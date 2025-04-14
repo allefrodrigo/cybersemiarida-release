@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=3 uid="uid://bn4sgxqrg1y63"]
+
+[ext_resource type="Texture2D" uid="uid://cyo8n3iymuyom" path="res://prefabs/graca_box.png" id="1_cb65k"]
+[ext_resource type="Script" path="res://prefabs/hit_pop.gd" id="2_1psdk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ygc1w"]
+size = Vector2(15.75, 14.6875)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s3gga"]
+size = Vector2(16, 4)
+
+[node name="pop_up" type="StaticBody2D"]
+position = Vector2(613, 414)
+collision_layer = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(0.5, 1.5)
+scale = Vector2(0.133929, 0.133929)
+texture = ExtResource("1_cb65k")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 1.34375)
+shape = SubResource("RectangleShape2D_ygc1w")
+
+[node name="hit_pop" type="Area2D" parent="."]
+position = Vector2(2, 1)
+collision_mask = 2
+script = ExtResource("2_1psdk")
+dialog_texts = Array[String](["Pulo no abismo, nao importa o que te digam", "Fume maconhaTexto 2", "Sério estou com fomo"])
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hit_pop"]
+position = Vector2(-1, 7)
+shape = SubResource("RectangleShape2D_s3gga")
+
+[connection signal="body_entered" from="hit_pop" to="hit_pop" method="_on_body_entered"]

@@ -1,0 +1,65 @@
+[gd_scene load_steps=7 format=3 uid="uid://bruuggoajpbgv"]
+
+[ext_resource type="Script" path="res://prefabs/dialog_box.gd" id="1_gjut1"]
+[ext_resource type="Texture2D" uid="uid://bnofkyygwqkww" path="res://Interface.png" id="2_la5tu"]
+[ext_resource type="Texture2D" uid="uid://yx40jxeqvri2" path="res://prefabs/ok_button_off.png" id="2_lfbxf"]
+[ext_resource type="Texture2D" uid="uid://bsovlxu0eyjoe" path="res://prefabs/ok_button_on.png" id="3_1c48g"]
+[ext_resource type="FontFile" uid="uid://bfx6vshfsm8us" path="res://Fonts/PixelifySans-Regular.ttf" id="3_e8q7x"]
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_qw68a"]
+frames = 2
+speed_scale = 2.0
+frame_0/texture = ExtResource("2_lfbxf")
+frame_1/texture = ExtResource("3_1c48g")
+frame_1/duration = 1.0
+
+[node name="dialog_box" type="MarginContainer"]
+process_mode = 3
+anchors_preset = -1
+anchor_left = 0.42
+anchor_top = 0.389
+anchor_right = 0.58
+anchor_bottom = 0.611
+offset_left = 0.0399933
+offset_top = 0.0879974
+offset_right = -0.0400085
+offset_bottom = -0.0879974
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_gjut1")
+
+[node name="bg_dialog_box" type="NinePatchRect" parent="."]
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("2_la5tu")
+region_rect = Rect2(0.286894, -0.0130038, 63.2068, 63.6915)
+patch_margin_left = 11
+patch_margin_top = 10
+patch_margin_right = 11
+patch_margin_bottom = 11
+
+[node name="text_container" type="MarginContainer" parent="."]
+texture_filter = 1
+layout_mode = 2
+theme_override_constants/margin_left = 14
+theme_override_constants/margin_top = 14
+theme_override_constants/margin_right = 14
+theme_override_constants/margin_bottom = 14
+
+[node name="text_label" type="Label" parent="text_container"]
+custom_minimum_size = Vector2(150, 40)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.690196, 0.447059, 0.345098, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_e8q7x")
+theme_override_font_sizes/font_size = 10
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="indicator" type="TextureRect" parent="."]
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+texture = SubResource("AnimatedTexture_qw68a")

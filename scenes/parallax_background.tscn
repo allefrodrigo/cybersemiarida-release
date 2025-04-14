@@ -1,0 +1,243 @@
+[gd_scene load_steps=21 format=3 uid="uid://b6ngnfhdvraqr"]
+
+[ext_resource type="Texture2D" uid="uid://lvu88u5ki4cw" path="res://assets/background/9_Céu.png" id="1_jhh2c"]
+[ext_resource type="Texture2D" uid="uid://dw8p1he01s1xt" path="res://assets/clouds/bg_cloud01.png" id="2_0xpd2"]
+[ext_resource type="Texture2D" uid="uid://c5tnubbk3p3x" path="res://assets/clouds/bg_cloud6.png" id="3_56jux"]
+[ext_resource type="Texture2D" uid="uid://5cfcum8bb2ch" path="res://assets/background/7_Passaros1.png" id="3_nuwcg"]
+[ext_resource type="Texture2D" uid="uid://bl755dkdlvdcg" path="res://assets/background/6_MontanhaLonge.png" id="4_28hpf"]
+[ext_resource type="Texture2D" uid="uid://bmf1w5vhrqstn" path="res://assets/background/7_Passaros2.png" id="4_d7vm1"]
+[ext_resource type="Texture2D" uid="uid://ctilg3dykp3ew" path="res://assets/background/5_Montanha.png" id="5_juqod"]
+[ext_resource type="Texture2D" uid="uid://cjnrvuoem4s3t" path="res://assets/background/4_PlantasLongeV2.png" id="6_ah2kk"]
+[ext_resource type="Texture2D" uid="uid://sbycmmfu1vrk" path="res://assets/background/4-2_Cactos.png" id="7_m2bdh"]
+[ext_resource type="Texture2D" uid="uid://c5v8oxi4kpewn" path="res://assets/background/3_Arvore.png" id="8_lar4h"]
+[ext_resource type="Texture2D" uid="uid://62dfhfojqdqv" path="res://assets/background/2_Plantas.png" id="9_ib50k"]
+[ext_resource type="Shader" path="res://shaders/arbusto.gdshader" id="10_21cim"]
+[ext_resource type="Shader" path="res://shaders/parallax_background.gdshader" id="10_qi4uw"]
+[ext_resource type="Texture2D" uid="uid://dpsn6qw3chp3x" path="res://assets/background/leaves.png" id="11_ricat"]
+[ext_resource type="Texture2D" uid="uid://5kt7yub1lrsk" path="res://assets/background/jungle_recolor.png" id="12_bs3ob"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wtndi"]
+atlas = ExtResource("3_nuwcg")
+region = Rect2(0, 0, 20, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xnexh"]
+atlas = ExtResource("4_d7vm1")
+region = Rect2(0, 0, 20, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_itp5e"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wtndi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xnexh")
+}],
+"loop": true,
+"name": &"fly",
+"speed": 2.0
+}]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_v83jo"]
+shader = ExtResource("10_21cim")
+shader_parameter/speed = 1.0
+shader_parameter/minStrength = 0.05
+shader_parameter/maxStrength = 0.01
+shader_parameter/strengthScale = 100.0
+shader_parameter/interval = 3.5
+shader_parameter/detail = 1.0
+shader_parameter/distortion = null
+shader_parameter/heightOffset = null
+shader_parameter/offset = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7i4yo"]
+shader = ExtResource("10_qi4uw")
+shader_parameter/dimensions = Vector2(1152, 648)
+shader_parameter/rows = 30.0
+shader_parameter/columns = 3.0
+shader_parameter/vertical_scroll = 0.5
+shader_parameter/horizontal_scroll = 0.1
+shader_parameter/size_min = 0.3
+shader_parameter/size_max = 0.8
+shader_parameter/wave_min = 0.1
+shader_parameter/wave_max = 1.0
+shader_parameter/wave_speed = 1.6
+shader_parameter/wave_rotation = -1.0
+shader_parameter/far_color = Color(0.5, 0.5, 0.5, 1)
+shader_parameter/near_color = Color(1, 1, 1, 1)
+shader_parameter/particle_texture = ExtResource("11_ricat")
+
+[node name="ParallaxBackground" type="Node2D"]
+
+[node name="ParallaxLayer" type="Parallax2D" parent="."]
+scale = Vector2(1.2, 1.2)
+scroll_offset = Vector2(0, -44)
+repeat_size = Vector2(272, 153)
+repeat_times = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer"]
+texture_filter = 1
+position = Vector2(136, 72)
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("1_jhh2c")
+
+[node name="ParallaxLayer2" type="Parallax2D" parent="."]
+scale = Vector2(1.2, 1.2)
+scroll_scale = Vector2(0.78, 0.78)
+scroll_offset = Vector2(0, 10)
+repeat_size = Vector2(272, 0)
+repeat_times = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer2"]
+texture_filter = 1
+position = Vector2(25, 14.1667)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_0xpd2")
+
+[node name="ParallaxLayer13" type="Parallax2D" parent="."]
+scale = Vector2(1.2, 1.2)
+scroll_scale = Vector2(0.78, 0.78)
+scroll_offset = Vector2(0, -44)
+repeat_size = Vector2(272, 0)
+autoscroll = Vector2(-10, 0)
+repeat_times = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer13"]
+texture_filter = 1
+position = Vector2(145, -19.1667)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("3_56jux")
+
+[node name="ParallaxLayer3" type="Parallax2D" parent="."]
+scale = Vector2(1.2, 1.2)
+scroll_scale = Vector2(0.8, 0.78)
+scroll_offset = Vector2(0, -44)
+repeat_size = Vector2(272, 0)
+autoscroll = Vector2(-15, 0)
+repeat_times = 3
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="ParallaxLayer3"]
+texture_filter = 1
+position = Vector2(32, 24)
+scale = Vector2(1.2, 1.2)
+sprite_frames = SubResource("SpriteFrames_itp5e")
+animation = &"fly"
+autoplay = "fly"
+frame_progress = 0.451246
+centered = false
+
+[node name="ParallaxLayer4" type="Parallax2D" parent="."]
+scale = Vector2(1.2, 1.2)
+scroll_scale = Vector2(0.8, 0.8)
+scroll_offset = Vector2(0, -44)
+repeat_size = Vector2(272, 0)
+repeat_times = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer4"]
+position = Vector2(136, 72)
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("4_28hpf")
+
+[node name="ParallaxLayer5" type="Parallax2D" parent="."]
+scale = Vector2(1.2, 1.2)
+scroll_scale = Vector2(0.78, 0.78)
+scroll_offset = Vector2(0, -44)
+repeat_size = Vector2(272, 0)
+repeat_times = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer5"]
+position = Vector2(136, 72)
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("5_juqod")
+
+[node name="ParallaxLayer6" type="Parallax2D" parent="."]
+scale = Vector2(1.2, 1.2)
+scroll_scale = Vector2(0.7, 0.7)
+scroll_offset = Vector2(0, -44)
+repeat_size = Vector2(272, 0)
+repeat_times = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer6"]
+position = Vector2(136, 72)
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("6_ah2kk")
+
+[node name="ParallaxLayer7" type="Parallax2D" parent="."]
+scale = Vector2(1.2, 1.2)
+scroll_scale = Vector2(0.7, 0.7)
+scroll_offset = Vector2(0, -44)
+repeat_size = Vector2(272, 0)
+repeat_times = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer7"]
+position = Vector2(136, 72)
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("7_m2bdh")
+
+[node name="ParallaxLayer8" type="Parallax2D" parent="."]
+scale = Vector2(1.2, 1.2)
+scroll_scale = Vector2(0.7, 0.7)
+scroll_offset = Vector2(0, -44)
+repeat_size = Vector2(272, 0)
+repeat_times = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer8"]
+position = Vector2(136, 72)
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("8_lar4h")
+
+[node name="ParallaxLayer9" type="Parallax2D" parent="."]
+scale = Vector2(1.2, 1.2)
+scroll_scale = Vector2(0.67, 0.67)
+scroll_offset = Vector2(0, -44)
+repeat_size = Vector2(272, 0)
+repeat_times = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer9"]
+material = SubResource("ShaderMaterial_v83jo")
+position = Vector2(136, 72)
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("9_ib50k")
+
+[node name="ParallaxLayer12" type="Parallax2D" parent="."]
+scale = Vector2(1.2, 1.2)
+scroll_scale = Vector2(0.67, 0.67)
+scroll_offset = Vector2(0, -44)
+repeat_size = Vector2(272, 0)
+repeat_times = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer12"]
+position = Vector2(432.5, 245)
+rotation = 3.14159
+scale = Vector2(0.61, 0.61)
+texture = ExtResource("12_bs3ob")
+flip_h = true
+flip_v = true
+
+[node name="ParallaxLayer11" type="Parallax2D" parent="."]
+scale = Vector2(1.2, 1.2)
+scroll_scale = Vector2(0.67, 0.67)
+scroll_offset = Vector2(10, 108)
+repeat_size = Vector2(272, 0)
+repeat_times = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer11"]
+position = Vector2(133.333, 250)
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("9_ib50k")
+flip_h = true
+flip_v = true
+
+[node name="ParallaxLayer10" type="Parallax2D" parent="."]
+visible = false
+scale = Vector2(1.2, 1.2)
+scroll_scale = Vector2(0.67, 1)
+repeat_size = Vector2(272, 0)
+repeat_times = 3
+
+[node name="ColorRect" type="ColorRect" parent="ParallaxLayer10"]
+material = SubResource("ShaderMaterial_7i4yo")
+offset_left = -15.0
+offset_top = -81.0
+offset_right = 299.0
+offset_bottom = 128.0

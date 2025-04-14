@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://88dwxv1n4o3a"]
+
+[ext_resource type="Script" path="res://scripts/floatingkey.gd" id="1_a1fhv"]
+[ext_resource type="Texture2D" uid="uid://deld67koetxfl" path="res://dialogues/note.png" id="2_h7jhn"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7655k"]
+radius = 5.0
+height = 12.0
+
+[node name="key" type="Area2D"]
+collision_mask = 2
+script = ExtResource("1_a1fhv")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.0242152, 0.0216207)
+texture = ExtResource("2_h7jhn")
+
+[node name="collision" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_7655k")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,0 +1,109 @@
+{
+    "Map/SizeTest": {
+        "height": 4300,
+        "width": 2
+    },
+    "activeFile": "OneDrive/Área de Trabalho/GAME DEV/Levels/Tilesets/taipa-house-solar.tsx",
+    "expandedProjectPaths": [
+        "."
+    ],
+    "file.lastUsedOpenFilter": "Todos os Ficheiros (*)",
+    "fileStates": {
+        "OneDrive/Área de Trabalho/GAME DEV/Levels/Cafundó.tmx": {
+            "scale": 0.75,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 471.9999999999999,
+                "y": 308.66666666666674
+            }
+        },
+        "OneDrive/Área de Trabalho/GAME DEV/Levels/Tilesets/sem título.tmx": {
+            "scale": 1,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 85,
+                "y": 136.5
+            }
+        },
+        "OneDrive/Área de Trabalho/GAME DEV/Levels/Tilesets/taipa-house-solar.tsx": {
+            "dynamicWrapping": false,
+            "scaleInDock": 1,
+            "scaleInEditor": 3
+        },
+        "OneDrive/Área de Trabalho/GAME DEV/Levels/Tilesets/tile cruz.tsx": {
+            "dynamicWrapping": false,
+            "scaleInDock": 1,
+            "scaleInEditor": 3
+        },
+        "OneDrive/Área de Trabalho/GAME DEV/Levels/Tilesets/tile_jungle_ground_brown.tsx": {
+            "scaleInDock": 2.0876,
+            "scaleInEditor": 3
+        },
+        "OneDrive/Área de Trabalho/GAME DEV/Levels/Tilesets/tileset 1.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1.5
+        },
+        "OneDrive/Área de Trabalho/GAME DEV/Levels/Tilesets/tileset rosca.tsx": {
+            "dynamicWrapping": false,
+            "scaleInDock": 1,
+            "scaleInEditor": 3
+        },
+        "OneDrive/Área de Trabalho/GAME DEV/Levels/Tilesets/tileset-export.tsx": {
+            "dynamicWrapping": false,
+            "scaleInDock": 1,
+            "scaleInEditor": 3
+        },
+        "OneDrive/Área de Trabalho/GAME DEV/Levels/Tilesets/tileset1.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 3
+        },
+        "OneDrive/Área de Trabalho/GAME DEV/Levels/Tilesets/tileset120225.tsx": {
+            "dynamicWrapping": true,
+            "scaleInDock": 1.5,
+            "scaleInEditor": 3
+        },
+        "OneDrive/Área de Trabalho/GAME DEV/Levels/texte export.tmx": {
+            "scale": 1.4295,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 211.96222455403986,
+                "y": 185.0297306750612
+            }
+        }
+    },
+    "last.exportedFilePath": "C:/Users/v-vbt/OneDrive/Área de Trabalho",
+    "last.imagePath": "C:/Users/v-vbt/Downloads",
+    "map.height": 30,
+    "map.lastUsedExportFilter": "Ficheiro de Cena do Godot 4 (*.tscn)",
+    "map.lastUsedFormat": "tmx",
+    "map.tileHeight": 16,
+    "map.tileWidth": 16,
+    "map.width": 120,
+    "openFiles": [
+        "OneDrive/Área de Trabalho/GAME DEV/Levels/Tilesets/taipa-house-solar.tsx",
+        "OneDrive/Área de Trabalho/GAME DEV/Levels/Tilesets/tileset-export.tsx",
+        "OneDrive/Área de Trabalho/GAME DEV/Levels/Tilesets/tileset rosca.tsx",
+        "OneDrive/Área de Trabalho/GAME DEV/Levels/Tilesets/tile cruz.tsx"
+    ],
+    "project": "sem título.tiled-project",
+    "recentFiles": [
+        "OneDrive/Área de Trabalho/GAME DEV/Levels/Tilesets/tile cruz.tsx",
+        "OneDrive/Área de Trabalho/GAME DEV/Levels/Tilesets/tileset rosca.tsx",
+        "OneDrive/Área de Trabalho/GAME DEV/Levels/Tilesets/tileset-export.tsx",
+        "OneDrive/Área de Trabalho/GAME DEV/Levels/Tilesets/taipa-house-solar.tsx",
+        "OneDrive/Área de Trabalho/GAME DEV/Levels/Tilesets/sem título.tmx",
+        "OneDrive/Área de Trabalho/GAME DEV/Levels/Tilesets/tileset120225.tsx",
+        "OneDrive/Área de Trabalho/GAME DEV/Levels/Tilesets/tile_jungle_ground_brown.tsx",
+        "OneDrive/Área de Trabalho/GAME DEV/Levels/texte export.tmx",
+        "OneDrive/Área de Trabalho/GAME DEV/Levels/Tilesets/tileset1.tsx",
+        "OneDrive/Área de Trabalho/GAME DEV/Levels/Cafundó.tmx",
+        "OneDrive/Área de Trabalho/GAME DEV/Levels/Tilesets/tileset 1.tsx"
+    ],
+    "tileset.lastUsedFormat": "tsx",
+    "tileset.margin": 0,
+    "tileset.spacing": 0,
+    "tileset.tileSize": {
+        "height": 16,
+        "width": 16
+    }
+}

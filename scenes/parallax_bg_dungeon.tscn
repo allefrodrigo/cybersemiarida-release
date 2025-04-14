@@ -1,0 +1,103 @@
+[gd_scene load_steps=6 format=3 uid="uid://dwo7sqxi3mg1h"]
+
+[ext_resource type="Texture2D" uid="uid://dj3p8w03cgot7" path="res://scenes/1.png" id="1_wuhk5"]
+[ext_resource type="Texture2D" uid="uid://ccr701hb6m4hw" path="res://scenes/2.png" id="2_srhfu"]
+[ext_resource type="Texture2D" uid="uid://dbuxorqesy6ih" path="res://scenes/3.png" id="4_sp8om"]
+[ext_resource type="Texture2D" uid="uid://d0qcg6enkblkl" path="res://scenes/4.png" id="5_omqwh"]
+[ext_resource type="Texture2D" uid="uid://cr54bwjdj7fpb" path="res://scenes/5.png" id="7_e44di"]
+
+[node name="ParallaxBg" type="Node2D"]
+position = Vector2(3, -29)
+
+[node name="ParallaxBackground" type="Node2D" parent="."]
+
+[node name="Sky" type="Parallax2D" parent="ParallaxBackground"]
+scale = Vector2(1.5, 1.5)
+repeat_size = Vector2(768, 0)
+repeat_times = 3
+
+[node name="ColorRect" type="ColorRect" parent="ParallaxBackground/Sky"]
+offset_left = 1.33333
+offset_top = -670.667
+offset_right = 768.333
+offset_bottom = -431.667
+color = Color(0.105882, 0.0980392, 0.0980392, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="ParallaxBackground/Sky"]
+offset_left = -2.66667
+offset_top = 853.333
+offset_right = 764.333
+offset_bottom = 1092.33
+color = Color(0.121569, 0.113725, 0.0980392, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Sky"]
+texture_filter = 1
+scale = Vector2(2, 2)
+texture = ExtResource("1_wuhk5")
+centered = false
+
+[node name="Mountain" type="Parallax2D" parent="ParallaxBackground"]
+texture_filter = 1
+scale = Vector2(1.5, 1.5)
+repeat_size = Vector2(768, 0)
+repeat_times = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Mountain"]
+texture_filter = 1
+scale = Vector2(2, 2)
+texture = ExtResource("2_srhfu")
+centered = false
+
+[node name="Mountain_Near" type="Parallax2D" parent="ParallaxBackground"]
+texture_filter = 1
+scale = Vector2(1.5, 1.5)
+repeat_size = Vector2(768, 0)
+repeat_times = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Mountain_Near"]
+texture_filter = 1
+scale = Vector2(2, 2)
+texture = ExtResource("4_sp8om")
+centered = false
+
+[node name="Plants_Far" type="Parallax2D" parent="ParallaxBackground"]
+texture_filter = 1
+scale = Vector2(1.5, 1.5)
+scroll_scale = Vector2(0.95, 0.95)
+repeat_size = Vector2(768, 0)
+repeat_times = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Plants_Far"]
+texture_filter = 1
+scale = Vector2(2, 2)
+texture = ExtResource("5_omqwh")
+centered = false
+
+[node name="Plants_Far2" type="Parallax2D" parent="ParallaxBackground"]
+texture_filter = 1
+scale = Vector2(1.5, 1.5)
+scroll_scale = Vector2(0.94, 0.94)
+repeat_size = Vector2(768, 0)
+repeat_times = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Plants_Far2"]
+texture_filter = 1
+scale = Vector2(2, 2)
+texture = ExtResource("7_e44di")
+centered = false
+
+[node name="Sprite2D3" type="Sprite2D" parent="ParallaxBackground/Plants_Far2"]
+texture_filter = 1
+position = Vector2(0, -432)
+scale = Vector2(2, 2)
+texture = ExtResource("7_e44di")
+centered = false
+flip_v = true
+
+[node name="Sprite2D2" type="Sprite2D" parent="ParallaxBackground/Plants_Far2"]
+texture_filter = 1
+position = Vector2(0, 426.667)
+scale = Vector2(2, 2)
+texture = ExtResource("7_e44di")
+centered = false
+flip_v = true

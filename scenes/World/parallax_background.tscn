@@ -1,0 +1,45 @@
+[gd_scene load_steps=2 format=3 uid="uid://bcsnyw4t6pnw2"]
+
+[ext_resource type="Texture2D" uid="uid://irr6td0rsom0" path="res://9_Céu.png" id="1_6sfc5"]
+
+[node name="ParallaxBackground" type="CanvasLayer"]
+
+[node name="Sky" type="Parallax2D" parent="."]
+visible = false
+
+[node name="Sprite2D" type="Sprite2D" parent="Sky"]
+texture = ExtResource("1_6sfc5")
+
+[node name="Clouds" type="Parallax2D" parent="."]
+scroll_scale = Vector2(1.1, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="Clouds"]
+
+[node name="Birds" type="Parallax2D" parent="."]
+scroll_scale = Vector2(1.11, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="Birds"]
+
+[node name="Mountains" type="Parallax2D" parent="."]
+scroll_scale = Vector2(1.2, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="Mountains"]
+
+[node name="Mountain" type="Parallax2D" parent="."]
+scroll_scale = Vector2(1.24, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="Mountain"]
+
+[node name="FarPlants" type="Parallax2D" parent="."]
+scroll_scale = Vector2(1.26, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="FarPlants"]
+
+[node name="Cactus" type="Parallax2D" parent="."]
+scroll_scale = Vector2(1.26, 1)
+
+[node name="Tree" type="Parallax2D" parent="."]
+scroll_scale = Vector2(1.26, 1)
+
+[node name="Plants" type="Parallax2D" parent="."]
+scroll_scale = Vector2(1.3, 1)

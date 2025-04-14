@@ -1,0 +1,148 @@
+{
+    "Map/SizeTest": {
+        "height": 4300,
+        "width": 2
+    },
+    "activeFile": "",
+    "expandedProjectPaths": [
+    ],
+    "file.lastUsedOpenFilter": "Todos os Ficheiros (*)",
+    "fileStates": {
+        "Cafundo1.tmx": {
+            "scale": 1,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 636,
+                "y": 294.5
+            }
+        },
+        "Cafundo_01.tmx": {
+            "scale": 0.33,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 2559.090909090909,
+                "y": 477.27272727272737
+            }
+        },
+        "Cafundo_01.tmx#tileset_cafundo": {
+            "scaleInDock": 0.5
+        },
+        "Mapa/cafundo_500bl.tmx": {
+            "scale": 0.5,
+            "selectedLayer": 1,
+            "viewCenter": {
+                "x": 4001,
+                "y": 801
+            }
+        },
+        "Mapa/cafundó_02.tmx": {
+            "scale": 0.25,
+            "selectedLayer": 4,
+            "viewCenter": {
+                "x": 6924,
+                "y": 710
+            }
+        },
+        "Mapa/cafundó_03.tmx": {
+            "scale": 0.25,
+            "selectedLayer": 3,
+            "viewCenter": {
+                "x": 2896,
+                "y": 1366
+            }
+        },
+        "Mapa/cafundó_dg.tmx": {
+            "scale": 0.25,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 1028,
+                "y": 1634
+            }
+        },
+        "Rules/Autotile_Rules.tmx": {
+            "scale": 1.5,
+            "selectedLayer": 2,
+            "viewCenter": {
+                "x": 886.3333333333333,
+                "y": 320.33333333333337
+            }
+        },
+        "Tileset/Dungeon_Ground_Tileset.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 2
+        },
+        "Tileset/cafundo1.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "Tileset/taipa-house-solar.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 3
+        },
+        "Tileset/tile_jungle_water.tsx": {
+            "scaleInDock": 1.5,
+            "scaleInEditor": 3
+        },
+        "Tileset/tileset_cafundo.tsx": {
+            "dynamicWrapping": false,
+            "scaleInDock": 2,
+            "scaleInEditor": 3
+        },
+        "Tileset/water_test.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "cafundo.tsx": {
+            "scaleInDock": 0.75,
+            "scaleInEditor": 1
+        },
+        "cafundo1.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        }
+    },
+    "last.exportedFilePath": "C:/Users/v-vbt/OneDrive/Documentos/GitHub/apetit-studios-cybersemiarida/levels/Level_design/TILED/CSA/Mapa",
+    "last.externalTilesetPath": "C:/Users/v-vbt/OneDrive/Documentos/GitHub/apetit-studios-cybersemiarida/levels/Level_design/TILED/CSA/Tileset",
+    "last.imagePath": "C:/Users/v-vbt/OneDrive/Documentos/GitHub/apetit-studios-cybersemiarida/levels/Level_design/Tilesets",
+    "lastUsedTilesetExportFilter": "Todos os Ficheiros (*)",
+    "map.height": 240,
+    "map.lastUsedExportFilter": "Ficheiro de Cena do Godot 4 (*.tscn)",
+    "map.lastUsedFormat": "tmx",
+    "map.tileHeight": 16,
+    "map.tileWidth": 16,
+    "map.width": 300,
+    "mapScene.enableWorlds": true,
+    "openFiles": [
+        "Cafundo_01.tmx",
+        "Rules/Autotile_Rules.tmx",
+        "Tileset/taipa-house-solar.tsx",
+        "Tileset/tileset_cafundo.tsx",
+        "Tileset/tile_jungle_water.tsx",
+        "Mapa/cafundo_500bl.tmx",
+        "Tileset/water_test.tsx",
+        "Mapa/cafundó_02.tmx",
+        "Mapa/cafundó_03.tmx",
+        "Tileset/Dungeon_Ground_Tileset.tsx"
+    ],
+    "project": "CSA.tiled-project",
+    "recentFiles": [
+        "Cafundo_01.tmx",
+        "Rules/Autotile_Rules.tmx",
+        "Tileset/taipa-house-solar.tsx",
+        "Tileset/tileset_cafundo.tsx",
+        "Tileset/tile_jungle_water.tsx",
+        "Mapa/cafundo_500bl.tmx",
+        "Tileset/water_test.tsx",
+        "Mapa/cafundó_02.tmx",
+        "Mapa/cafundó_03.tmx",
+        "Tileset/Dungeon_Ground_Tileset.tsx",
+        "cafundo.tsx",
+        "Tileset/cafundo1.tsx"
+    ],
+    "tileset.lastUsedFilter": "Ficheiros de conjunto de tiles Tiled (*.tsx *.xml)",
+    "tileset.lastUsedFormat": "tsx",
+    "tileset.tileSize": {
+        "height": 16,
+        "width": 16
+    }
+}

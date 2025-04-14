@@ -1,0 +1,26 @@
+~ fazenda_inicial
+Dona Graça: "[shake]Timby, o vento hoje traz mudanças.[/shake]"
+Timby: "Sinto um mistério no ar. Por que a música foi silenciada?"
+Dona Graça: "O Maestro teme a liberdade que cada nota traz."
+Timby: "E minha mãe? Ela cantava com paixão?"
+Dona Graça: "[wave]Sim, ela foi a voz dos que não se calaram.[/wave]"
+Timby: "Então, o que devo fazer?"
+Dona Graça: "O destino te chama. A escolha é tua."
+
+- Aceitar o chamado
+	Timby: "Eu aceito. Vou a Cybersemiárida buscar a verdade."
+	Dona Graça: "[shake]Que a melodia te guie, meu filho.[/shake]"
+	=> END
+
+- Dúvidas persistem
+	Timby: "Ainda tenho dúvidas... preciso de mais clareza."
+	Dona Graça: "A verdade exige coragem; o tempo não espera."
+	- Aceitar agora
+		Timby: "Então, seguirei sem hesitar."
+		Dona Graça: "[wake]Que a coragem te conduza, Timby.[/wake]"
+		=> END
+	- Permanecer na dúvida
+		Timby: "Mas e se eu não estiver pronto?"
+		Dona Graça: "Sem escolha, o destino se repete."
+		=> fazenda_inicial
+=> END
