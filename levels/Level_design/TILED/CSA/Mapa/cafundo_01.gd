@@ -3,6 +3,8 @@ extends Node
 @onready var player = $player
 
 func _ready():
+	MusicPlayer.play("phase1_3")
+
 	# Desabilita o controle do player enquanto o diálogo não acaba
 	player.set_process_input(false)
 	player.set_physics_process(false)

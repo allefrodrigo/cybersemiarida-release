@@ -1,26 +1,26 @@
 ~ fazenda_inicial
-Dona Graça: "[shake]Timby, o vento hoje traz mudanças.[/shake]"
-Timby: "Sinto um mistério no ar. Por que a música foi silenciada?"
-Dona Graça: "O Maestro teme a liberdade que cada nota traz."
-Timby: "E minha mãe? Ela cantava com paixão?"
-Dona Graça: "[wave]Sim, ela foi a voz dos que não se calaram.[/wave]"
-Timby: "Então, o que devo fazer?"
-Dona Graça: "O destino te chama. A escolha é tua."
-
+Dona Graça: Timby, hoje algo cortou o silêncio da fazenda.
+Timby: [shake]Meus estão formigando por dentro, que estranho...[/shake]
+Dona Graça: O destino te chama, meu filho... 
+Timby: [shake]Meu peito está estranho...[/shake] 
+Timby: como se algo estivesse batendo lá dentro...
+Timby: Não é meu coração... ai... [shake]eu tô com medo[/shake] 
+Dona Graça: Timby, relaxa... o que você está percebendo é música.
+Timby: Relaxa?!??! Mas eu nunca ouvi música.
+Dona Graça: A música são vibrações no ar e no corpo. 
+Dona Graça: Mesmo [color=red]proibida[/color], ela encontra um jeito de chegar até você.
 - Aceitar o chamado
-	Timby: "Eu aceito. Vou a Cybersemiárida buscar a verdade."
-	Dona Graça: "[shake]Que a melodia te guie, meu filho.[/shake]"
+	Timby: Então essas batidas que sinto são notas? Como encontro o ritmo?
+	Dona Graça: [rainbow freq=0.1 sat=50 val=50]Escute o pulso e siga-o. A estrada para Cybersemiárida começa no compasso que você sente.[/rainbow]
 	=> END
-
 - Dúvidas persistem
-	Timby: "Ainda tenho dúvidas... preciso de mais clareza."
-	Dona Graça: "A verdade exige coragem; o tempo não espera."
+	Timby: Ainda tenho dúvidas... preciso de mais clareza.
+	Dona Graça: A verdade exige coragem; o tempo não espera.
 	- Aceitar agora
-		Timby: "Então, seguirei sem hesitar."
-		Dona Graça: "[wake]Que a coragem te conduza, Timby.[/wake]"
+		Dona Graça: [rainbow freq=0.1 sat=50 val=50]Que a coragem te conduza, Timby.[/rainbow]
 		=> END
 	- Permanecer na dúvida
-		Timby: "Mas e se eu não estiver pronto?"
-		Dona Graça: "Sem escolha, o destino se repete."
+		Timby: Mas e se eu não estiver pronto?
+		Dona Graça: Sem escolha, o destino se repete.
 		=> fazenda_inicial
 => END

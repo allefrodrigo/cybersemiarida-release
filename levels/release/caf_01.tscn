@@ -1,17 +1,18 @@
-[gd_scene load_steps=14 format=3 uid="uid://cqdc45syx1oa0"]
+[gd_scene load_steps=15 format=3 uid="uid://cqdc45syx1oa0"]
 
-[ext_resource type="PackedScene" uid="uid://cls1bhrmlht6k" path="res://scenes/parallax_bg.tscn" id="1_a3llx"]
-[ext_resource type="Script" path="res://levels/Level_design/TILED/CSA/Mapa/cafundo_01.gd" id="1_p0cwi"]
-[ext_resource type="PackedScene" uid="uid://bapvy71043313" path="res://Player/player.tscn" id="4_d6wv4"]
-[ext_resource type="PackedScene" uid="uid://6x1esumef4rj" path="res://scenes/goal.tscn" id="7_jdop2"]
-[ext_resource type="PackedScene" uid="uid://blpskcxyt3yry" path="res://Player/dona-graca.tscn" id="8_43n2e"]
-[ext_resource type="PackedScene" uid="uid://88dwxv1n4o3a" path="res://props/key.tscn" id="9_ng7ja"]
-[ext_resource type="Texture2D" uid="uid://crggrq0ygw5b3" path="res://scenes/World/Props/taipa-house-solar.png" id="taipa-house-solar"]
-[ext_resource type="Texture2D" uid="uid://iq5o5bvwxmgs" path="res://levels/Level_design/Tilesets/tileset_cafundo.png" id="tileset_cafundo"]
-[ext_resource type="Texture2D" uid="uid://d124m6kp50ls7" path="res://assets/Water/tile_jungle_water.png" id="tile_jungle_water"]
+[ext_resource type="Script" path="res://levels/Level_design/TILED/CSA/Mapa/cafundo_01.gd" id="1_x8byv"]
+[ext_resource type="PackedScene" uid="uid://cls1bhrmlht6k" path="res://scenes/parallax_bg.tscn" id="2_f5v4a"]
+[ext_resource type="Texture2D" uid="uid://d124m6kp50ls7" path="res://assets/Water/tile_jungle_water.png" id="3_n3i7j"]
+[ext_resource type="Texture2D" uid="uid://iq5o5bvwxmgs" path="res://levels/Level_design/Tilesets/tileset_cafundo.png" id="4_te3eh"]
+[ext_resource type="Texture2D" uid="uid://crggrq0ygw5b3" path="res://scenes/World/Props/taipa-house-solar.png" id="5_ga3a7"]
+[ext_resource type="PackedScene" uid="uid://bapvy71043313" path="res://Player/player.tscn" id="6_kiwin"]
+[ext_resource type="PackedScene" uid="uid://6x1esumef4rj" path="res://scenes/goal.tscn" id="7_s5nev"]
+[ext_resource type="PackedScene" uid="uid://blpskcxyt3yry" path="res://Player/dona-graca.tscn" id="8_5oa2k"]
+[ext_resource type="PackedScene" uid="uid://dbnnn8x7jpx30" path="res://parede_colisao.tscn" id="9_kj0p3"]
+[ext_resource type="Texture2D" uid="uid://cpfen1uhaaw7a" path="res://scenes/sign_forbiden.png" id="10_tfsea"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0"]
-texture = ExtResource("tile_jungle_water")
+texture = ExtResource("3_n3i7j")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -80,7 +81,7 @@ texture = ExtResource("tile_jungle_water")
 7:7/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1"]
-texture = ExtResource("tileset_cafundo")
+texture = ExtResource("4_te3eh")
 1:1/0 = 0
 1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 2:1/0 = 0
@@ -416,7 +417,7 @@ texture = ExtResource("tileset_cafundo")
 14:20/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2"]
-texture = ExtResource("taipa-house-solar")
+texture = ExtResource("5_ga3a7")
 1:0/0 = 0
 2:0/0 = 0
 3:0/0 = 0
@@ -497,10 +498,10 @@ sources/1 = SubResource("TileSetAtlasSource_1")
 sources/2 = SubResource("TileSetAtlasSource_2")
 
 [node name="cafundo_500bl" type="Node2D"]
-script = ExtResource("1_p0cwi")
+script = ExtResource("1_x8byv")
 
-[node name="ParallaxBg" parent="." instance=ExtResource("1_a3llx")]
-position = Vector2(428, 603)
+[node name="ParallaxBg" parent="." instance=ExtResource("2_f5v4a")]
+position = Vector2(402, 704)
 
 [node name="TileMap" type="TileMap" parent="."]
 texture_filter = 1
@@ -517,18 +518,22 @@ layer_3/tile_data = PackedInt32Array(3342483, 786433, 12, 3408019, 786433, 12, 3
 layer_4/name = "sombra 2"
 layer_4/tile_data = PackedInt32Array(3342628, 786433, 12, 3342645, 786433, 12, 3408163, 786433, 12, 3408164, 786433, 13, 3408181, 786433, 12, 3473717, 786433, 12, 3473752, 786433, 12, 3473764, 720897, 11, 3473765, 720897, 11, 3473794, 786433, 12, 3539288, 786433, 12, 3539294, 720897, 11, 3539295, 720897, 11, 3539296, 720897, 11, 3539307, 720897, 11, 3539308, 720897, 11, 3539330, 786433, 12, 3604658, 720897, 11, 3604659, 720897, 11, 3604660, 720897, 11, 3604664, 720897, 11, 3604665, 720897, 11, 3604666, 720897, 11, 3604667, 720897, 11, 3604784, 786433, 12, 3604822, 786433, 12, 3604823, 655361, 13, 3604824, 786433, 13, 3604840, 720897, 11, 3604850, 786433, 12, 3604861, 786433, 12, 3604866, 786433, 12, 3604871, 786433, 12, 3670204, 720897, 11, 3670205, 720897, 11, 3670206, 720897, 11, 3670207, 720897, 11, 3670208, 720897, 11, 3670209, 720897, 11, 3670210, 720897, 11, 3670211, 720897, 11, 3670212, 720897, 11, 3670213, 720897, 11, 3670214, 720897, 11, 3670320, 786433, 12, 3670358, 786433, 12, 3670386, 786433, 12, 3670402, 786433, 12, 3670407, 786433, 12, 3735856, 786433, 12, 3735892, 786433, 12, 3735893, 655361, 13, 3735894, 786433, 13, 3735920, 786433, 12, 3735921, 655361, 13, 3735922, 786433, 13, 3735938, 786433, 12, 3735940, 786433, 12, 3801392, 786433, 12, 3801428, 786433, 12, 3801456, 786433, 12, 3801474, 786433, 12, 3801476, 786433, 12, 3866797, 655361, 7, 3866801, 786433, 7, 3866815, 655361, 7, 3866819, 786433, 7, 3866894, 655361, 7, 3866898, 786433, 7, 3866927, 655361, 13, 3866928, 786433, 13, 3866947, 655361, 7, 3866951, 786433, 7, 3866963, 655361, 13, 3866964, 786433, 13, 3866991, 655361, 13, 3866992, 786433, 13, 3932333, 655361, 8, 3932337, 786433, 8, 3932351, 655361, 8, 3932355, 786433, 8, 3932430, 655361, 8, 3932434, 786433, 8, 3932483, 655361, 8, 3932487, 786433, 8, 3997869, 655361, 8, 3997873, 786433, 8, 3997887, 655361, 8, 3997891, 786433, 8, 3997966, 655361, 8, 3997970, 786433, 8, 3998019, 655361, 8, 3998023, 786433, 8, 4063409, 786433, 8, 4063427, 786433, 8, 4063502, 655361, 8, 4063506, 786433, 8, 4063555, 655361, 8, 4063559, 786433, 8, 4128945, 786433, 8, 4128963, 786433, 8, 4129042, 786433, 8, 4129091, 655361, 8, 4129095, 786433, 8, 4194481, 786433, 8, 4194499, 786433, 8, 4194578, 786433, 8, 4194627, 655361, 8, 4194631, 786433, 8, 4260017, 786433, 8, 4260035, 786433, 8, 4260114, 786433, 8, 4260163, 655361, 8, 4260167, 786433, 8, 4325553, 786433, 8, 4325571, 786433, 8, 4325650, 786433, 8, 4325699, 655361, 8, 4325703, 786433, 8, 4391089, 786433, 8, 4391107, 786433, 8, 4391186, 786433, 8, 4391235, 655361, 8, 4391239, 786433, 8, 4456625, 786433, 8, 4456643, 786433, 8, 4456722, 786433, 8, 4456771, 655361, 8, 4456775, 786433, 8, 4522161, 786433, 8, 4522179, 786433, 8, 4522258, 786433, 8, 4522307, 655361, 8, 4522311, 786433, 8, 4587697, 786433, 8, 4587715, 786433, 8, 4587794, 786433, 8, 4587843, 655361, 8, 4587847, 786433, 8, 4653233, 786433, 8, 4653251, 786433, 8, 4653330, 786433, 8, 4653379, 655361, 8, 4653383, 786433, 8, 4718769, 786433, 8, 4718787, 786433, 8, 4718866, 786433, 8, 4718915, 655361, 8, 4718919, 786433, 8, 4784305, 786433, 8, 4784323, 786433, 8, 4784402, 786433, 8, 4784451, 655361, 8, 4784455, 786433, 8, 4849841, 786433, 8, 4849859, 786433, 8, 4849938, 786433, 8, 4849987, 655361, 8, 4849991, 786433, 8, 4915377, 786433, 8, 4915395, 786433, 8, 4915474, 786433, 8, 4915523, 655361, 8, 4915527, 786433, 8, 4980913, 786433, 8, 4980931, 786433, 8, 4981010, 786433, 8, 4981059, 655361, 8, 4981063, 786433, 8, 5046449, 786433, 8, 5046467, 786433, 8, 5046546, 786433, 8, 5046595, 655361, 8, 5046599, 786433, 8, 5111985, 786433, 8, 5112003, 786433, 8, 5112082, 786433, 8, 5112131, 655361, 8, 5112135, 786433, 8, 5177521, 786433, 8, 5177539, 786433, 8, 5177618, 786433, 8, 5177667, 655361, 8, 5177671, 786433, 8, 5243057, 786433, 8, 5243075, 786433, 8, 5243154, 786433, 8, 5243203, 655361, 8, 5243207, 786433, 8, 5308593, 786433, 8, 5308611, 786433, 8, 5308690, 786433, 8, 5308739, 655361, 8, 5308743, 786433, 8, 5374129, 786433, 8, 5374147, 786433, 8, 5374226, 786433, 8, 5374275, 655361, 8, 5374279, 786433, 8, 5439665, 786433, 8, 5439683, 786433, 8, 5439762, 786433, 8, 5439811, 655361, 8, 5439815, 786433, 8, 5505201, 786433, 8, 5505219, 786433, 8, 5505298, 786433, 8, 5505347, 655361, 8, 5505351, 786433, 8, 5570737, 786433, 8, 5570755, 786433, 8, 5570834, 786433, 8, 5570883, 655361, 8, 5570887, 786433, 8, 5636273, 786433, 8, 5636291, 786433, 8, 5636370, 786433, 8, 5636419, 655361, 8, 5636423, 786433, 8, 5701809, 786433, 8, 5701827, 786433, 8, 5701906, 786433, 8, 5701955, 655361, 8, 5701959, 786433, 8, 5767345, 786433, 8, 5767363, 786433, 8, 5767442, 786433, 8, 5767491, 655361, 8, 5767495, 786433, 8, 5832881, 786433, 8, 5832899, 786433, 8, 5832978, 786433, 8, 5833027, 655361, 8, 5833031, 786433, 8, 5898417, 786433, 8, 5898435, 786433, 8, 5898514, 786433, 8, 5898563, 655361, 8, 5898567, 786433, 8, 5963953, 786433, 8, 5963971, 786433, 8, 5964050, 786433, 8, 5964099, 655361, 8, 5964103, 786433, 8, 6029489, 786433, 8, 6029507, 786433, 8, 6029586, 786433, 8, 6029635, 655361, 8, 6029639, 786433, 8, 6095025, 786433, 8, 6095043, 786433, 8, 6095122, 786433, 8, 6095171, 655361, 8, 6095175, 786433, 8, 6160561, 786433, 8, 6160579, 786433, 8, 6160658, 786433, 8, 6160707, 655361, 8, 6160711, 786433, 8, 6226097, 786433, 8, 6226115, 786433, 8, 6226194, 786433, 8, 6226243, 655361, 8, 6226247, 786433, 8, 6291633, 786433, 8, 6291651, 786433, 8, 6291730, 786433, 8, 6291779, 655361, 8, 6291783, 786433, 8, 6357169, 786433, 8, 6357187, 786433, 8, 6357266, 786433, 8, 6357315, 655361, 8, 6357319, 786433, 8, 6422705, 786433, 8, 6422723, 786433, 8, 6422802, 786433, 8, 6422851, 655361, 8, 6422855, 786433, 8, 6488241, 786433, 8, 6488259, 786433, 8, 6488338, 786433, 8, 6488387, 655361, 8, 6488391, 786433, 8)
 
-[node name="player" parent="." instance=ExtResource("4_d6wv4")]
-position = Vector2(439, 934)
+[node name="player" parent="." instance=ExtResource("6_kiwin")]
+position = Vector2(406, 934)
 
-[node name="Area2D" parent="." instance=ExtResource("7_jdop2")]
-position = Vector2(7800, 934)
-next_scene_path = "res://levels/Level_design/TILED/CSA/Mapa/cafundó_02.tscn"
+[node name="Goal" parent="." instance=ExtResource("7_s5nev")]
+position = Vector2(7306, 935)
+collision_mask = 2
+next_scene_path = "res://levels/release/caf_02.tscn"
 
-[node name="Dona-graca" parent="." instance=ExtResource("8_43n2e")]
+[node name="Dona-graca" parent="." instance=ExtResource("8_5oa2k")]
 texture_filter = 1
 position = Vector2(482, 916)
 
-[node name="key" parent="." instance=ExtResource("9_ng7ja")]
-position = Vector2(587, 917)
+[node name="parede_invisivel" parent="." instance=ExtResource("9_kj0p3")]
+position = Vector2(-15, 970)
 
-[connection signal="key_collected" from="key" to="player" method="_on_keynote_key_collected"]
+[node name="SignForbiden" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(208, 928)
+texture = ExtResource("10_tfsea")

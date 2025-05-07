@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://bapvy71043313"]
+[gd_scene load_steps=39 format=3 uid="uid://bapvy71043313"]
 
 [ext_resource type="Script" path="res://Player/player.gd" id="1_1akqa"]
 [ext_resource type="AudioStream" uid="uid://cxod1j5xq50sq" path="res://levels/Step_03.wav" id="2_01uoc"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://dvhb0we5l4wu5" path="res://Player/timby_sheet.png" id="3_3npf3"]
 [ext_resource type="AudioStream" uid="uid://cohomxrh847yi" path="res://levels/Step_01.wav" id="3_mqhok"]
 [ext_resource type="AudioStream" uid="uid://c4xr2sis82hqc" path="res://levels/Step_02.wav" id="4_q78kk"]
+[ext_resource type="Texture2D" uid="uid://c0kk15rkf3qlq" path="res://Player/timby_sheet-800pct.png" id="6_aoasm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ok28f"]
 size = Vector2(13, 20)
@@ -21,6 +22,30 @@ region = Rect2(33, 96, 33, 32)
 [sub_resource type="AtlasTexture" id="AtlasTexture_upd7w"]
 atlas = ExtResource("2_vtor2")
 region = Rect2(66, 96, 33, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pstnt"]
+atlas = ExtResource("6_aoasm")
+region = Rect2(5544, 0, 264, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4sr2n"]
+atlas = ExtResource("6_aoasm")
+region = Rect2(5808, 0, 264, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iml2i"]
+atlas = ExtResource("6_aoasm")
+region = Rect2(6072, 0, 264, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pvksj"]
+atlas = ExtResource("6_aoasm")
+region = Rect2(6336, 0, 264, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_36qrj"]
+atlas = ExtResource("6_aoasm")
+region = Rect2(6600, 0, 264, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rn2q4"]
+atlas = ExtResource("6_aoasm")
+region = Rect2(6864, 0, 264, 256)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jy8cs"]
 atlas = ExtResource("3_3npf3")
@@ -45,6 +70,22 @@ region = Rect2(99, 0, 33, 32)
 [sub_resource type="AtlasTexture" id="AtlasTexture_p0384"]
 atlas = ExtResource("3_3npf3")
 region = Rect2(462, 0, 33, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_551d5"]
+atlas = ExtResource("6_aoasm")
+region = Rect2(7128, 0, 264, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rroq2"]
+atlas = ExtResource("6_aoasm")
+region = Rect2(7392, 0, 264, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yn563"]
+atlas = ExtResource("6_aoasm")
+region = Rect2(7656, 0, 264, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8o8rr"]
+atlas = ExtResource("6_aoasm")
+region = Rect2(7920, 0, 264, 256)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_noj7n"]
 atlas = ExtResource("3_3npf3")
@@ -92,6 +133,29 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_pstnt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4sr2n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iml2i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pvksj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_36qrj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rn2q4")
+}],
+"loop": true,
+"name": &"dizzy",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_jy8cs")
 }],
 "loop": true,
@@ -122,6 +186,23 @@ animations = [{
 "loop": true,
 "name": &"jump",
 "speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_551d5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rroq2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yn563")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8o8rr")
+}],
+"loop": true,
+"name": &"roll_fall",
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -263,7 +344,7 @@ shape = SubResource("RectangleShape2D_ok28f")
 texture_filter = 1
 position = Vector2(-1, -6)
 sprite_frames = SubResource("SpriteFrames_f4wda")
-animation = &"run"
+animation = &"fall"
 autoplay = "idle"
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -279,6 +360,7 @@ autoplay = "camera"
 
 [node name="sfx_player" type="AudioStreamPlayer2D" parent="."]
 unique_name_in_owner = true
+volume_db = -4.457
 bus = &"SFX"
 
 [node name="key_holder" type="Marker2D" parent="."]
