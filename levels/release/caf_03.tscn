@@ -1,7 +1,8 @@
-[gd_scene load_steps=13 format=3 uid="uid://bemuvsg5wcgy2"]
+[gd_scene load_steps=14 format=3 uid="uid://bemuvsg5wcgy2"]
 
 [ext_resource type="PackedScene" uid="uid://cls1bhrmlht6k" path="res://scenes/parallax_bg.tscn" id="1_jluky"]
 [ext_resource type="PackedScene" uid="uid://bqa760f4vreov" path="res://prefabs/falling_platform.tscn" id="2_7pfjl"]
+[ext_resource type="Texture2D" uid="uid://di30hpo3hj6xj" path="res://tile_fall.png" id="3_u0xsk"]
 [ext_resource type="Texture2D" uid="uid://iq5o5bvwxmgs" path="res://levels/Level_design/Tilesets/tileset_cafundo.png" id="3_x6q03"]
 [ext_resource type="PackedScene" uid="uid://bapvy71043313" path="res://Player/player.tscn" id="5_b3ykf"]
 [ext_resource type="Script" path="res://scripts/FallDungeonZone.gd" id="7_6pkdr"]
@@ -350,7 +351,36 @@ size = Vector2(1581, 120)
 position = Vector2(410, 510)
 
 [node name="falling_platform6" parent="." instance=ExtResource("2_7pfjl")]
-position = Vector2(3106, 523)
+position = Vector2(2394, 559)
+platform_texture = ExtResource("3_u0xsk")
+
+[node name="falling_platform7" parent="." instance=ExtResource("2_7pfjl")]
+position = Vector2(2502, 613)
+platform_texture = ExtResource("3_u0xsk")
+
+[node name="falling_platform8" parent="." instance=ExtResource("2_7pfjl")]
+position = Vector2(2634, 580)
+platform_texture = ExtResource("3_u0xsk")
+
+[node name="falling_platform9" parent="." instance=ExtResource("2_7pfjl")]
+position = Vector2(3114, 516)
+platform_texture = ExtResource("3_u0xsk")
+
+[node name="falling_platform10" parent="." instance=ExtResource("2_7pfjl")]
+position = Vector2(6483, 846)
+platform_texture = ExtResource("3_u0xsk")
+
+[node name="falling_platform11" parent="." instance=ExtResource("2_7pfjl")]
+position = Vector2(6610, 796)
+platform_texture = ExtResource("3_u0xsk")
+
+[node name="falling_platform12" parent="." instance=ExtResource("2_7pfjl")]
+position = Vector2(6752, 765)
+platform_texture = ExtResource("3_u0xsk")
+
+[node name="falling_platform13" parent="." instance=ExtResource("2_7pfjl")]
+position = Vector2(6752, 765)
+platform_texture = ExtResource("3_u0xsk")
 
 [node name="TileMap" type="TileMap" parent="."]
 texture_filter = 1
@@ -365,32 +395,8 @@ layer_2/tile_data = PackedInt32Array(1900553, 786432, 12, 1966089, 786432, 12, 1
 layer_3/name = "sombras 2"
 layer_3/tile_data = PackedInt32Array(1835245, 786432, 12, 1900781, 786432, 12, 1966312, 786432, 12, 1966317, 786432, 12, 2031726, 720896, 11, 2031729, 720896, 11, 2031848, 786432, 12, 2031853, 786432, 12, 2031861, 720896, 11, 2031862, 720896, 11, 2097255, 720896, 11, 2097371, 786432, 12, 2097389, 786432, 12, 2162787, 720896, 11, 2162907, 786432, 12, 2162925, 786432, 12, 2228330, 720896, 11, 2228443, 786432, 12, 2228461, 786432, 12, 2293979, 786432, 12, 2293997, 786432, 12, 2294022, 720896, 11, 2294023, 720896, 11, 2294024, 720896, 11, 2359515, 786432, 12, 2359533, 786432, 12, 2424899, 720896, 11, 2425051, 786432, 12, 2425069, 786432, 12, 2490587, 786432, 12, 2490605, 786432, 12, 2555969, 720896, 11, 2556123, 786432, 12, 2556141, 786432, 12, 2556171, 720896, 11, 2556172, 720896, 11, 2556173, 720896, 11, 2621659, 786432, 12, 2621677, 786432, 12, 2687195, 786432, 12, 2687213, 786432, 12, 2752731, 786432, 12, 2752749, 786432, 12, 2818267, 786432, 12, 2818285, 786432, 12, 2818320, 720896, 11, 2818321, 720896, 11, 2818322, 720896, 11, 2883803, 786432, 12, 2883821, 786432, 12, 2949172, 786432, 12, 2949339, 786432, 12, 2949357, 786432, 12, 3014708, 786432, 12, 3014710, 720896, 11, 3014711, 720896, 11, 3014712, 720896, 11, 3014713, 720896, 11, 3014714, 720896, 11, 3014715, 720896, 11, 3014875, 786432, 12, 3014893, 786432, 12, 3080411, 786432, 12, 3080429, 786432, 12, 3145947, 786432, 12, 3145965, 786432, 12, 3211483, 786432, 12, 3211501, 786432, 12, 3277019, 786432, 12, 3277037, 786432, 12, 3342555, 786432, 12, 3342573, 786432, 12, 3408091, 786432, 12, 3408109, 786432, 12, 3473627, 786432, 12, 3473645, 786432, 12, 3539163, 786432, 12, 3539181, 786432, 12, 3604699, 786432, 12, 3604717, 786432, 12, 3670235, 786432, 12, 3670253, 786432, 12, 3735771, 786432, 12, 3735789, 786432, 12, 3801307, 786432, 12, 3801325, 786432, 12, 3866843, 786432, 12, 3866861, 786432, 12, 3932379, 786432, 12, 3932397, 786432, 12, 3997915, 786432, 12, 3997933, 786432, 12, 4063451, 786432, 12, 4063469, 786432, 12, 4128987, 786432, 12, 4129005, 786432, 12, 4194523, 786432, 12, 4194541, 786432, 12, 4260059, 786432, 12, 4260077, 786432, 12, 4325595, 786432, 12, 4325613, 786432, 12, 4391131, 786432, 12, 4391149, 786432, 12, 4456667, 786432, 12, 4456685, 786432, 12, 4522203, 786432, 12, 4522221, 786432, 12, 4587738, 655360, 13, 4587739, 786432, 13, 4587756, 655360, 13, 4587757, 786432, 13)
 
-[node name="falling_platform" parent="." instance=ExtResource("2_7pfjl")]
-position = Vector2(6725, 774)
-
-[node name="falling_platform2" parent="." instance=ExtResource("2_7pfjl")]
-position = Vector2(2612, 566)
-
-[node name="falling_platform3" parent="." instance=ExtResource("2_7pfjl")]
-position = Vector2(2388, 550)
-
-[node name="falling_platform4" parent="." instance=ExtResource("2_7pfjl")]
-position = Vector2(7040, 793)
-
-[node name="falling_platform5" parent="." instance=ExtResource("2_7pfjl")]
-position = Vector2(6882, 699)
-
-[node name="falling_platform7" parent="." instance=ExtResource("2_7pfjl")]
-position = Vector2(2492, 582)
-
-[node name="falling_platform8" parent="." instance=ExtResource("2_7pfjl")]
-position = Vector2(6538, 857)
-
-[node name="falling_platform9" parent="." instance=ExtResource("2_7pfjl")]
-position = Vector2(7173, 655)
-
 [node name="Player" parent="." instance=ExtResource("5_b3ykf")]
-position = Vector2(379, 773)
+position = Vector2(4870, 744)
 
 [node name="ColorRect" type="ColorRect" parent="."]
 visible = false
