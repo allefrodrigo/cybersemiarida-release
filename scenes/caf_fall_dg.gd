@@ -36,7 +36,7 @@ func _ready() -> void:
 
 func _setup_speedlines() -> void:
 	wind.texture     = preload("res://particles/speedline.png")
-	wind.amount      = 30
+	wind.amount      = 100
 	wind.lifetime    = fall_duration * 0.1
 
 	var mat = ParticleProcessMaterial.new()
