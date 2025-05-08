@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://6x1esumef4rj" path="res://scenes/goal.tscn" id="6_tnen5"]
 [ext_resource type="PackedScene" uid="uid://dbnnn8x7jpx30" path="res://parede_colisao.tscn" id="9_2jj3n"]
 [ext_resource type="PackedScene" uid="uid://dwwuffuaonhbe" path="res://prefabs/controls.tscn" id="9_8wwyo"]
-[ext_resource type="Shader" path="res://shaders/rain.gdshader" id="11_lbno6"]
+[ext_resource type="Shader" path="res://shaders/diamond_transition.gdshader" id="11_lbno6"]
 [ext_resource type="PackedScene" uid="uid://blpskcxyt3yry" path="res://Player/dona-graca.tscn" id="13_twaow"]
 [ext_resource type="PackedScene" uid="uid://bn4sgxqrg1y63" path="res://prefabs/pop_up.tscn" id="14_1n6rp"]
 [ext_resource type="Texture2D" uid="uid://crggrq0ygw5b3" path="res://scenes/World/Props/taipa-house-solar.png" id="14_12flb"]
