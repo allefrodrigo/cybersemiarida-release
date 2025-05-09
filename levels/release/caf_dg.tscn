@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bw1uyyxsccc3r"]
+[gd_scene load_steps=15 format=3 uid="uid://bw1uyyxsccc3r"]
 
 [ext_resource type="Script" path="res://levels/Level_design/TILED/CSA/Mapa/cafundó_dg.gd" id="1_2x3xk"]
 [ext_resource type="PackedScene" uid="uid://dwo7sqxi3mg1h" path="res://scenes/parallax_bg_dungeon.tscn" id="2_fupbk"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://bq1yv17qjnec6" path="res://tile_dg_fall.png" id="8_dp31g"]
 [ext_resource type="PackedScene" uid="uid://bqa760f4vreov" path="res://prefabs/falling_platform.tscn" id="8_yri7x"]
 [ext_resource type="PackedScene" uid="uid://dtb6c8613kpqc" path="res://scenes/moving_platform.tscn" id="9_ycnyd"]
+[ext_resource type="PackedScene" uid="uid://dfdug4kdd6kaf" path="res://scenes/FallZone.tscn" id="10_ypb2t"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0"]
 texture = ExtResource("3_imnn4")
@@ -611,6 +612,9 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_0")
 sources/1 = SubResource("TileSetAtlasSource_1")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dk8rg"]
+size = Vector2(362.25, 10)
+
 [node name="cafundó_dg" type="Node2D"]
 script = ExtResource("1_2x3xk")
 
@@ -634,9 +638,6 @@ layer_4/name = "sombras 2"
 position = Vector2(2777, 2488)
 collision_mask = 2
 next_scene_path = "res://scenes/main_title.tscn"
-
-[node name="player" parent="." instance=ExtResource("6_ma4qt")]
-position = Vector2(909, 1490)
 
 [node name="moving_platform" parent="." instance=ExtResource("9_ycnyd")]
 position = Vector2(919, 1218)
@@ -662,7 +663,7 @@ move_distance = 700.0
 move_speed = 100.0
 
 [node name="moving_platform2" parent="." instance=ExtResource("9_ycnyd")]
-position = Vector2(1281, 954)
+position = Vector2(1387, 943)
 collision_mask = 2
 platform_texture = ExtResource("8_dp31g")
 move_distance = 250.0
@@ -673,21 +674,44 @@ position = Vector2(995, 1482)
 platform_texture = ExtResource("8_dp31g")
 
 [node name="falling_platform2" parent="." instance=ExtResource("8_yri7x")]
-position = Vector2(998, 1382)
+position = Vector2(993, 1398)
 platform_texture = ExtResource("8_dp31g")
 
 [node name="falling_platform4" parent="." instance=ExtResource("8_yri7x")]
-position = Vector2(1092, 1328)
+position = Vector2(1107, 1352)
 platform_texture = ExtResource("8_dp31g")
 
 [node name="falling_platform5" parent="." instance=ExtResource("8_yri7x")]
-position = Vector2(998, 1284)
+position = Vector2(1198, 1307)
 platform_texture = ExtResource("8_dp31g")
 
 [node name="falling_platform6" parent="." instance=ExtResource("8_yri7x")]
-position = Vector2(1092, 1248)
+position = Vector2(1096, 1272)
 platform_texture = ExtResource("8_dp31g")
 
 [node name="falling_platform3" parent="." instance=ExtResource("8_yri7x")]
 position = Vector2(1093, 1420)
 platform_texture = ExtResource("8_dp31g")
+
+[node name="player" parent="." instance=ExtResource("6_ma4qt")]
+position = Vector2(-199, 940)
+
+[node name="FallZone" parent="." instance=ExtResource("10_ypb2t")]
+position = Vector2(819, 1541)
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FallZone"]
+position = Vector2(384, -19)
+shape = SubResource("RectangleShape2D_dk8rg")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="FallZone"]
+position = Vector2(384, -19)
+shape = SubResource("RectangleShape2D_dk8rg")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="FallZone"]
+position = Vector2(246.875, -421)
+shape = SubResource("RectangleShape2D_dk8rg")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="FallZone"]
+position = Vector2(603, -627)
+shape = SubResource("RectangleShape2D_dk8rg")
