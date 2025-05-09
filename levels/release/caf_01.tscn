@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://cqdc45syx1oa0"]
+[gd_scene load_steps=17 format=3 uid="uid://cqdc45syx1oa0"]
 
 [ext_resource type="Script" path="res://levels/Level_design/TILED/CSA/Mapa/cafundo_01.gd" id="1_x8byv"]
 [ext_resource type="PackedScene" uid="uid://cls1bhrmlht6k" path="res://scenes/parallax_bg.tscn" id="2_f5v4a"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://blpskcxyt3yry" path="res://Player/dona-graca.tscn" id="8_5oa2k"]
 [ext_resource type="PackedScene" uid="uid://dbnnn8x7jpx30" path="res://parede_colisao.tscn" id="9_kj0p3"]
 [ext_resource type="Texture2D" uid="uid://cpfen1uhaaw7a" path="res://scenes/sign_forbiden.png" id="10_tfsea"]
+[ext_resource type="PackedScene" uid="uid://dfdug4kdd6kaf" path="res://scenes/FallZone.tscn" id="11_es76g"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0"]
 texture = ExtResource("3_n3i7j")
@@ -497,7 +498,10 @@ sources/0 = SubResource("TileSetAtlasSource_0")
 sources/1 = SubResource("TileSetAtlasSource_1")
 sources/2 = SubResource("TileSetAtlasSource_2")
 
-[node name="cafundo_500bl" type="Node2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7ncvv"]
+size = Vector2(2605, 130)
+
+[node name="caf_01" type="Node2D"]
 script = ExtResource("1_x8byv")
 
 [node name="ParallaxBg" parent="." instance=ExtResource("2_f5v4a")]
@@ -537,3 +541,11 @@ position = Vector2(-15, 970)
 texture_filter = 1
 position = Vector2(208, 928)
 texture = ExtResource("10_tfsea")
+
+[node name="FallZone" parent="." instance=ExtResource("11_es76g")]
+position = Vector2(2761, 978)
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FallZone"]
+position = Vector2(1292.5, 55)
+shape = SubResource("RectangleShape2D_7ncvv")

@@ -1,9 +1,9 @@
 [gd_scene load_steps=24 format=3 uid="uid://6x1esumef4rj"]
 
 [ext_resource type="Script" path="res://scripts/goal.gd" id="1_pcjr0"]
-[ext_resource type="AudioStream" uid="uid://bu3ffg8jcb1wn" path="res://assets/Music/sound_fade_out.mp3" id="2_trbg1"]
 [ext_resource type="Texture2D" uid="uid://cou1d43paw2wa" path="res://levels/Sino_Spritesheet.png" id="3_kas85"]
 [ext_resource type="Shader" path="res://scenes/main_title.gdshader" id="4_ueal5"]
+[ext_resource type="AudioStream" uid="uid://dw37m76fuves1" path="res://audio/bell-goal.ogg" id="4_uxxij"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l7tn0"]
 size = Vector2(20, 281)
@@ -140,9 +140,6 @@ next_scene_path = "res://scenes/World/world_02.tscn"
 position = Vector2(0, -130.5)
 shape = SubResource("RectangleShape2D_l7tn0")
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("2_trbg1")
-
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 material = SubResource("ShaderMaterial_gunqw")
@@ -165,3 +162,7 @@ offset_left = -250.0
 offset_top = -168.0
 offset_right = 269.0
 offset_bottom = 156.0
+color = Color(1, 1, 1, 0)
+
+[node name="BellPlayer" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_uxxij")

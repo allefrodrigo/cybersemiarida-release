@@ -32,6 +32,7 @@ var was_on_floor = false
 # --- NOVOS CONTROLES DE INPUT ---
 var input_enabled = true
 var forced_walk_direction = 0
+var initial_position: Vector2
 
 # --- RAYCASTS PARA DETECTAR PAREDE ---
 @onready var raycast_wall_left: RayCast2D = $raycast_wall_left
@@ -50,6 +51,7 @@ func vibrate(duration_ms: int) -> void:
 func _ready() -> void:
 	add_to_group("player")
 	print("Grupos do jogador:", get_groups())
+	initial_position = global_position
 	respawn_if_needed()
 
 func _physics_process(delta: float) -> void:
@@ -270,3 +272,7 @@ func collect_key():
 func _on_keynote_key_collected() -> void:
 	print("key_collect")
 	collect_key()
+
+func respawn_to_initial() -> void:
+	global_position = initial_position
+	velocity = Vector2.ZERO

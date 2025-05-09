@@ -2,20 +2,26 @@ extends Area2D
 
 @export_file("*.tscn") var next_scene_path: String
 
-# Novo ColorRect só para o fade
-@onready var fade_out_rect: ColorRect = $FadeOutRect
+# Nós filhos de Goal:
+# ├─ CollisionShape2D
+# ├─ FadeOutRect (ColorRect full-screen, cor preta alpha=0)
+# └─ BellPlayer   (AudioStreamPlayer, Stream apontando para bell-goal.ogg)
+@onready var fade_out_rect: ColorRect         = $FadeOutRect
+@onready var bell_player: AudioStreamPlayer2D = $BellPlayer
 
 func _ready() -> void:
 	# Inicializa o fade invisível
 	fade_out_rect.visible = false
-	fade_out_rect.color = Color(0, 0, 0, 0)
-	# Conecta o trigger de entrada do player
+	fade_out_rect.color   = Color(0, 0, 0, 0)
+	# Conecta detecção de colisão
 	connect("body_entered", Callable(self, "_on_body_entered"))
 
 
 func _on_body_entered(body: Node) -> void:
 	if body.is_in_group("player"):
-		print("[GOAL] Player entrou no goal! Iniciando rotina.")
+		# Toca o sino
+		bell_player.play()
+		print("[GOAL] Player entrou! Tocando sino e iniciando rotina.")
 		handle_goal_reached(body)
 
 
@@ -23,46 +29,46 @@ func handle_goal_reached(player: Node) -> void:
 	print("[GOAL] handle_goal_reached iniciado. Desativando controles e forçando movimento.")
 
 	# 1) Desativa input e força movimento do player
-	player.input_enabled = false
+	player.input_enabled       = false
 	player.forced_walk_direction = 1
 
-	# 2) Desativa a câmera do player, se for a atual
+	# 2) Desativa a câmera do player (se estiver ativa)
 	var player_camera = player.get_node_or_null("Camera2D")
 	if player_camera and player_camera.is_current():
 		player_camera.set_process_mode(Camera2D.PROCESS_MODE_DISABLED)
 
-	# 3) Troca para câmera fixa, se existir
+	# 3) Ativa a câmera fixa (se existir)
 	var fixed_camera = get_parent().get_node_or_null("CameraFixed")
 	if fixed_camera:
 		fixed_camera.make_current()
 	else:
 		print("[GOAL] Câmera fixa não encontrada. Pulando espera.")
 
-	# 4) Aguarda 1.5s antes de checar saída do viewport
+	# 4) Aguarda 1.5s antes de começar o fade
 	await get_tree().create_timer(1.5).timeout
-	# 6) Inicia o fade-out
+
+	# 5) Fade-out  
 	print("[GOAL] Iniciando fade-out")
 	fade_out_rect.visible = true
-	fade_out_rect.color = Color(0, 0, 0, 0)
+	fade_out_rect.color   = Color(0, 0, 0, 0)
 	var tw = create_tween()
 	tw.tween_property(
 		fade_out_rect,
 		"color:a",    # anima só o alpha
-		1.0,          # final opaco
-		1.0           # duração do fade (1s)
+		1.0,          # opaco
+		1.0           # duração 1s
 	).set_trans(Tween.TRANS_LINEAR).set_ease(Tween.EASE_IN_OUT)
 	await tw.finished
 	print("[GOAL] Fade-out completo.")
-	# 5) Se houver fixed_camera, espera o player sair da tela
+
+	# 6) Se houver câmera fixa, espera o player sair do viewport
 	if fixed_camera:
 		print("[GOAL] Esperando player sair do viewport…")
 		await wait_until_player_leaves_screen(player, fixed_camera)
 		print("[GOAL] Player saiu do viewport.")
 
-
-
-	# 7) Por fim, muda de cena
-	print("[GOAL] Mudando para próxima cena:", next_scene_path)
+	# 7) Troca de cena
+	print("[GOAL] Mudando para:", next_scene_path)
 	if next_scene_path.is_empty():
 		push_error("[GOAL] ERRO: next_scene_path não foi definido!")
 		return
