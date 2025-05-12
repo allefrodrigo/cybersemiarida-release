@@ -1007,7 +1007,7 @@ position = Vector2(1093, 1420)
 platform_texture = ExtResource("8_dp31g")
 
 [node name="player" parent="." instance=ExtResource("6_ma4qt")]
-position = Vector2(2096, 325)
+position = Vector2(-177, 1139)
 
 [node name="FallZone" parent="." instance=ExtResource("10_ypb2t")]
 position = Vector2(819, 1541)
