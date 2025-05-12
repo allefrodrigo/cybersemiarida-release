@@ -6,7 +6,7 @@
 [ext_resource type="AudioStream" uid="uid://dw37m76fuves1" path="res://audio/bell-goal.ogg" id="4_uxxij"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l7tn0"]
-size = Vector2(20, 281)
+size = Vector2(20, 204)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_gunqw"]
 resource_local_to_scene = true
@@ -137,7 +137,7 @@ script = ExtResource("1_pcjr0")
 next_scene_path = "res://scenes/World/world_02.tscn"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -130.5)
+position = Vector2(0, -92)
 shape = SubResource("RectangleShape2D_l7tn0")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
