@@ -1,6 +1,6 @@
 extends Node2D
 
-@export var next_scene: String    = "res://levels/release/caf_dg.tscn"
+@export var next_scene: String    = "res://levels/release/caf_03_dg.tscn"
 @export var fall_duration: float = 5.0
 @export var fall_speed: float    = 400.0
 @export var spin_speed: float    = 360.0

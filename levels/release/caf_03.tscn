@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://bemuvsg5wcgy2"]
+[gd_scene load_steps=14 format=3 uid="uid://bemuvsg5wcgy2"]
 
 [ext_resource type="PackedScene" uid="uid://cls1bhrmlht6k" path="res://scenes/parallax_bg.tscn" id="1_jluky"]
 [ext_resource type="PackedScene" uid="uid://bqa760f4vreov" path="res://prefabs/falling_platform.tscn" id="2_7pfjl"]
@@ -6,7 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://iq5o5bvwxmgs" path="res://levels/Level_design/Tilesets/tileset_cafundo.png" id="3_x6q03"]
 [ext_resource type="PackedScene" uid="uid://bapvy71043313" path="res://Player/player.tscn" id="5_b3ykf"]
 [ext_resource type="Script" path="res://scripts/FallDungeonZone.gd" id="7_6pkdr"]
-[ext_resource type="Shader" path="res://levels/Level_design/TILED/CSA/Mapa/rain.gdshader" id="7_18yy3"]
 [ext_resource type="PackedScene" uid="uid://dbnnn8x7jpx30" path="res://parede_colisao.tscn" id="7_pjml4"]
 [ext_resource type="Texture2D" uid="uid://cpfen1uhaaw7a" path="res://scenes/sign_forbiden.png" id="8_ukj5s"]
 [ext_resource type="PackedScene" uid="uid://dfdug4kdd6kaf" path="res://scenes/FallZone.tscn" id="10_gawki"]
@@ -334,15 +333,6 @@ texture = ExtResource("3_x6q03")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_0")
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_us3wa"]
-shader = ExtResource("7_18yy3")
-shader_parameter/count = 100
-shader_parameter/slant = 0.1
-shader_parameter/speed = 30.899
-shader_parameter/blur = 0.0015
-shader_parameter/colour = Color(1, 1, 1, 1)
-shader_parameter/size = Vector2(0.005, 0.2)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ibxcf"]
 size = Vector2(1581, 120)
 
@@ -400,15 +390,7 @@ layer_3/name = "sombras 2"
 layer_3/tile_data = PackedInt32Array(1835245, 786432, 12, 1900781, 786432, 12, 1966312, 786432, 12, 1966317, 786432, 12, 2031726, 720896, 11, 2031729, 720896, 11, 2031848, 786432, 12, 2031853, 786432, 12, 2031861, 720896, 11, 2031862, 720896, 11, 2097255, 720896, 11, 2097371, 786432, 12, 2097389, 786432, 12, 2162787, 720896, 11, 2162907, 786432, 12, 2162925, 786432, 12, 2228330, 720896, 11, 2228443, 786432, 12, 2228461, 786432, 12, 2293979, 786432, 12, 2293997, 786432, 12, 2294022, 720896, 11, 2294023, 720896, 11, 2294024, 720896, 11, 2359515, 786432, 12, 2359533, 786432, 12, 2424899, 720896, 11, 2425051, 786432, 12, 2425069, 786432, 12, 2490587, 786432, 12, 2490605, 786432, 12, 2555969, 720896, 11, 2556123, 786432, 12, 2556141, 786432, 12, 2556171, 720896, 11, 2556172, 720896, 11, 2556173, 720896, 11, 2621659, 786432, 12, 2621677, 786432, 12, 2687195, 786432, 12, 2687213, 786432, 12, 2752731, 786432, 12, 2752749, 786432, 12, 2818267, 786432, 12, 2818285, 786432, 12, 2818320, 720896, 11, 2818321, 720896, 11, 2818322, 720896, 11, 2883803, 786432, 12, 2883821, 786432, 12, 2949172, 786432, 12, 2949339, 786432, 12, 2949357, 786432, 12, 3014708, 786432, 12, 3014710, 720896, 11, 3014711, 720896, 11, 3014712, 720896, 11, 3014713, 720896, 11, 3014714, 720896, 11, 3014715, 720896, 11, 3014875, 786432, 12, 3014893, 786432, 12, 3080411, 786432, 12, 3080429, 786432, 12, 3145947, 786432, 12, 3145965, 786432, 12, 3211483, 786432, 12, 3211501, 786432, 12, 3277019, 786432, 12, 3277037, 786432, 12, 3342555, 786432, 12, 3342573, 786432, 12, 3408091, 786432, 12, 3408109, 786432, 12, 3473627, 786432, 12, 3473645, 786432, 12, 3539163, 786432, 12, 3539181, 786432, 12, 3604699, 786432, 12, 3604717, 786432, 12, 3670235, 786432, 12, 3670253, 786432, 12, 3735771, 786432, 12, 3735789, 786432, 12, 3801307, 786432, 12, 3801325, 786432, 12, 3866843, 786432, 12, 3866861, 786432, 12, 3932379, 786432, 12, 3932397, 786432, 12, 3997915, 786432, 12, 3997933, 786432, 12, 4063451, 786432, 12, 4063469, 786432, 12, 4128987, 786432, 12, 4129005, 786432, 12, 4194523, 786432, 12, 4194541, 786432, 12, 4260059, 786432, 12, 4260077, 786432, 12, 4325595, 786432, 12, 4325613, 786432, 12, 4391131, 786432, 12, 4391149, 786432, 12, 4456667, 786432, 12, 4456685, 786432, 12, 4522203, 786432, 12, 4522221, 786432, 12, 4587738, 655360, 13, 4587739, 786432, 13, 4587756, 655360, 13, 4587757, 786432, 13)
 
 [node name="Player" parent="." instance=ExtResource("5_b3ykf")]
-position = Vector2(422, 774)
-
-[node name="ColorRect" type="ColorRect" parent="."]
-visible = false
-material = SubResource("ShaderMaterial_us3wa")
-offset_left = 2285.0
-offset_top = 214.0
-offset_right = 3527.0
-offset_bottom = 776.0
+position = Vector2(6315, 821)
 
 [node name="FallDungeonZone" type="Area2D" parent="."]
 collision_mask = 2

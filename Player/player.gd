@@ -22,6 +22,10 @@ const WALL_JUMP_FORCE = 400.0  # Ajuste conforme o comportamento desejado
 @export var sfx_footstep : AudioStream
 @export var sfx_fall : AudioStream
 @onready var camera = $Camera2D
+# referências à vinheta
+@onready var vignette_layer: CanvasLayer    = $CanvasLayer
+@onready var vignette_rect:  ColorRect      = $CanvasLayer/Vignette
+var shader_mat: ShaderMaterial
 
 var footstep_frames : Array = [2, 5]
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
@@ -53,6 +57,9 @@ func _ready() -> void:
 	print("Grupos do jogador:", get_groups())
 	initial_position = global_position
 	respawn_if_needed()
+	shader_mat           = vignette_rect.material as ShaderMaterial
+	vignette_layer.visible = false
+	set_process(true)  # para _process rodar
 
 func _physics_process(delta: float) -> void:
 	var on_floor = is_on_floor()
@@ -276,3 +283,27 @@ func _on_keynote_key_collected() -> void:
 func respawn_to_initial() -> void:
 	global_position = initial_position
 	velocity = Vector2.ZERO
+
+
+# roda todo frame para atualizar a vinheta
+func _process(_delta: float) -> void:
+	if not vignette_layer.visible or shader_mat == null:
+		return
+
+	# 1) pega tamanho da tela em pixels
+	var vs   = get_viewport().get_visible_rect().size
+	# 2) calcula canto superior-esquerdo da view em world-space
+	var cam_pos  = camera.global_position
+	var top_left = cam_pos - vs * 0.5
+	# 3) obtém posição do player em pixels dentro da view
+	var pixel    = global_position - top_left
+	# 4) normaliza X e Y (SCREEN_UV.y=0 é bottom, então invertemos Y)
+	var uv = Vector2(
+		pixel.x / vs.x,
+		1.0 - (pixel.y / vs.y)
+	)
+	shader_mat.set_shader_parameter("player_pos", uv)
+
+# chame isto para ligar/desligar a vinheta
+func show_vignette(on: bool) -> void:
+	vignette_layer.visible = on

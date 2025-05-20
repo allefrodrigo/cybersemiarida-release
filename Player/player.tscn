@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://bapvy71043313"]
+[gd_scene load_steps=41 format=3 uid="uid://bapvy71043313"]
 
 [ext_resource type="Script" path="res://Player/player.gd" id="1_1akqa"]
 [ext_resource type="AudioStream" uid="uid://cxod1j5xq50sq" path="res://levels/Step_03.wav" id="2_01uoc"]
@@ -7,6 +7,7 @@
 [ext_resource type="AudioStream" uid="uid://cohomxrh847yi" path="res://levels/Step_01.wav" id="3_mqhok"]
 [ext_resource type="AudioStream" uid="uid://c4xr2sis82hqc" path="res://levels/Step_02.wav" id="4_q78kk"]
 [ext_resource type="Texture2D" uid="uid://c0kk15rkf3qlq" path="res://Player/timby_sheet-800pct.png" id="6_aoasm"]
+[ext_resource type="Shader" path="res://shaders/vignette.gdshader" id="8_0r5ne"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ok28f"]
 size = Vector2(13, 20)
@@ -272,6 +273,11 @@ _data = {
 "camera": SubResource("Animation_0jq76")
 }
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xw1k5"]
+shader = ExtResource("8_0r5ne")
+shader_parameter/outerRadius = 1.0
+shader_parameter/MainAlpha = 1.0
+
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 texture_filter = 1
 collision_layer = 2
@@ -364,5 +370,17 @@ volume_db = -4.457
 bus = &"SFX"
 
 [node name="key_holder" type="Marker2D" parent="."]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Vignette" type="ColorRect" parent="CanvasLayer"]
+material = SubResource("ShaderMaterial_xw1k5")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -7.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [connection signal="frame_changed" from="Sprite" to="." method="_on_sprite_frame_changed"]

@@ -1,0 +1,204 @@
+[gd_scene load_steps=21 format=3 uid="uid://b4od7gebexprg"]
+
+[ext_resource type="Texture2D" uid="uid://ba8dmkeuaev6x" path="res://assets/bg_deserto/Main_Sky.png" id="1_6r2db"]
+[ext_resource type="Texture2D" uid="uid://ckctwt6s8nweg" path="res://assets/bg_deserto/Gradient.png" id="2_3v0ri"]
+[ext_resource type="Texture2D" uid="uid://btl8y2jdf0j8y" path="res://assets/clouds/bg_cloud2.png" id="2_10wm3"]
+[ext_resource type="Texture2D" uid="uid://d1hubl6f6iqvm" path="res://assets/clouds/bg_cloud5.png" id="3_axhxd"]
+[ext_resource type="Texture2D" uid="uid://c5tnubbk3p3x" path="res://assets/clouds/bg_cloud6.png" id="4_tnjde"]
+[ext_resource type="Texture2D" uid="uid://mo0d1wy7i855" path="res://assets/bg_deserto/Far_Mountain.png" id="5_uw2gq"]
+[ext_resource type="Texture2D" uid="uid://diw62pqm6bueu" path="res://assets/bg_deserto/Main Mountain.png" id="6_poeeo"]
+[ext_resource type="Texture2D" uid="uid://ctxl1jdv0vogy" path="res://assets/bg_deserto/Front_Mountain.png" id="8_yfvhj"]
+[ext_resource type="Texture2D" uid="uid://c5v8oxi4kpewn" path="res://assets/background/3_Arvore.png" id="10_7j38x"]
+[ext_resource type="Texture2D" uid="uid://bb4qkrlbpoov4" path="res://assets/bg_deserto/Eolica1.png" id="11_gvvf2"]
+[ext_resource type="Shader" path="res://shaders/arbusto.gdshader" id="11_jpxy6"]
+[ext_resource type="Texture2D" uid="uid://doac1jshee4c3" path="res://assets/bg_deserto/Eolica2.png" id="12_52nui"]
+[ext_resource type="Texture2D" uid="uid://ct5cb8w5fdfsk" path="res://assets/bg_deserto/Eolica3.png" id="13_ke2ft"]
+[ext_resource type="Texture2D" uid="uid://l1s7cmoai058" path="res://assets/bg_deserto/Eolica4.png" id="14_k885t"]
+[ext_resource type="Texture2D" uid="uid://b778v0syjrjwb" path="res://assets/bg_deserto/Eolica5.png" id="15_s6gli"]
+[ext_resource type="Texture2D" uid="uid://bv7icme6h08fu" path="res://assets/bg_deserto/Eolica6.png" id="16_ato28"]
+[ext_resource type="Texture2D" uid="uid://sf7ertxl1p54" path="res://assets/bg_deserto/Eolica7.png" id="17_vjex6"]
+[ext_resource type="Texture2D" uid="uid://dcg2g5hmgnn7c" path="res://assets/bg_deserto/Eolica8.png" id="18_mivwm"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_22tcc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_gvvf2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_52nui")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_ke2ft")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_k885t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_s6gli")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_ato28")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_vjex6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_mivwm")
+}],
+"loop": true,
+"name": &"default",
+"speed": 15.0
+}]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1gw6j"]
+shader = ExtResource("11_jpxy6")
+shader_parameter/speed = 1.0
+shader_parameter/minStrength = 0.05
+shader_parameter/maxStrength = 0.01
+shader_parameter/strengthScale = 100.0
+shader_parameter/interval = 3.5
+shader_parameter/detail = 1.0
+shader_parameter/distortion = null
+shader_parameter/heightOffset = null
+shader_parameter/offset = 0.0
+
+[node name="ParallaxBg" type="Node2D"]
+position = Vector2(3, -29)
+
+[node name="ParallaxBackground" type="Node2D" parent="."]
+
+[node name="Sky" type="Parallax2D" parent="ParallaxBackground"]
+scale = Vector2(1.5, 1.5)
+repeat_size = Vector2(272, 0)
+repeat_times = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Sky"]
+texture_filter = 1
+position = Vector2(6.66667, -32.6667)
+texture = ExtResource("1_6r2db")
+centered = false
+
+[node name="Sprite2D2" type="Sprite2D" parent="ParallaxBackground/Sky"]
+texture_filter = 1
+position = Vector2(15.3333, -4)
+texture = ExtResource("2_3v0ri")
+centered = false
+
+[node name="Cloud" type="Parallax2D" parent="ParallaxBackground"]
+scale = Vector2(1.5, 1.5)
+repeat_size = Vector2(600, 0)
+autoscroll = Vector2(-7, 0)
+repeat_times = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Cloud"]
+texture_filter = 1
+position = Vector2(404, -144.667)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_10wm3")
+centered = false
+
+[node name="Cloud2" type="Parallax2D" parent="ParallaxBackground"]
+scale = Vector2(1.5, 1.5)
+repeat_size = Vector2(600, 0)
+autoscroll = Vector2(-9, 0)
+repeat_times = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Cloud2"]
+texture_filter = 1
+position = Vector2(410.667, -41.3333)
+scale = Vector2(0.225989, 0.225989)
+texture = ExtResource("3_axhxd")
+centered = false
+
+[node name="Cloud3" type="Parallax2D" parent="ParallaxBackground"]
+scale = Vector2(1.5, 1.5)
+repeat_size = Vector2(600, 0)
+autoscroll = Vector2(-15, 0)
+repeat_times = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Cloud3"]
+texture_filter = 1
+position = Vector2(406.667, -100)
+scale = Vector2(0.101106, 0.101106)
+texture = ExtResource("4_tnjde")
+centered = false
+
+[node name="Cloud4" type="Parallax2D" parent="ParallaxBackground"]
+scale = Vector2(1.5, 1.5)
+scroll_offset = Vector2(-7, -18)
+repeat_size = Vector2(600, 0)
+autoscroll = Vector2(-10, 0)
+repeat_times = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Cloud4"]
+texture_filter = 1
+position = Vector2(438.667, -186.667)
+scale = Vector2(0.101106, 0.101106)
+texture = ExtResource("4_tnjde")
+centered = false
+
+[node name="Mountain_Near" type="Parallax2D" parent="ParallaxBackground"]
+texture_filter = 1
+scale = Vector2(1.5, 1.5)
+scroll_scale = Vector2(0.9, 0.9)
+repeat_size = Vector2(272, 0)
+repeat_times = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Mountain_Near"]
+texture_filter = 1
+position = Vector2(-4, -41.3333)
+texture = ExtResource("6_poeeo")
+centered = false
+
+[node name="Mountain" type="Parallax2D" parent="ParallaxBackground"]
+texture_filter = 1
+scale = Vector2(1.5, 1.5)
+scroll_scale = Vector2(0.9, 0.9)
+repeat_size = Vector2(272, 0)
+repeat_times = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Mountain"]
+texture_filter = 1
+position = Vector2(18, -61.3333)
+texture = ExtResource("5_uw2gq")
+centered = false
+
+[node name="Planta2" type="Parallax2D" parent="ParallaxBackground"]
+scale = Vector2(1.5, 1.5)
+scroll_scale = Vector2(0.9, 0.9)
+repeat_size = Vector2(272, 0)
+repeat_times = 3
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="ParallaxBackground/Planta2"]
+texture_filter = 1
+position = Vector2(168, 83.3333)
+sprite_frames = SubResource("SpriteFrames_22tcc")
+autoplay = "default"
+frame_progress = 0.322188
+
+[node name="Plants_Far2" type="Parallax2D" parent="ParallaxBackground"]
+scale = Vector2(1.5, 1.5)
+scroll_scale = Vector2(0.9, 0.9)
+scroll_offset = Vector2(-1, 20)
+repeat_size = Vector2(272, 0)
+repeat_times = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Plants_Far2"]
+texture_filter = 1
+material = SubResource("ShaderMaterial_1gw6j")
+position = Vector2(3.33333, 63.3333)
+texture = ExtResource("8_yfvhj")
+centered = false
+
+[node name="Planta" type="Parallax2D" parent="ParallaxBackground"]
+scale = Vector2(1.5, 1.5)
+scroll_scale = Vector2(0.9, 0.9)
+repeat_size = Vector2(272, 0)
+repeat_times = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Planta"]
+texture_filter = 1
+position = Vector2(38.6667, 57.3333)
+texture = ExtResource("10_7j38x")
+centered = false
