@@ -1,12 +1,11 @@
-[gd_scene load_steps=15 format=3 uid="uid://bgti3h7kctofu"]
+[gd_scene load_steps=14 format=3 uid="uid://bgti3h7kctofu"]
 
 [ext_resource type="PackedScene" uid="uid://cls1bhrmlht6k" path="res://scenes/parallax_bg.tscn" id="1_7xnpk"]
 [ext_resource type="Texture2D" uid="uid://d124m6kp50ls7" path="res://assets/Water/tile_jungle_water.png" id="2_qr8y5"]
 [ext_resource type="Texture2D" uid="uid://iq5o5bvwxmgs" path="res://levels/Level_design/Tilesets/tileset_cafundo.png" id="3_kdxmx"]
 [ext_resource type="PackedScene" uid="uid://bapvy71043313" path="res://Player/player.tscn" id="4_ue3r0"]
 [ext_resource type="PackedScene" uid="uid://6x1esumef4rj" path="res://scenes/goal.tscn" id="5_y8xtw"]
-[ext_resource type="PackedScene" uid="uid://by036lvidspns" path="res://scenes/estandarte.tscn" id="6_4msll"]
-[ext_resource type="PackedScene" uid="uid://bn4sgxqrg1y63" path="res://prefabs/pop_up.tscn" id="9_pxnic"]
+[ext_resource type="PackedScene" uid="uid://byytbwggf64du" path="res://scenes/HUD.tscn" id="9_ugn02"]
 [ext_resource type="PackedScene" uid="uid://dbnnn8x7jpx30" path="res://parede_colisao.tscn" id="10_1dm8y"]
 [ext_resource type="PackedScene" uid="uid://dfdug4kdd6kaf" path="res://scenes/FallZone.tscn" id="10_dd7uv"]
 [ext_resource type="Texture2D" uid="uid://cpfen1uhaaw7a" path="res://scenes/sign_forbiden.png" id="10_yaym7"]
@@ -441,11 +440,6 @@ position = Vector2(7655, 934)
 collision_mask = 2
 next_scene_path = "res://levels/release/caf_03.tscn"
 
-[node name="AnimatedSprite2D" parent="." instance=ExtResource("6_4msll")]
-
-[node name="pop_up" parent="." instance=ExtResource("9_pxnic")]
-position = Vector2(5723, 561)
-
 [node name="parede_invisivel" parent="." instance=ExtResource("10_1dm8y")]
 position = Vector2(7, 980)
 
@@ -461,3 +455,5 @@ collision_mask = 2
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="FallZone"]
 position = Vector2(1458, 57.5)
 shape = SubResource("RectangleShape2D_u4toe")
+
+[node name="Hud" parent="." instance=ExtResource("9_ugn02")]

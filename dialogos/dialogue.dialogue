@@ -8,16 +8,16 @@ Timby: Não é meu coração... ai... [shake]eu tô com medo[/shake]
 Dona Graça: Timby, relaxa... o que você está percebendo é música.
 Timby: Relaxa?!??! Mas eu nunca ouvi música.
 Dona Graça: A música são vibrações no ar e no corpo. 
-Dona Graça: Mesmo [color=red]proibida[/color], ela encontra um jeito de chegar até você.
+Dona Graça: Mesmo proibida, ela encontra um jeito de chegar até você.
 - Aceitar o chamado
 	Timby: Então essas batidas que sinto são notas? Como encontro o ritmo?
-	Dona Graça: [rainbow freq=0.1 sat=50 val=50]Escute o pulso e siga-o. A estrada para Cybersemiárida começa no compasso que você sente.[/rainbow]
+	Dona Graça: Escute o pulso e siga-o. A estrada para Cybersemiárida começa no compasso que você sente.
 	=> END
 - Dúvidas persistem
 	Timby: Ainda tenho dúvidas... preciso de mais clareza.
 	Dona Graça: A verdade exige coragem; o tempo não espera.
 	- Aceitar agora
-		Dona Graça: [rainbow freq=0.1 sat=50 val=50]Que a coragem te conduza, Timby.[/rainbow]
+		Dona Graça: Que a coragem te conduza, Timby.
 		=> END
 	- Permanecer na dúvida
 		Timby: Mas e se eu não estiver pronto?

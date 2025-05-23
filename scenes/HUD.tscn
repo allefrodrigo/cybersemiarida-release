@@ -1,0 +1,84 @@
+[gd_scene load_steps=4 format=3 uid="uid://byytbwggf64du"]
+
+[ext_resource type="Script" path="res://scenes/hud.gd" id="1_y5gwh"]
+[ext_resource type="Texture2D" uid="uid://bnofkyygwqkww" path="res://Interface.png" id="2_omjit"]
+[ext_resource type="Texture2D" uid="uid://c54lg7h25qwhk" path="res://scenes/timby_banner2.png" id="3_nvgdc"]
+
+[node name="Hud" type="CanvasLayer"]
+script = ExtResource("1_y5gwh")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -39.0
+offset_top = 3.0
+offset_right = 40.0
+offset_bottom = 33.0
+grow_horizontal = 2
+
+[node name="NinePatchRect" type="NinePatchRect" parent="MarginContainer"]
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("2_omjit")
+region_rect = Rect2(0.00662613, 0.0162168, 63.9177, 63.7754)
+patch_margin_left = 8
+patch_margin_top = 10
+patch_margin_right = 8
+patch_margin_bottom = 8
+
+[node name="TimerLabel" type="Label" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.588235, 0.380392, 0.305882, 1)
+text = "00:00"
+
+[node name="FPSLabel" type="Label" parent="."]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -212.0
+offset_right = 12.0
+offset_bottom = -161.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 10
+text = "0"
+
+[node name="MarginContainer2" type="MarginContainer" parent="."]
+texture_filter = 1
+offset_left = 8.0
+offset_top = 15.0
+offset_right = 69.0
+offset_bottom = 41.0
+
+[node name="NinePatchRect" type="NinePatchRect" parent="MarginContainer2"]
+layout_mode = 2
+texture = ExtResource("2_omjit")
+region_rect = Rect2(65.1496, -0.0199516, 63.7414, 63.9951)
+patch_margin_left = 7
+patch_margin_top = 8
+patch_margin_right = 8
+patch_margin_bottom = 7
+
+[node name="Avatar" type="TextureRect" parent="."]
+offset_left = 3.0
+offset_top = 13.0
+offset_right = 33.0
+offset_bottom = 42.0
+texture = ExtResource("3_nvgdc")
+expand_mode = 1
+
+[node name="DeathLabel" type="Label" parent="."]
+offset_left = 20.0
+offset_top = 1.0
+offset_right = 67.0
+offset_bottom = 52.0
+theme_override_colors/font_color = Color(0.232286, 0.240042, 0.25297, 1)
+theme_override_colors/font_shadow_color = Color(0.439216, 0.45098, 0.470588, 1)
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1

@@ -11,17 +11,23 @@ var player: AudioStreamPlayer
 
 func _ready() -> void:
 	player = AudioStreamPlayer.new()
+	player.bus = "Music"
 	add_child(player)
-	player.bus = "Music"  # opcional: defina um bus separado
 
 func play(group_name: String) -> void:
-	if current_group == group_name:
+	if current_group == group_name and player.playing:
+		return
+	if not tracks.has(group_name):
+		push_error("[MusicPlayer] Grupo inválido: %s" % group_name)
 		return
 	if player.playing:
 		player.stop()
-	if tracks.has(group_name):
-		player.stream = tracks[group_name]
-		player.play()
-		current_group = group_name
-	else:
-		push_error("[MusicPlayer] Grupo inválido: %s" % group_name)
+	
+	# Ativa loop no recurso antes de tocar
+	var stream_resource = tracks[group_name]
+	if stream_resource is AudioStreamOggVorbis:
+		stream_resource.loop = true
+	
+	player.stream = stream_resource
+	player.play()
+	current_group = group_name

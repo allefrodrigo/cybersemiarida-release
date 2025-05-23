@@ -281,6 +281,8 @@ func _on_keynote_key_collected() -> void:
 	collect_key()
 
 func respawn_to_initial() -> void:
+	GameState.death_count += 1
+	print(GameState.death_count)
 	global_position = initial_position
 	velocity = Vector2.ZERO
 

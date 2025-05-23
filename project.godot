@@ -23,6 +23,7 @@ DialogManager="*res://prefabs/dialog_manager.tscn"
 GameManager="*res://scripts/GameManager.gd"
 MusicPlayer="*res://scripts/music_player.gd"
 FallManager="*res://scripts/FallManager.gd"
+GameState="*res://scripts/GameState.gd"
 
 [dialogue_manager]
 
