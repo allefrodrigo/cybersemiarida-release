@@ -47,9 +47,9 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_s02tk"]
 _data = {
-"RESET": SubResource("Animation_mbqay"),
-"fade_in": SubResource("Animation_wftpy"),
-"fade_out": SubResource("Animation_w5qy5")
+&"RESET": SubResource("Animation_mbqay"),
+&"fade_in": SubResource("Animation_wftpy"),
+&"fade_out": SubResource("Animation_w5qy5")
 }
 
 [node name="Fade" type="Node2D"]

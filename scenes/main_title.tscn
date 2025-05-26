@@ -1,14 +1,14 @@
 [gd_scene load_steps=18 format=3 uid="uid://cbqml2b0rn61y"]
 
-[ext_resource type="Script" path="res://scripts/main_title.gd" id="1_mrqmd"]
+[ext_resource type="Script" uid="uid://g1bgaqmiugu1" path="res://scripts/main_title.gd" id="1_mrqmd"]
 [ext_resource type="FontFile" uid="uid://bfx6vshfsm8us" path="res://Fonts/PixelifySans-Regular.ttf" id="2_fi1qu"]
 [ext_resource type="Texture2D" uid="uid://bhfqemcd1sckx" path="res://assets/title.png" id="3_3yjo5"]
 [ext_resource type="Texture2D" uid="uid://b0gu5wcofcm1i" path="res://assets/ReguaLPG/horizontal-mono-negativa.png" id="3_7qrwd"]
-[ext_resource type="Shader" path="res://scenes/main_title.gdshader" id="3_tnyu8"]
+[ext_resource type="Shader" uid="uid://byulhnmatdpps" path="res://scenes/main_title.gdshader" id="3_tnyu8"]
 [ext_resource type="PackedScene" uid="uid://cls1bhrmlht6k" path="res://scenes/parallax_bg.tscn" id="5_841ov"]
 [ext_resource type="PackedScene" uid="uid://daolyiryu2ium" path="res://scenes/fade.tscn" id="5_q613m"]
 [ext_resource type="AudioStream" uid="uid://cnbpse6ugj67k" path="res://assets/Music/OST_menu.wav" id="8_47v03"]
-[ext_resource type="Script" path="res://scripts/audio_stream_player_2d.gd" id="9_16vkm"]
+[ext_resource type="Script" uid="uid://b6g8jeaq5q5qi" path="res://scripts/audio_stream_player_2d.gd" id="9_16vkm"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_xq152"]
 
@@ -69,8 +69,8 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_7ve66"]
 _data = {
-"RESET": SubResource("Animation_1bn07"),
-"tutorial": SubResource("Animation_ih5a8")
+&"RESET": SubResource("Animation_1bn07"),
+&"tutorial": SubResource("Animation_ih5a8")
 }
 
 [sub_resource type="Animation" id="Animation_aic40"]
@@ -106,8 +106,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_at7gw"]
 _data = {
-"RESET": SubResource("Animation_aic40"),
-"pulse": SubResource("Animation_yy3aj")
+&"RESET": SubResource("Animation_aic40"),
+&"pulse": SubResource("Animation_yy3aj")
 }
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_hxnbr"]
@@ -132,7 +132,7 @@ texture = ExtResource("3_3yjo5")
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Title"]
 root_node = NodePath("../..")
 libraries = {
-"": SubResource("AnimationLibrary_7ve66")
+&"": SubResource("AnimationLibrary_7ve66")
 }
 autoplay = "tutorial"
 speed_scale = 0.357
@@ -157,7 +157,7 @@ text = "Toque na tela para iniciar"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Label"]
 libraries = {
-"": SubResource("AnimationLibrary_at7gw")
+&"": SubResource("AnimationLibrary_at7gw")
 }
 autoplay = "pulse"
 

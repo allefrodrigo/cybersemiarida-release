@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dfdug4kdd6kaf"]
 
-[ext_resource type="Script" path="res://scenes/FallZone.gd" id="1_2qsxq"]
+[ext_resource type="Script" uid="uid://bdu230mlqvo5e" path="res://scenes/FallZone.gd" id="1_2qsxq"]
 
 [node name="FallZone" type="Area2D"]
 script = ExtResource("1_2qsxq")

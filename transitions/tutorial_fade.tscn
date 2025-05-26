@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://badoulo86ypb1"]
 
-[ext_resource type="Script" path="res://scripts/tutorial_fade.gd" id="1_pa3v1"]
-[ext_resource type="FontFile" uid="uid://bfx6vshfsm8us" path="res://fonts/PixelifySans-Regular.ttf" id="2_5ill3"]
+[ext_resource type="Script" uid="uid://chx5eg7qavlov" path="res://scripts/tutorial_fade.gd" id="1_pa3v1"]
+[ext_resource type="FontFile" uid="uid://bfx6vshfsm8us" path="res://Fonts/PixelifySans-Regular.ttf" id="2_5ill3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l4r2q"]
 size = Vector2(224, 11)
@@ -54,9 +54,9 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_kraxr"]
 _data = {
-"RESET": SubResource("Animation_wn48j"),
-"fade_in_out": SubResource("Animation_u6hv7"),
-"fade_out": SubResource("Animation_36rsn")
+&"RESET": SubResource("Animation_wn48j"),
+&"fade_in_out": SubResource("Animation_u6hv7"),
+&"fade_out": SubResource("Animation_36rsn")
 }
 
 [node name="TutorialFade" type="Node2D"]

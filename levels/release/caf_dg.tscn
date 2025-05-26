@@ -1,6 +1,6 @@
 [gd_scene load_steps=15 format=4 uid="uid://bw1uyyxsccc3r"]
 
-[ext_resource type="Script" path="res://levels/Level_design/TILED/CSA/Mapa/cafundó_dg.gd" id="1_2x3xk"]
+[ext_resource type="Script" uid="uid://jisqqqrywi4s" path="res://levels/Level_design/TILED/CSA/Mapa/cafundó_dg.gd" id="1_2x3xk"]
 [ext_resource type="PackedScene" uid="uid://dwo7sqxi3mg1h" path="res://scenes/parallax_bg_dungeon.tscn" id="2_fupbk"]
 [ext_resource type="Texture2D" uid="uid://bc3njw6xo37qa" path="res://levels/Level_design/Tilesets/Dungeon_Ground_Tileset.png" id="3_imnn4"]
 [ext_resource type="Texture2D" uid="uid://c2afdk53h0wq0" path="res://assets/Pointers/8.png" id="3_w8nwe"]

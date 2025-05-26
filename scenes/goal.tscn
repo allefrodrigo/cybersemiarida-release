@@ -1,8 +1,8 @@
 [gd_scene load_steps=24 format=3 uid="uid://6x1esumef4rj"]
 
-[ext_resource type="Script" path="res://scripts/goal.gd" id="1_pcjr0"]
+[ext_resource type="Script" uid="uid://ci103trmm2xf0" path="res://scripts/goal.gd" id="1_pcjr0"]
 [ext_resource type="Texture2D" uid="uid://cou1d43paw2wa" path="res://levels/Sino_Spritesheet.png" id="3_kas85"]
-[ext_resource type="Shader" path="res://scenes/main_title.gdshader" id="4_ueal5"]
+[ext_resource type="Shader" uid="uid://byulhnmatdpps" path="res://scenes/main_title.gdshader" id="4_ueal5"]
 [ext_resource type="AudioStream" uid="uid://dw37m76fuves1" path="res://audio/bell-goal.ogg" id="4_uxxij"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l7tn0"]

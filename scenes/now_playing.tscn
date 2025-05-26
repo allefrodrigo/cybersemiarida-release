@@ -1,6 +1,6 @@
 [gd_scene load_steps=57 format=4 uid="uid://lu7emei1niol"]
 
-[ext_resource type="Script" path="res://scripts/NowPlayingOverlay.gd" id="1_wg2f5"]
+[ext_resource type="Script" uid="uid://ceoun24swjr4f" path="res://scripts/NowPlayingOverlay.gd" id="1_wg2f5"]
 [ext_resource type="Texture2D" uid="uid://bpxrh5rb65352" path="res://assets/Music/Nt6v-ezgif.com-gif-to-sprite-converter.png" id="3_cjalf"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_j3mrq"]

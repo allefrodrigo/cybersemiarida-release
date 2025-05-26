@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=4 uid="uid://jocc8swellva"]
 
-[ext_resource type="Script" path="res://scenes/fall_scene.gd" id="1_i6nln"]
+[ext_resource type="Script" uid="uid://0vtiy77n2h8q" path="res://scenes/fall_scene.gd" id="1_i6nln"]
 [ext_resource type="Texture2D" uid="uid://7evhyf0bq76a" path="res://assets/Wall/tile_jungle_wall_brown.png" id="1_qh448"]
 [ext_resource type="PackedScene" uid="uid://bapvy71043313" path="res://Player/player.tscn" id="3_tqqhv"]
 

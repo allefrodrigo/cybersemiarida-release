@@ -1,6 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://bcsnyw4t6pnw2"]
 
-[ext_resource type="Texture2D" uid="uid://irr6td0rsom0" path="res://9_Céu.png" id="1_6sfc5"]
+[sub_resource type="Resource" id="Resource_c5h5e"]
+metadata/__load_path__ = "res://9_Céu.png"
 
 [node name="ParallaxBackground" type="CanvasLayer"]
 
@@ -8,7 +9,7 @@
 visible = false
 
 [node name="Sprite2D" type="Sprite2D" parent="Sky"]
-texture = ExtResource("1_6sfc5")
+texture = SubResource("Resource_c5h5e")
 
 [node name="Clouds" type="Parallax2D" parent="."]
 scroll_scale = Vector2(1.1, 1)

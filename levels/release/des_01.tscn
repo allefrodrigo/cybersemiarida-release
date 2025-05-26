@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://bxe726ltq0g33"]
+[gd_scene load_steps=16 format=3 uid="uid://bxe726ltq0g33"]
 
 [ext_resource type="PackedScene" uid="uid://b4od7gebexprg" path="res://scenes/parallax_bg_desert.tscn" id="1_6k77b"]
 [ext_resource type="PackedScene" uid="uid://bapvy71043313" path="res://Player/player.tscn" id="3_7oivi"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://bqa760f4vreov" path="res://prefabs/falling_platform.tscn" id="8_fsq75"]
 [ext_resource type="Texture2D" uid="uid://bxuu4pqtw3n2g" path="res://desert_fall.png" id="9_w04d0"]
 [ext_resource type="PackedScene" uid="uid://dfdug4kdd6kaf" path="res://scenes/FallZone.tscn" id="10_882gr"]
+[ext_resource type="PackedScene" uid="uid://byytbwggf64du" path="res://scenes/HUD.tscn" id="11_d6ubr"]
 [ext_resource type="Texture2D" uid="uid://bqq8n6aoyimsx" path="res://levels/Level_design/TILED/CSA/_tileset_png.png" id="desert_tileset_png"]
 [ext_resource type="Texture2D" uid="uid://iq5o5bvwxmgs" path="res://levels/Level_design/Tilesets/tileset_cafundo.png" id="tileset_cafundo"]
 
@@ -716,3 +717,5 @@ position = Vector2(287, 931)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FallZone"]
 position = Vector2(2021.75, -11)
 shape = SubResource("RectangleShape2D_e2kc7")
+
+[node name="Hud" parent="." instance=ExtResource("11_d6ubr")]

@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://bruuggoajpbgv"]
 
-[ext_resource type="Script" path="res://prefabs/dialog_box.gd" id="1_gjut1"]
+[ext_resource type="Script" uid="uid://c3woqlct8iupf" path="res://prefabs/dialog_box.gd" id="1_gjut1"]
 [ext_resource type="Texture2D" uid="uid://bnofkyygwqkww" path="res://Interface.png" id="2_la5tu"]
 [ext_resource type="Texture2D" uid="uid://yx40jxeqvri2" path="res://prefabs/ok_button_off.png" id="2_lfbxf"]
 [ext_resource type="Texture2D" uid="uid://bsovlxu0eyjoe" path="res://prefabs/ok_button_on.png" id="3_1c48g"]
@@ -32,10 +32,10 @@ script = ExtResource("1_gjut1")
 texture_filter = 1
 layout_mode = 2
 texture = ExtResource("2_la5tu")
-region_rect = Rect2(0.286894, -0.0130038, 63.2068, 63.6915)
-patch_margin_left = 11
-patch_margin_top = 10
-patch_margin_right = 11
+region_rect = Rect2(180.36, 65.476, 25.7137, 29.1667)
+patch_margin_left = 4
+patch_margin_top = 7
+patch_margin_right = 4
 patch_margin_bottom = 11
 
 [node name="text_container" type="MarginContainer" parent="."]

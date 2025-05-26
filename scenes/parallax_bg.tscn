@@ -11,7 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://sbycmmfu1vrk" path="res://assets/background/4-2_Cactos.png" id="7_iyqyv"]
 [ext_resource type="Texture2D" uid="uid://c5v8oxi4kpewn" path="res://assets/background/3_Arvore.png" id="8_qd05g"]
 [ext_resource type="Texture2D" uid="uid://62dfhfojqdqv" path="res://assets/background/2_Plantas.png" id="9_u0a06"]
-[ext_resource type="Shader" path="res://shaders/arbusto.gdshader" id="11_bnlqs"]
+[ext_resource type="Shader" uid="uid://cqlyd4ib02st0" path="res://shaders/arbusto.gdshader" id="11_bnlqs"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8twc2"]
 atlas = ExtResource("3_phf1l")
@@ -71,8 +71,8 @@ shader_parameter/maxStrength = 0.01
 shader_parameter/strengthScale = 100.0
 shader_parameter/interval = 3.5
 shader_parameter/detail = 1.0
-shader_parameter/distortion = null
-shader_parameter/heightOffset = null
+shader_parameter/distortion = 0.0
+shader_parameter/heightOffset = 0.0
 shader_parameter/offset = 0.0
 
 [node name="ParallaxBg" type="Node2D"]

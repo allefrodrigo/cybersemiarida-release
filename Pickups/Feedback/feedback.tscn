@@ -2,6 +2,21 @@
 
 [ext_resource type="Texture2D" uid="uid://ccj8h2agwvo7o" path="res://Pickups/Feedback/item-feedback.png" id="1_cr7ej"]
 
+[sub_resource type="Animation" id="Animation_438vi"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
 [sub_resource type="Animation" id="Animation_yad7i"]
 resource_name = "pickup"
 tracks/0/type = "value"
@@ -31,25 +46,10 @@ tracks/1/keys = {
 }]
 }
 
-[sub_resource type="Animation" id="Animation_438vi"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_snj6l"]
 _data = {
-"RESET": SubResource("Animation_438vi"),
-"pickup": SubResource("Animation_yad7i")
+&"RESET": SubResource("Animation_438vi"),
+&"pickup": SubResource("Animation_yad7i")
 }
 
 [node name="Feedback" type="Sprite2D"]

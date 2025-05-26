@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://lm417k411oj5"]
 
 [ext_resource type="Texture2D" uid="uid://c8um2uh5a5rh0" path="res://Objetos/Flag.png" id="1_e2k7v"]
-[ext_resource type="Script" path="res://scripts/flag.gd" id="1_yxxfw"]
+[ext_resource type="Script" uid="uid://ok11xfdatc32" path="res://scripts/flag.gd" id="1_yxxfw"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hei2t"]
 radius = 13.0

@@ -1,6 +1,6 @@
 [gd_scene load_steps=38 format=4 uid="uid://bwaualu5vkant"]
 
-[ext_resource type="Script" path="res://scenes/World/world.gd" id="1_x2gca"]
+[ext_resource type="Script" uid="uid://dxln28win2xot" path="res://scenes/World/world.gd" id="1_x2gca"]
 [ext_resource type="PackedScene" uid="uid://cls1bhrmlht6k" path="res://scenes/parallax_bg.tscn" id="2_1v0hq"]
 [ext_resource type="PackedScene" uid="uid://lu7emei1niol" path="res://scenes/now_playing.tscn" id="2_u7r6o"]
 [ext_resource type="Texture2D" uid="uid://w1gwsr7bifrb" path="res://scenes/World/Tilesets/tile_jungle_ground_brown.png" id="3_q4vjl"]
@@ -15,8 +15,8 @@
 [ext_resource type="Texture2D" uid="uid://c40q6xu4cdxgl" path="res://assets/Casas Sertão/casa_sertao_4.png" id="11_xba12"]
 [ext_resource type="Texture2D" uid="uid://cbd4flb86ktus" path="res://assets/Casas Sertão/casa_sertao_3.png" id="12_jlldw"]
 [ext_resource type="AudioStream" uid="uid://dtu6edecpycrc" path="res://assets/Music/bg_mundo1.wav" id="12_qf3w4"]
-[ext_resource type="PackedScene" uid="uid://daolyiryu2ium" path="res://scenes/fade.tscn" id="13_skx3w"]
-[ext_resource type="Script" path="res://scripts/MusicManager.gd" id="16_2jhri"]
+[ext_resource type="PackedScene" uid="uid://daolyiryu2ium" path="res://scenes/World/fade.tscn" id="13_skx3w"]
+[ext_resource type="Script" uid="uid://c1111crs4tv4d" path="res://scripts/MusicManager.gd" id="16_2jhri"]
 [ext_resource type="PackedScene" uid="uid://dwwuffuaonhbe" path="res://prefabs/controls.tscn" id="18_bnqc3"]
 [ext_resource type="PackedScene" uid="uid://bpv0a8wadbvx6" path="res://prefabs/fallzone.tscn" id="24_vswpy"]
 [ext_resource type="Texture2D" uid="uid://cgm4paby6x5gn" path="res://NPC/Base_Graça.png" id="25_lnivq"]
@@ -2756,8 +2756,8 @@ resource_name = "new_animation"
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_fjllt"]
 _data = {
-"moving": SubResource("Animation_m7qsa"),
-"new_animation": SubResource("Animation_qdso3")
+&"moving": SubResource("Animation_m7qsa"),
+&"new_animation": SubResource("Animation_qdso3")
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r1twq"]

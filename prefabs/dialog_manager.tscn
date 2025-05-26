@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://d2h4hob3d47xc"]
 
-[ext_resource type="Script" path="res://prefabs/dialog_manager.gd" id="1_8f66j"]
+[ext_resource type="Script" uid="uid://uv66qejiy54p" path="res://prefabs/dialog_manager.gd" id="1_8f66j"]
 [ext_resource type="PackedScene" uid="uid://bruuggoajpbgv" path="res://prefabs/dialog_box.tscn" id="2_wvtpc"]
 
 [node name="DialogManager" type="Node"]

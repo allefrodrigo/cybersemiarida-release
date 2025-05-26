@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://b7k4yoi12eq7p"]
 
-[ext_resource type="Script" path="res://scenes/transition.gd" id="1_rojxd"]
+[ext_resource type="Script" uid="uid://dlm8xsleluiso" path="res://scenes/transition.gd" id="1_rojxd"]
 [ext_resource type="AudioStream" uid="uid://c7httu086a3ng" path="res://assets/Music/transition_fade_in.mp3" id="2_5lgdf"]
 [ext_resource type="Texture2D" uid="uid://bdefjuogdb1n2" path="res://assets/silhueta.png" id="3_hf8qe"]
 
@@ -37,8 +37,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_l4nxk"]
 _data = {
-"RESET": SubResource("Animation_rhfir"),
-"zoom": SubResource("Animation_d4lq5")
+&"RESET": SubResource("Animation_rhfir"),
+&"zoom": SubResource("Animation_d4lq5")
 }
 
 [node name="Node2D" type="CanvasLayer"]

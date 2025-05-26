@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://cav2q1cg8ru5g"]
 
-[ext_resource type="Script" path="res://scenes/caf_fall_dg.gd" id="1_ar2sw"]
+[ext_resource type="Script" uid="uid://djemawx6bnaiq" path="res://scenes/caf_fall_dg.gd" id="1_ar2sw"]
 [ext_resource type="PackedScene" uid="uid://bapvy71043313" path="res://Player/player.tscn" id="2_r8srq"]
 [ext_resource type="AudioStream" uid="uid://pmoplkuxj0ub" path="res://audio/fall_sound.ogg" id="4_oeqtv"]
 

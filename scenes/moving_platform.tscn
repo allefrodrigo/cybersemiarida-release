@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://dtb6c8613kpqc"]
 
 [ext_resource type="Texture2D" uid="uid://bq1yv17qjnec6" path="res://tile_dg_fall.png" id="1_8s15o"]
-[ext_resource type="Script" path="res://scripts/moving_platform.gd" id="1_xdoyl"]
+[ext_resource type="Script" uid="uid://daj4iobdf6dsg" path="res://scripts/moving_platform.gd" id="1_xdoyl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gmkbf"]
 size = Vector2(64, 32)

@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://diw62pqm6bueu" path="res://assets/bg_deserto/Main Mountain.png" id="6_poeeo"]
 [ext_resource type="Texture2D" uid="uid://ctxl1jdv0vogy" path="res://assets/bg_deserto/Front_Mountain.png" id="8_yfvhj"]
 [ext_resource type="Texture2D" uid="uid://bb4qkrlbpoov4" path="res://assets/bg_deserto/Eolica1.png" id="11_gvvf2"]
-[ext_resource type="Shader" path="res://shaders/arbusto.gdshader" id="11_jpxy6"]
+[ext_resource type="Shader" uid="uid://cqlyd4ib02st0" path="res://shaders/arbusto.gdshader" id="11_jpxy6"]
 [ext_resource type="Texture2D" uid="uid://doac1jshee4c3" path="res://assets/bg_deserto/Eolica2.png" id="12_52nui"]
 [ext_resource type="Texture2D" uid="uid://ct5cb8w5fdfsk" path="res://assets/bg_deserto/Eolica3.png" id="13_ke2ft"]
 [ext_resource type="Texture2D" uid="uid://l1s7cmoai058" path="res://assets/bg_deserto/Eolica4.png" id="14_k885t"]
@@ -60,8 +60,8 @@ shader_parameter/maxStrength = 0.01
 shader_parameter/strengthScale = 100.0
 shader_parameter/interval = 3.5
 shader_parameter/detail = 1.0
-shader_parameter/distortion = null
-shader_parameter/heightOffset = null
+shader_parameter/distortion = 0.0
+shader_parameter/heightOffset = 0.0
 shader_parameter/offset = 0.0
 
 [node name="ParallaxBg" type="Node2D"]

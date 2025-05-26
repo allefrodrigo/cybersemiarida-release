@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://cyo8n3iymuyom" path="res://prefabs/graca_box.png" id="1_cb65k"]
 [ext_resource type="AudioStream" uid="uid://c33bds4d2cofu" path="res://audio/stop.ogg" id="1_j0f8i"]
-[ext_resource type="Script" path="res://prefabs/hit_pop.gd" id="2_1psdk"]
+[ext_resource type="Script" uid="uid://b7jl2d42eyq0q" path="res://prefabs/hit_pop.gd" id="2_1psdk"]
 
 [sub_resource type="Animation" id="Animation_eqssr"]
 length = 0.001
@@ -38,8 +38,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_53w2m"]
 _data = {
-"RESET": SubResource("Animation_eqssr"),
-"shake": SubResource("Animation_8ycp4")
+&"RESET": SubResource("Animation_eqssr"),
+&"shake": SubResource("Animation_8ycp4")
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ygc1w"]
@@ -54,7 +54,7 @@ collision_layer = 2
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_53w2m")
+&"": SubResource("AnimationLibrary_53w2m")
 }
 autoplay = "shake"
 
@@ -72,7 +72,7 @@ shape = SubResource("RectangleShape2D_ygc1w")
 position = Vector2(2, 1)
 collision_mask = 2
 script = ExtResource("2_1psdk")
-dialog_texts = Array[String](["Meu bixim... esse é um estandarte dos Harmonistas", "Toda vez que você avistar um", "Fique feliz, pois quer dizer que você estará salvo", "Quer dizer... pelo menos por enquanto"])
+dialog_texts = Array[String](["Esta é a antiga ", "cidade de Mossoró - RN", "Ela foi encoberta ", "pelo deserto e com o aumento da repressão do Maestro", "Assim todos decidiram", "abandonar a cidade"])
 
 [node name="PauseSound" type="AudioStreamPlayer2D" parent="hit_pop"]
 position = Vector2(-2, -1)

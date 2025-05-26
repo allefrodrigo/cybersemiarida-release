@@ -1,6 +1,6 @@
 [gd_scene load_steps=12 format=3 uid="uid://bttsjij0ss8q0"]
 
-[ext_resource type="Script" path="res://Enemies/Frog/frog.gd" id="1_5fl31"]
+[ext_resource type="Script" uid="uid://dh63o1atpf7qi" path="res://Enemies/Frog/frog.gd" id="1_5fl31"]
 [ext_resource type="Texture2D" uid="uid://m7jx3eb2ey3e" path="res://Enemies/Frog/frog-jump.png" id="1_ld22g"]
 [ext_resource type="Texture2D" uid="uid://dbaymly2fej4i" path="res://Enemies/Frog/frog-idle.png" id="1_x3351"]
 

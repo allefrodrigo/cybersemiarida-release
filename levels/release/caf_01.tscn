@@ -1,6 +1,6 @@
 [gd_scene load_steps=18 format=3 uid="uid://cqdc45syx1oa0"]
 
-[ext_resource type="Script" path="res://levels/Level_design/TILED/CSA/Mapa/cafundo_01.gd" id="1_x8byv"]
+[ext_resource type="Script" uid="uid://b10wyplafx7ir" path="res://levels/Level_design/TILED/CSA/Mapa/cafundo_01.gd" id="1_x8byv"]
 [ext_resource type="PackedScene" uid="uid://cls1bhrmlht6k" path="res://scenes/parallax_bg.tscn" id="2_f5v4a"]
 [ext_resource type="Texture2D" uid="uid://d124m6kp50ls7" path="res://assets/Water/tile_jungle_water.png" id="3_n3i7j"]
 [ext_resource type="Texture2D" uid="uid://iq5o5bvwxmgs" path="res://levels/Level_design/Tilesets/tileset_cafundo.png" id="4_te3eh"]

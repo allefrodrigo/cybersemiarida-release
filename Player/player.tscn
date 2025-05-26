@@ -1,13 +1,13 @@
 [gd_scene load_steps=41 format=3 uid="uid://bapvy71043313"]
 
-[ext_resource type="Script" path="res://Player/player.gd" id="1_1akqa"]
+[ext_resource type="Script" uid="uid://d63clb8am1nq" path="res://Player/player.gd" id="1_1akqa"]
 [ext_resource type="AudioStream" uid="uid://cxod1j5xq50sq" path="res://levels/Step_03.wav" id="2_01uoc"]
 [ext_resource type="Texture2D" uid="uid://bt8gb54hjkhl1" path="res://Player/player.png" id="2_vtor2"]
 [ext_resource type="Texture2D" uid="uid://dvhb0we5l4wu5" path="res://Player/timby_sheet.png" id="3_3npf3"]
 [ext_resource type="AudioStream" uid="uid://cohomxrh847yi" path="res://levels/Step_01.wav" id="3_mqhok"]
 [ext_resource type="AudioStream" uid="uid://c4xr2sis82hqc" path="res://levels/Step_02.wav" id="4_q78kk"]
 [ext_resource type="Texture2D" uid="uid://c0kk15rkf3qlq" path="res://Player/timby_sheet-800pct.png" id="6_aoasm"]
-[ext_resource type="Shader" path="res://shaders/vignette.gdshader" id="8_0r5ne"]
+[ext_resource type="Shader" uid="uid://7f6ykgarrc5q" path="res://shaders/vignette.gdshader" id="8_0r5ne"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ok28f"]
 size = Vector2(13, 20)
@@ -269,8 +269,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_prjx3"]
 _data = {
-"RESET": SubResource("Animation_xrwyl"),
-"camera": SubResource("Animation_0jq76")
+&"RESET": SubResource("Animation_xrwyl"),
+&"camera": SubResource("Animation_0jq76")
 }
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_xw1k5"]

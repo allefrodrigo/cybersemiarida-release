@@ -1,6 +1,6 @@
-[gd_scene load_steps=23 format=3 uid="uid://cphapejk1jat"]
+[gd_scene load_steps=24 format=3 uid="uid://cphapejk1jat"]
 
-[ext_resource type="Script" path="res://levels/Level_design/TILED/CSA/Mapa/cafundo_04.gd" id="1_atmii"]
+[ext_resource type="Script" uid="uid://eeaycdqrin25" path="res://levels/Level_design/TILED/CSA/Mapa/cafundo_04.gd" id="1_atmii"]
 [ext_resource type="Texture2D" uid="uid://d124m6kp50ls7" path="res://assets/Water/tile_jungle_water.png" id="3_n3i7j"]
 [ext_resource type="Texture2D" uid="uid://iq5o5bvwxmgs" path="res://levels/Level_design/Tilesets/tileset_cafundo.png" id="4_te3eh"]
 [ext_resource type="Texture2D" uid="uid://crggrq0ygw5b3" path="res://scenes/World/Props/taipa-house-solar.png" id="5_ga3a7"]
@@ -17,6 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://c1w0twwttnnpj" path="res://pedaco_igreja.png" id="15_n264o"]
 [ext_resource type="Texture2D" uid="uid://bmqjd588xt8mr" path="res://Pax.png" id="16_aje3k"]
 [ext_resource type="PackedScene" uid="uid://b4od7gebexprg" path="res://scenes/parallax_bg_desert.tscn" id="17_ks3o0"]
+[ext_resource type="PackedScene" uid="uid://bn4sgxqrg1y63" path="res://prefabs/pop_up.tscn" id="19_338rc"]
 [ext_resource type="PackedScene" uid="uid://byytbwggf64du" path="res://scenes/HUD.tscn" id="19_lfp5k"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0"]
@@ -580,3 +581,6 @@ position = Vector2(208, 928)
 texture = ExtResource("10_tfsea")
 
 [node name="Hud" parent="." instance=ExtResource("19_lfp5k")]
+
+[node name="pop_up" parent="." instance=ExtResource("19_338rc")]
+position = Vector2(966, 889)

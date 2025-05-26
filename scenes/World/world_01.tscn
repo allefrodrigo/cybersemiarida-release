@@ -1,6 +1,6 @@
 [gd_scene load_steps=38 format=4 uid="uid://cei616u40ocer"]
 
-[ext_resource type="Script" path="res://scenes/World/world.gd" id="1_r3s10"]
+[ext_resource type="Script" uid="uid://dxln28win2xot" path="res://scenes/World/world.gd" id="1_r3s10"]
 [ext_resource type="Texture2D" uid="uid://w1gwsr7bifrb" path="res://scenes/World/Tilesets/tile_jungle_ground_brown.png" id="2_755c4"]
 [ext_resource type="PackedScene" uid="uid://lu7emei1niol" path="res://scenes/now_playing.tscn" id="2_dtm36"]
 [ext_resource type="Texture2D" uid="uid://thrwp1163dv6" path="res://scenes/World/Tilesets/tileset.png" id="4_ldir7"]
@@ -15,7 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://byhtl04n602rh" path="res://assets/Casas Sertão/casa_sertao_3_3D.png" id="13_xu1yn"]
 [ext_resource type="Texture2D" uid="uid://hiegaj6qjvel" path="res://scenes/World/Props/bush.png" id="14_fsucw"]
 [ext_resource type="Texture2D" uid="uid://do6fw458xln43" path="res://scenes/World/Props/rock-2.png" id="16_agiad"]
-[ext_resource type="Script" path="res://scripts/MusicManager.gd" id="16_uibhe"]
+[ext_resource type="Script" uid="uid://c1111crs4tv4d" path="res://scripts/MusicManager.gd" id="16_uibhe"]
 [ext_resource type="PackedScene" uid="uid://lm417k411oj5" path="res://props/flag.tscn" id="23_vq0wc"]
 [ext_resource type="PackedScene" uid="uid://blpskcxyt3yry" path="res://Player/dona-graca.tscn" id="26_e4evy"]
 [ext_resource type="PackedScene" uid="uid://6x1esumef4rj" path="res://scenes/goal.tscn" id="26_qonp1"]
@@ -24,7 +24,7 @@
 [ext_resource type="PackedScene" uid="uid://bpv0a8wadbvx6" path="res://prefabs/fallzone.tscn" id="35_6dejq"]
 [ext_resource type="PackedScene" uid="uid://bapvy71043313" path="res://Player/player.tscn" id="35_cvaor"]
 [ext_resource type="AudioStream" uid="uid://dtu6edecpycrc" path="res://assets/Music/bg_mundo1.wav" id="36_ajfc7"]
-[ext_resource type="PackedScene" uid="uid://daolyiryu2ium" path="res://scenes/fade.tscn" id="37_b0kd7"]
+[ext_resource type="PackedScene" uid="uid://daolyiryu2ium" path="res://scenes/World/fade.tscn" id="37_b0kd7"]
 [ext_resource type="PackedScene" uid="uid://badoulo86ypb1" path="res://transitions/tutorial_fade.tscn" id="42_tlf01"]
 [ext_resource type="PackedScene" uid="uid://cls1bhrmlht6k" path="res://scenes/parallax_bg.tscn" id="47_6m05e"]
 
@@ -2756,8 +2756,8 @@ resource_name = "new_animation"
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_fjllt"]
 _data = {
-"moving": SubResource("Animation_m7qsa"),
-"new_animation": SubResource("Animation_qdso3")
+&"moving": SubResource("Animation_m7qsa"),
+&"new_animation": SubResource("Animation_qdso3")
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r1twq"]

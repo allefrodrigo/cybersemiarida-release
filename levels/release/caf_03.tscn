@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://di30hpo3hj6xj" path="res://tile_fall.png" id="3_u0xsk"]
 [ext_resource type="Texture2D" uid="uid://iq5o5bvwxmgs" path="res://levels/Level_design/Tilesets/tileset_cafundo.png" id="3_x6q03"]
 [ext_resource type="PackedScene" uid="uid://bapvy71043313" path="res://Player/player.tscn" id="5_b3ykf"]
-[ext_resource type="Script" path="res://scripts/FallDungeonZone.gd" id="7_6pkdr"]
+[ext_resource type="Script" uid="uid://cxuy7ragwsl1a" path="res://scripts/FallDungeonZone.gd" id="7_6pkdr"]
 [ext_resource type="PackedScene" uid="uid://dbnnn8x7jpx30" path="res://parede_colisao.tscn" id="7_pjml4"]
 [ext_resource type="Texture2D" uid="uid://cpfen1uhaaw7a" path="res://scenes/sign_forbiden.png" id="8_ukj5s"]
 [ext_resource type="PackedScene" uid="uid://byytbwggf64du" path="res://scenes/HUD.tscn" id="10_fvdix"]

@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://dal4rb7ryg6yb"]
 
-[ext_resource type="Script" path="res://control.gd" id="1_0gv4a"]
-[ext_resource type="FontFile" uid="uid://bfx6vshfsm8us" path="res://fonts/PixelifySans-Regular.ttf" id="2_i6x7f"]
+[ext_resource type="Script" uid="uid://com63qk3jtirw" path="res://control.gd" id="1_0gv4a"]
+[ext_resource type="FontFile" uid="uid://bfx6vshfsm8us" path="res://Fonts/PixelifySans-Regular.ttf" id="2_i6x7f"]
 
 [node name="Control" type="Control"]
 layout_mode = 3

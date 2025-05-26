@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://c6diiunn70psp"]
 
-[ext_resource type="Script" path="res://Pickups/Cheery/cherry.gd" id="1_g3p1m"]
+[ext_resource type="Script" uid="uid://dccv2hco1dhwb" path="res://Pickups/Cheery/cherry.gd" id="1_g3p1m"]
 [ext_resource type="Texture2D" uid="uid://fvyuq31617vq" path="res://Pickups/Cheery/cherry.png" id="1_kyayr"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rx5wv"]

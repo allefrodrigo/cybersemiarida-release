@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://bqa760f4vreov"]
 
 [ext_resource type="Texture2D" uid="uid://di30hpo3hj6xj" path="res://tile_fall.png" id="1_otw4c"]
-[ext_resource type="Script" path="res://scripts/falling_platform.gd" id="1_ql2w8"]
+[ext_resource type="Script" uid="uid://djhcrqar63vto" path="res://scripts/falling_platform.gd" id="1_ql2w8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xu2vn"]
 size = Vector2(64, 33)
@@ -39,8 +39,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_cxyrf"]
 _data = {
-"RESET": SubResource("Animation_tl657"),
-"shake": SubResource("Animation_glu67")
+&"RESET": SubResource("Animation_tl657"),
+&"shake": SubResource("Animation_glu67")
 }
 
 [node name="falling_platform" type="AnimatableBody2D"]
