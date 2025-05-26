@@ -61,7 +61,7 @@ one_way_collision = true
 [node name="anim" type="AnimationPlayer" parent="."]
 root_node = NodePath("../respawn_timer")
 libraries = {
-"": SubResource("AnimationLibrary_cxyrf")
+&"": SubResource("AnimationLibrary_cxyrf")
 }
 
 [connection signal="timeout" from="respawn_timer" to="." method="_on_respawn_timer_timeout"]

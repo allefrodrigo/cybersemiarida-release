@@ -363,7 +363,7 @@ editor_draw_drag_margin = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Camera2D"]
 libraries = {
-"": SubResource("AnimationLibrary_prjx3")
+&"": SubResource("AnimationLibrary_prjx3")
 }
 autoplay = "camera"
 

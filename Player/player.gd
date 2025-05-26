@@ -113,37 +113,37 @@ func update_coyote_time(delta: float, on_floor: bool) -> void:
 		coyote_time_counter = max(coyote_time_counter - delta, 0)
 
 func handle_movement(delta: float) -> void:
-	var direction = Input.get_axis("ui_left", "ui_right")
-	var target_speed = direction * SPEED
+	# Obtém um Vector2 combinando teclado e gamepad (-X, +X, -Y, +Y)
+	var move_vec = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
+	# Calcula a velocidade-alvo no eixo X
+	var target_speed = move_vec.x * SPEED
 
 	if abs(target_speed) > 0.1:
+		# Acelera até a velocidade-alvo
 		velocity.x = move_toward(velocity.x, target_speed, ACCELERATION * delta)
 	else:
+		# Desacelera suavemente até parar
 		velocity.x = move_toward(velocity.x, 0, DECELERATION * delta)
+
 
 
 func handle_wall_slide(delta: float) -> void:
 	is_wall_sliding = false
 
-	# Se não está no chão e está caindo (velocity.y > 0)...
 	if not is_on_floor() and velocity.y > 0:
-		# Verifica se está pressionando esquerda e colidindo com a parede esquerda
-		if Input.get_action_strength("ui_left") > 0 and raycast_wall_left.is_colliding():
+		if Input.get_action_strength("ui_right") > 0 and raycast_wall_left.is_colliding():
 			is_wall_sliding = true
-		# Ou se está pressionando direita e colidindo com a parede direita
-		elif Input.get_action_strength("ui_right") > 0 and raycast_wall_right.is_colliding():
+		elif Input.get_action_strength("ui_left") > 0 and raycast_wall_right.is_colliding():
 			is_wall_sliding = true
 
-	# Ao deslizar na parede, limitamos a velocidade vertical
 	if is_wall_sliding:
-		# Zera coyote time, para não permitir jump "normal" ao invés de wall jump
 		coyote_time_counter = 0
 		if velocity.y > WALL_SLIDE_SPEED:
 			velocity.y = move_toward(velocity.y, WALL_SLIDE_SPEED, 300 * delta)
 
+
 func handle_jump() -> void:
-	# Pulo normal (quando está no chão ou com coyote time) e não está em wall slide
-	if Input.is_action_just_pressed("ui_accept") and coyote_time_counter > 0 and not is_wall_sliding:
+	if Input.is_action_just_pressed("jump") and coyote_time_counter > 0 and not is_wall_sliding:
 		load_sfx(sfx_jump)
 		$sfx_player.play()
 		velocity.y = JUMP_VELOCITY
@@ -151,16 +151,13 @@ func handle_jump() -> void:
 		vibrate(400)
 		return
 
-	# Wall jump: somente dispara se estiver em wall slide
-	if is_wall_sliding and Input.is_action_just_pressed("ui_accept"):
+	if is_wall_sliding and Input.is_action_just_pressed("jump"):
 		load_sfx(sfx_jump)
 		$sfx_player.play()
 		vibrate(400)
 		var jump_impulse: Vector2 = Vector2.ZERO
-		# Se o player estiver encostado na parede da esquerda, força o impulso para a direita e para cima
 		if raycast_wall_left.is_colliding():
 			jump_impulse = Vector2(1, -1).normalized() * WALL_JUMP_FORCE
-		# Se estiver encostado na parede da direita, força o impulso para a esquerda e para cima
 		elif raycast_wall_right.is_colliding():
 			jump_impulse = Vector2(-1, -1).normalized() * WALL_JUMP_FORCE
 		velocity = jump_impulse
