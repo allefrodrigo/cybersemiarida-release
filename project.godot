@@ -24,6 +24,7 @@ GameManager="*res://scripts/GameManager.gd"
 MusicPlayer="*res://scripts/music_player.gd"
 FallManager="*res://scripts/FallManager.gd"
 GameState="*res://scripts/GameState.gd"
+global_accesibility_signal="*res://addons/accesibilitytools/global_accesibility_signal.gd"
 
 [dialogue_manager]
 
@@ -42,7 +43,7 @@ window/name="beta-cybersemiarida"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg")
+enabled=PackedStringArray("res://addons/accesibilitytools/plugin.cfg", "res://addons/dialogue_manager/plugin.cfg")
 
 [global_group]
 

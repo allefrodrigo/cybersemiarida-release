@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://cqdc45syx1oa0"]
+[gd_scene load_steps=19 format=3 uid="uid://cqdc45syx1oa0"]
 
 [ext_resource type="Script" uid="uid://b10wyplafx7ir" path="res://levels/Level_design/TILED/CSA/Mapa/cafundo_01.gd" id="1_x8byv"]
 [ext_resource type="PackedScene" uid="uid://cls1bhrmlht6k" path="res://scenes/parallax_bg.tscn" id="2_f5v4a"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://cpfen1uhaaw7a" path="res://scenes/sign_forbiden.png" id="10_tfsea"]
 [ext_resource type="PackedScene" uid="uid://dfdug4kdd6kaf" path="res://scenes/FallZone.tscn" id="11_es76g"]
 [ext_resource type="PackedScene" uid="uid://byytbwggf64du" path="res://scenes/HUD.tscn" id="12_upkis"]
+[ext_resource type="PackedScene" uid="uid://diirx2efdrc4l" path="res://colorblind_shaderscreen.tscn" id="13_ri2wy"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0"]
 texture = ExtResource("3_n3i7j")
@@ -552,3 +553,5 @@ position = Vector2(1292.5, 55)
 shape = SubResource("RectangleShape2D_7ncvv")
 
 [node name="Hud" parent="." instance=ExtResource("12_upkis")]
+
+[node name="ColorBlindCanvas" parent="." instance=ExtResource("13_ri2wy")]

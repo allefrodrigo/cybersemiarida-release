@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://cbqml2b0rn61y"]
+[gd_scene load_steps=20 format=3 uid="uid://cbqml2b0rn61y"]
 
 [ext_resource type="Script" uid="uid://g1bgaqmiugu1" path="res://scripts/main_title.gd" id="1_mrqmd"]
 [ext_resource type="FontFile" uid="uid://bfx6vshfsm8us" path="res://Fonts/PixelifySans-Regular.ttf" id="2_fi1qu"]
@@ -9,6 +9,8 @@
 [ext_resource type="PackedScene" uid="uid://daolyiryu2ium" path="res://scenes/fade.tscn" id="5_q613m"]
 [ext_resource type="AudioStream" uid="uid://cnbpse6ugj67k" path="res://assets/Music/OST_menu.wav" id="8_47v03"]
 [ext_resource type="Script" uid="uid://b6g8jeaq5q5qi" path="res://scripts/audio_stream_player_2d.gd" id="9_16vkm"]
+[ext_resource type="PackedScene" uid="uid://cbk4d5ty6dl14" path="res://colorblind_optionbutton.tscn" id="10_bc43o"]
+[ext_resource type="PackedScene" uid="uid://diirx2efdrc4l" path="res://colorblind_shaderscreen.tscn" id="11_db04l"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_xq152"]
 
@@ -191,6 +193,14 @@ volume_db = 11.642
 script = ExtResource("9_16vkm")
 
 [node name="Timer" type="Timer" parent="AudioStreamPlayer2D"]
+
+[node name="ColorBlindOptions" parent="." instance=ExtResource("10_bc43o")]
+offset_left = 297.0
+offset_top = 9.0
+offset_right = 383.0
+offset_bottom = 29.0
+
+[node name="ColorBlindCanvas" parent="." instance=ExtResource("11_db04l")]
 
 [connection signal="timeout" from="Fade/Fade_timer" to="." method="_on_fade_timer_timeout"]
 [connection signal="pressed" from="ColorRect/TextureButton" to="." method="_on_texture_button_pressed"]
