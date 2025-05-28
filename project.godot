@@ -18,7 +18,6 @@ config/icon="res://icon.svg"
 [autoload]
 
 CheckpointManager="*res://singleton/CheckpointManager.gd"
-DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 DialogManager="*res://prefabs/dialog_manager.tscn"
 GameManager="*res://scripts/GameManager.gd"
 MusicPlayer="*res://scripts/music_player.gd"
@@ -43,7 +42,7 @@ window/name="beta-cybersemiarida"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/accesibilitytools/plugin.cfg", "res://addons/dialogue_manager/plugin.cfg")
+enabled=PackedStringArray("res://addons/accesibilitytools/plugin.cfg")
 
 [global_group]
 

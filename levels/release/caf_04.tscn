@@ -583,4 +583,5 @@ texture = ExtResource("10_tfsea")
 [node name="Hud" parent="." instance=ExtResource("19_lfp5k")]
 
 [node name="pop_up" parent="." instance=ExtResource("19_338rc")]
+visible = false
 position = Vector2(966, 889)
