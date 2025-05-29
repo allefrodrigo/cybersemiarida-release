@@ -3,6 +3,8 @@ extends Node
 @export var tracks := {
 	"phase1_3": preload("res://audio/phase1_3.ogg"),
 	"phase4_5": preload("res://audio/phase4_5.ogg"),
+	"phase_city": preload("res://audio/phase_city.ogg"),
+	"phase_des": preload("res://audio/phase_des.ogg"),
 	"dungeon":   preload("res://audio/dungeon.ogg")
 }
 

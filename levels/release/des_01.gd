@@ -3,4 +3,4 @@ extends Node
 @onready var player = $player
 
 func _ready():
-	MusicPlayer.play("phase_city")
+	MusicPlayer.play("phase_des")
