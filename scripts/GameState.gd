@@ -4,6 +4,7 @@ extends Node
 
 var death_count: int = 0
 var time_elapsed: float = 0.0
+var has_key: bool       = false
 
 func _ready() -> void:
 	set_process(true)

@@ -9,6 +9,7 @@ extends CanvasLayer
 @onready var timer_label:  Label         = $MarginContainer/TimerLabel
 @onready var pause_button: TextureButton = $PauseButton
 @onready var menu_button:  TextureButton = $MenuButton
+@onready var key_label: Label = $KeyLabel
 
 func _ready() -> void:
 	# HUD sempre processa, mesmo com Tree pausada
@@ -23,9 +24,10 @@ func _ready() -> void:
 
 func _process(_delta: float) -> void:
 	death_label.text = str(GameState.death_count)
-	var total_secs = int(GameState.time_elapsed)
-	timer_label.text = "%02d:%02d" % [ total_secs / 60, total_secs % 60 ]
+	var total = int(GameState.time_elapsed)
+	timer_label.text = "%02d:%02d" % [total/60, total%60]
 	fps_label.text   = str(Engine.get_frames_per_second())
+	key_label.text   = "1/1" if GameState.has_key else "0/1"
 
 func _on_pause_button_pressed() -> void:
 	var will_pause = not get_tree().paused
