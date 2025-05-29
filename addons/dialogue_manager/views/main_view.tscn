@@ -34,7 +34,7 @@ data = {
 [sub_resource type="ImageTexture" id="ImageTexture_57eek"]
 image = SubResource("Image_y6rqu")
 
-[sub_resource type="SyntaxHighlighter" id="SyntaxHighlighter_kb7f8"]
+[sub_resource type="SyntaxHighlighter" id="SyntaxHighlighter_mpdoc"]
 script = ExtResource("7_necsa")
 
 [node name="MainView" type="Control"]
@@ -132,7 +132,6 @@ size_flags_vertical = 3
 unique_name_in_owner = true
 visible = false
 layout_mode = 2
-size_flags_vertical = 3
 
 [node name="FilesPopupMenu" type="PopupMenu" parent="Margin/Content/SidePanel/Bookmarks/FilesList"]
 unique_name_in_owner = true
@@ -158,6 +157,7 @@ text = "Insert"
 item_count = 15
 popup/item_0/text = "Wave BBCode"
 popup/item_0/icon = SubResource("ImageTexture_57eek")
+popup/item_0/id = 0
 popup/item_1/text = "Shake BBCode"
 popup/item_1/icon = SubResource("ImageTexture_57eek")
 popup/item_1/id = 1
@@ -312,7 +312,7 @@ Coco: Meow.
 
 => END"
 scroll_smooth = true
-syntax_highlighter = SubResource("SyntaxHighlighter_kb7f8")
+syntax_highlighter = SubResource("SyntaxHighlighter_mpdoc")
 
 [node name="ErrorsPanel" parent="Margin/Content/CodePanel" instance=ExtResource("7_5cvl4")]
 unique_name_in_owner = true
