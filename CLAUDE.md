@@ -24,6 +24,8 @@ Located in project.godot autoload section:
 - `MusicPlayer` - Handles background music management
 - `FallManager` - Manages fall damage and respawn mechanics
 - `DialogManager` - Manages dialogue system integration
+- `global_accesibility_signal` - Colorblind filter state (from the accessibility addon)
+- `ColorBlindLayer` - Persistent colorblind filter layer (`colorblind_shaderscreen.tscn` + `scripts/colorblind_layer.gd`, CanvasLayer 120, hidden on "Normal"); covers every scene, so new scenes must NOT instance the filter again
 
 ### Key Components
 
@@ -35,13 +37,16 @@ Located in project.godot autoload section:
 - Key collection mechanics
 
 **Level Structure**:
-- Main levels in `levels/release/` (caf_01.tscn through caf_04.tscn, des_01.tscn)
+- Playable route (set/2026): `scenes/main_title.tscn` → `levels/release/caf_01` → `caf_02` → `caf_03` → fall cutscene `scenes/caf_fall_dg.tscn` → `caf_03_dg` (key + door) → `des_01` (dead end, no exit yet)
+- Also in `levels/release/` but off the route (nothing leads to them): `caf_04`, `caf_05`, `caf_dg`; credits `scenes/CreditsScreen.tscn` is unreachable too
+- Some release levels still use scripts stored in `levels/Level_design/TILED/CSA/Mapa/`
 - Level design files in `levels/Level_design/TILED/` (uses Tiled map editor)
+- `levels/Level_design/_arquivo_morto/` holds archived Tiled test files; it has a `.gdignore`, so Godot ignores it
 - Scenes follow naming pattern: caf_XX for "Cafundó" levels, des_XX for desert levels
 
 **Dialogue System**:
 - Uses dialogue_manager addon for narrative content
-- Dialogue files in `dialogues/` and `dialogos/` directories
+- `dialogues/` = addon example dialogue ("Nathan", English) + the balloon scene; `dialogos/` = the real Dona Graça dialogue
 - Balloon UI system for conversation display
 
 **Accessibility Features**:
