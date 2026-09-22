@@ -23,15 +23,18 @@ func _find_tilemap() -> TileMap:
 	return null
 
 func _auto_size_to_tilemap(tm: TileMap) -> void:
+	if tm.tile_set == null:
+		return
 	var used = tm.get_used_rect()           # Rect2 em coords de célula
-	var cell = tm.cell_size                 # tamanho de cada célula
-	var world_pos = tm.map_to_world(used.position)
-	var world_size = used.size * cell
+	var cell: Vector2 = Vector2(tm.tile_set.tile_size)   # tamanho de cada célula
+	# map_to_local devolve o centro da célula; recua meia célula para o canto
+	var world_pos: Vector2 = tm.map_to_local(used.position) - cell * 0.5
+	var world_size: Vector2 = Vector2(used.size) * cell
 
 	var half_w = world_size.x * 0.5 + padding
 	var half_h = depth * 0.5
 	var shape = RectangleShape2D.new()
-	shape.extents = Vector2(half_w, half_h)
+	shape.size = Vector2(half_w, half_h) * 2.0
 	$CollisionShape2D.shape = shape
 
 	position.x = world_pos.x + world_size.x * 0.5

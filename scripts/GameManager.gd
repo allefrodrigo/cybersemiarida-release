@@ -15,11 +15,11 @@ func set_checkpoint(level_path: String, position: Vector2) -> void:
 	# Armazena a posição do checkpoint da fase corrente
 	checkpoints[level_path] = position
 
-func get_checkpoint(level_path: String) -> Vector2:
+func get_checkpoint(level_path: String) -> Variant:
 	# Retorna a posição do checkpoint se existir ou null
 	return checkpoints.get(level_path, null)
 
 func load_level(level_path: String) -> void:
 	# Armazena qual é o nível atual
 	current_level_path = level_path
-	get_tree().change_scene(level_path)
+	get_tree().change_scene_to_file(level_path)

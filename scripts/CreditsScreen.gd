@@ -57,7 +57,7 @@ extends Control
 func _ready() -> void:
 	# 1) Monta o BBCode
 	rich_text.bbcode_enabled = true
-	rich_text.bbcode_text    = _build_bbcode()
+	rich_text.text           = _build_bbcode()
 	# 2) Defer pra ajustar tamanho após o RichTextLabel processar o texto
 	call_deferred("_start_scroll")
 
