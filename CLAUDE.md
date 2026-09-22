@@ -37,8 +37,8 @@ Located in project.godot autoload section:
 - Key collection mechanics
 
 **Level Structure**:
-- Playable route (set/2026): `scenes/main_title.tscn` → `levels/release/caf_01` → `caf_02` → `caf_03` → fall cutscene `scenes/caf_fall_dg.tscn` → `caf_03_dg` (key + door) → `des_01` (dead end, no exit yet)
-- Also in `levels/release/` but off the route (nothing leads to them): `caf_04`, `caf_05`, `caf_dg`; credits `scenes/CreditsScreen.tscn` is unreachable too
+- Playable route (set/2026): `scenes/main_title.tscn` → `levels/release/caf_01` → `caf_02` → `caf_03` → fall cutscene `scenes/caf_fall_dg.tscn` → `caf_03_dg` (key + door; `scenes/DoorUnlock.tscn` points to `caf_04` via uid) → `caf_04` (ruins; bell) → `des_01` (dead end, no exit yet)
+- Also in `levels/release/` but off the route (nothing leads to them): `caf_05`, `caf_dg`; credits `scenes/CreditsScreen.tscn` is unreachable too
 - Some release levels still use scripts stored in `levels/Level_design/TILED/CSA/Mapa/`
 - Level design files in `levels/Level_design/TILED/` (uses Tiled map editor)
 - `levels/Level_design/_arquivo_morto/` holds archived Tiled test files; it has a `.gdignore`, so Godot ignores it
