@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <tileset version="1.10" tiledversion="1.11.2" name="tileset rosca" tilewidth="16" tileheight="16" tilecount="575" columns="25">
- <image source="../../../../../Downloads/tileset rosca.png" width="400" height="368"/>
+ <image source="../../Tilesets/tile cruz.png" width="400" height="368"/>
  <wangsets>
   <wangset name="novo terreno" type="corner" tile="-1">
    <wangcolor name="" color="#ff0000" tile="-1" probability="1"/>

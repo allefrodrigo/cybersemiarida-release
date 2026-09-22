@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<tileset version="1.10" tiledversion="1.11.2" name="cafundo1" tilewidth="16" tileheight="16" tilecount="575" columns="25">
- <image source="../../../../../../Downloads/tile cruz.png" width="400" height="368"/>
+<tileset version="1.10" tiledversion="1.11.2" name="cafundo" tilewidth="16" tileheight="16" tilecount="575" columns="25">
+ <image source="../../Tilesets/tile cruz.png" width="400" height="368"/>
  <tile id="26">
   <objectgroup>
    <object id="1" type="Plataforma" x="0" y="0" width="16" height="16"/>
@@ -51,6 +51,21 @@
    <object id="1" type="Plataforma" x="0" y="0" width="16" height="16"/>
   </objectgroup>
  </tile>
+ <tile id="64" type="Plataforma">
+  <objectgroup>
+   <object id="1" type="Plataforma" x="0" y="0" width="16" height="16"/>
+  </objectgroup>
+ </tile>
+ <tile id="65" type="Plataforma">
+  <objectgroup>
+   <object id="1" type="Plataforma" x="0" y="0" width="16" height="16"/>
+  </objectgroup>
+ </tile>
+ <tile id="66" type="Plataforma">
+  <objectgroup draworder="index" id="2">
+   <object id="1" type="Plataforma" x="0" y="0" width="16" height="16"/>
+  </objectgroup>
+ </tile>
  <tile id="76">
   <objectgroup>
    <object id="1" type="Plataforma" x="0" y="0" width="16" height="16"/>
@@ -72,6 +87,16 @@
   </objectgroup>
  </tile>
  <tile id="80">
+  <objectgroup>
+   <object id="1" type="Plataforma" x="0" y="0" width="16" height="16"/>
+  </objectgroup>
+ </tile>
+ <tile id="89" type="Plataforma">
+  <objectgroup>
+   <object id="1" type="Plataforma" x="0" y="0" width="16" height="16"/>
+  </objectgroup>
+ </tile>
+ <tile id="91" type="Plataforma">
   <objectgroup>
    <object id="1" type="Plataforma" x="0" y="0" width="16" height="16"/>
   </objectgroup>
@@ -101,6 +126,21 @@
    <object id="1" type="Plataforma" x="0" y="0" width="16" height="16"/>
   </objectgroup>
  </tile>
+ <tile id="114" type="Plataforma">
+  <objectgroup>
+   <object id="1" type="Plataforma" x="0" y="0" width="16" height="16"/>
+  </objectgroup>
+ </tile>
+ <tile id="115" type="Plataforma">
+  <objectgroup>
+   <object id="1" type="Plataforma" x="0" y="0" width="16" height="16"/>
+  </objectgroup>
+ </tile>
+ <tile id="116" type="Plataforma">
+  <objectgroup>
+   <object id="1" type="Plataforma" x="0" y="0" width="16" height="16"/>
+  </objectgroup>
+ </tile>
  <tile id="126">
   <objectgroup>
    <object id="1" type="Plataforma" x="0" y="0" width="16" height="16"/>
@@ -123,6 +163,16 @@
  </tile>
  <tile id="130">
   <objectgroup draworder="index" id="2">
+   <object id="1" type="Plataforma" x="0" y="0" width="16" height="16"/>
+  </objectgroup>
+ </tile>
+ <tile id="378" type="Plataforma">
+  <objectgroup draworder="index" id="2">
+   <object id="1" type="Plataforma" x="0" y="0" width="16" height="16"/>
+  </objectgroup>
+ </tile>
+ <tile id="379" type="Plataforma">
+  <objectgroup>
    <object id="1" type="Plataforma" x="0" y="0" width="16" height="16"/>
   </objectgroup>
  </tile>
