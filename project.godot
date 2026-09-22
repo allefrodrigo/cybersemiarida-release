@@ -24,6 +24,7 @@ MusicPlayer="*res://scripts/music_player.gd"
 FallManager="*res://scripts/FallManager.gd"
 GameState="*res://scripts/GameState.gd"
 global_accesibility_signal="*res://addons/accesibilitytools/global_accesibility_signal.gd"
+ColorBlindLayer="*res://colorblind_shaderscreen.tscn"
 
 [dialogue_manager]
 

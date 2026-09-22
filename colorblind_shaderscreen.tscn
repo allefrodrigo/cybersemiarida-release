@@ -1,13 +1,15 @@
-[gd_scene load_steps=4 format=3 uid="uid://diirx2efdrc4l"]
+[gd_scene load_steps=5 format=3 uid="uid://diirx2efdrc4l"]
 
 [ext_resource type="Shader" uid="uid://ey5onbpy2t8s" path="res://addons/accesibilitytools/shaders/normal_shader.gdshader" id="1_mjlk8"]
 [ext_resource type="Script" uid="uid://brgihn0id5b0l" path="res://addons/accesibilitytools/shaders/daltonismo_colorrect.gd" id="2_b332t"]
+[ext_resource type="Script" path="res://scripts/colorblind_layer.gd" id="3_layer"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_m14id"]
 shader = ExtResource("1_mjlk8")
 shader_parameter/type = 0
 
 [node name="ColorBlindCanvas" type="CanvasLayer"]
+script = ExtResource("3_layer")
 
 [node name="ColorBlindFilter" type="ColorRect" parent="."]
 material = SubResource("ShaderMaterial_m14id")
