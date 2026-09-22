@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cqdc45syx1oa0"]
+[gd_scene load_steps=9 format=3]
 
 [ext_resource type="PackedScene" uid="uid://bapvy71043313" path="res://Player/player.tscn" id="4_d6wv4"]
 [ext_resource type="Texture2D" uid="uid://crggrq0ygw5b3" path="res://scenes/World/Props/taipa-house-solar.png" id="taipa-house-solar"]

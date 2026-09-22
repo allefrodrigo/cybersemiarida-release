@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://daolyiryu2ium"]
+[gd_scene load_steps=5 format=3]
 
 [sub_resource type="Animation" id="Animation_mbqay"]
 length = 0.001

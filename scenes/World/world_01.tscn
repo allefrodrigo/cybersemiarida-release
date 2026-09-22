@@ -24,7 +24,7 @@
 [ext_resource type="PackedScene" uid="uid://bpv0a8wadbvx6" path="res://prefabs/fallzone.tscn" id="35_6dejq"]
 [ext_resource type="PackedScene" uid="uid://bapvy71043313" path="res://Player/player.tscn" id="35_cvaor"]
 [ext_resource type="AudioStream" uid="uid://dtu6edecpycrc" path="res://assets/Music/bg_mundo1.wav" id="36_ajfc7"]
-[ext_resource type="PackedScene" uid="uid://daolyiryu2ium" path="res://scenes/World/fade.tscn" id="37_b0kd7"]
+[ext_resource type="PackedScene" path="res://scenes/World/fade.tscn" id="37_b0kd7"]
 [ext_resource type="PackedScene" uid="uid://badoulo86ypb1" path="res://transitions/tutorial_fade.tscn" id="42_tlf01"]
 [ext_resource type="PackedScene" uid="uid://cls1bhrmlht6k" path="res://scenes/parallax_bg.tscn" id="47_6m05e"]
 
