@@ -694,6 +694,7 @@ size = Vector2(4070.5, 72)
 script = ExtResource("1_beqyc")
 
 [node name="ParallaxBg" parent="." instance=ExtResource("1_6k77b")]
+z_index = -10
 position = Vector2(280, 422)
 
 [node name="TileMap" type="TileMap" parent="."]
