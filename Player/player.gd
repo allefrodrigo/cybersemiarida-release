@@ -88,6 +88,10 @@ func _setup_wall_rays() -> void:
 	raycast_wall_left.target_position = Vector2(-(half_w + WALL_CONTACT_DISTANCE), 0.0)
 	raycast_wall_right.target_position = Vector2(half_w + WALL_CONTACT_DISTANCE, 0.0)
 
+func _notification(what: int) -> void:
+	if what == NOTIFICATION_UNPAUSED:
+		frames_since_jump_press = 999   # aperto durante a pausa não vira pulo (H3.5)
+
 func _physics_process(delta: float) -> void:
 	var on_floor = is_on_floor()
 
@@ -100,6 +104,8 @@ func _physics_process(delta: float) -> void:
 		handle_wall_slide(on_floor)
 		handle_jump(on_floor)
 	else:
+		frames_since_jump_press = 999   # aperto com o controle travado não vira pulo depois (H2.6)
+		is_wall_sliding = false
 		# Input desativado mas com direcao forçada
 		if forced_walk_direction != 0:
 			velocity.x = move_toward(velocity.x, forced_walk_direction * SPEED, ACCELERATION * delta)
