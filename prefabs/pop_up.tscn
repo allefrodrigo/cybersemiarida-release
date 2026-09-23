@@ -72,7 +72,7 @@ shape = SubResource("RectangleShape2D_ygc1w")
 position = Vector2(2, 1)
 collision_mask = 2
 script = ExtResource("2_1psdk")
-dialog_texts = Array[String](["Esta é a antiga ", "cidade de Mossoró - RN", "Ela foi encoberta ", "pelo deserto e com o aumento da repressão do Maestro", "Assim todos decidiram", "abandonar a cidade"])
+dialog_texts = Array[String](["Esta é a antiga cidade de Mossoró - RN.", "Ela foi encoberta pelo deserto.", "Com o aumento da repressão do Maestro, todos decidiram abandonar a cidade."])
 
 [node name="PauseSound" type="AudioStreamPlayer2D" parent="hit_pop"]
 position = Vector2(-2, -1)

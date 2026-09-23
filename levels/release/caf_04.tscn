@@ -793,7 +793,7 @@ position = Vector2(529, 915)
 texture = ExtResource("20_57fg6")
 
 [node name="player" parent="." instance=ExtResource("6_kiwin")]
-position = Vector2(3772, 914)
+position = Vector2(529, 915)
 
 [node name="CasaSertao43d" type="Sprite2D" parent="."]
 texture_filter = 1
