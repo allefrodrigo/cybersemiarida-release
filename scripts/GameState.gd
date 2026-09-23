@@ -14,11 +14,14 @@ func _ready() -> void:
 	set_process(true)
 	touch_ui = device_reports_touch()
 
-## Web: o navegador diz se há tela de toque. Fora da Web, o Godot responde "sim" sempre que a emulação de toque
-## pelo mouse está ligada (o nosso caso), então só celular nativo conta.
+## Se o aparelho tem tela de toque. O DisplayServer.is_touchscreen_available() responde "sim" sempre que a emulação de
+## toque pelo mouse está ligada (o nosso caso), também na Web; por isso, na Web, pergunta-se ao navegador (build Web
+## local da spec 006, T013/T101). Fora da Web, só celular nativo conta.
+const WEB_TOUCH_QUERY: String = "'ontouchstart' in window"
+
 static func device_reports_touch() -> bool:
 	if OS.has_feature("web"):
-		return DisplayServer.is_touchscreen_available()
+		return JavaScriptBridge.eval(WEB_TOUCH_QUERY, true) == true
 	return OS.has_feature("mobile")
 
 func _input(event: InputEvent) -> void:
