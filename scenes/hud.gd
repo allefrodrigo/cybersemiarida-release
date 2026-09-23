@@ -15,6 +15,7 @@ const PAUSE_ACTION: StringName = &"pause"   # Esc, P, Start (spec 005, H3.4)
 @onready var key_label: Label = $KeyLabel
 
 func _ready() -> void:
+	add_to_group(&"game_hud")
 	# HUD sempre processa, mesmo com Tree pausada
 	process_mode = ProcessMode.PROCESS_MODE_ALWAYS
 
@@ -36,6 +37,20 @@ func _on_pause_button_pressed() -> void:
 	var will_pause = not get_tree().paused
 	get_tree().paused = will_pause
 	pause_button.texture_normal = icon_play if will_pause else icon_pause
+
+## ⏸ e 🏠 por toque de qualquer dedo (spec 006, H3.1–H3.2). O Godot só emula mouse para o 1º dedo na tela, então
+## os TextureButton ignoram o mouse (mouse_filter = IGNORE) e o HUD lê o toque; o clique do mouse chega aqui como toque
+## emulado, então o computador continua igual.
+func _input(event: InputEvent) -> void:
+	if not (event is InputEventScreenTouch and event.pressed):
+		return
+	var p: Vector2 = (event as InputEventScreenTouch).position
+	if pause_button.get_global_rect().has_point(p) and not pause_button.disabled:
+		get_viewport().set_input_as_handled()
+		_on_pause_button_pressed()
+	elif menu_button.get_global_rect().has_point(p) and not menu_button.disabled:
+		get_viewport().set_input_as_handled()
+		_on_menu_button_pressed()
 
 ## Pausa por tecla ou botão do controle, com as mesmas regras do botão ⏸ (spec 005, H3.4–H3.6).
 func _unhandled_input(event: InputEvent) -> void:
@@ -67,3 +82,7 @@ func _on_menu_button_pressed() -> void:
 	var err = get_tree().change_scene_to_file("res://scenes/main_title.tscn")
 	if err != OK:
 		printerr("Falha ao trocar para Main Title:", err)
+
+## Ponto (coordenadas da tela-base) dentro da área de toque do ⏸ ou do 🏠 (spec 006, H2.6).
+func is_over_buttons(p: Vector2) -> bool:
+	return pause_button.get_global_rect().has_point(p) or menu_button.get_global_rect().has_point(p)
