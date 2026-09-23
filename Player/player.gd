@@ -24,6 +24,8 @@ const WALL_JUMP_FORCE: float = 400.0           # igual a antes: (±282,8, −282
 const WALL_JUMP_COYOTE_FRAMES: int = 8         # q desde o último quadro encostado; o teste mede 6 q (H1.4)
 const WALL_JUMP_LOCK_FRAMES: int = 7           # 0,12 s sem efeito da direção depois do wall jump (H1.4)
 
+const FRAME_COUNTER_MAX: int = 999               # teto dos contadores de quadros ("longe demais"; plano 005 §4.4)
+
 @export var sfx_jump : AudioStream
 @export var sfx_footstep : AudioStream
 @export var sfx_fall : AudioStream
@@ -52,9 +54,9 @@ var initial_position: Vector2
 var is_wall_sliding = false
 
 # Contadores da spec 005 (janelas em quadros de física)
-var frames_since_floor: int = 999
-var frames_since_jump_press: int = 999
-var frames_since_wall: int = 999
+var frames_since_floor: int = FRAME_COUNTER_MAX
+var frames_since_jump_press: int = FRAME_COUNTER_MAX
+var frames_since_wall: int = FRAME_COUNTER_MAX
 var wall_jump_lock_frames_left: int = 0
 var last_wall_dir: int = 0          # -1 parede à esquerda, +1 à direita
 var wall_dir: int = 0
@@ -90,7 +92,7 @@ func _setup_wall_rays() -> void:
 
 func _notification(what: int) -> void:
 	if what == NOTIFICATION_UNPAUSED:
-		frames_since_jump_press = 999   # aperto durante a pausa não vira pulo (H3.5)
+		frames_since_jump_press = FRAME_COUNTER_MAX   # aperto durante a pausa não vira pulo (H3.5)
 
 func _physics_process(delta: float) -> void:
 	var on_floor = is_on_floor()
@@ -104,7 +106,7 @@ func _physics_process(delta: float) -> void:
 		handle_wall_slide(on_floor)
 		handle_jump(on_floor)
 	else:
-		frames_since_jump_press = 999   # aperto com o controle travado não vira pulo depois (H2.6)
+		frames_since_jump_press = FRAME_COUNTER_MAX   # aperto com o controle travado não vira pulo depois (H2.6)
 		is_wall_sliding = false
 		# Input desativado mas com direcao forçada
 		if forced_walk_direction != 0:
@@ -143,7 +145,7 @@ func apply_gravity(delta: float, on_floor: bool) -> void:
 func update_coyote_time(on_floor: bool) -> void:
 	if on_floor:
 		frames_since_floor = 0
-	elif frames_since_floor < 999:
+	elif frames_since_floor < FRAME_COUNTER_MAX:
 		frames_since_floor += 1
 
 func update_wall_contact(on_floor: bool) -> void:
@@ -155,7 +157,7 @@ func update_wall_contact(on_floor: bool) -> void:
 	if wall_dir != 0 and not on_floor:
 		last_wall_dir = wall_dir
 		frames_since_wall = 0
-	elif frames_since_wall < 999:
+	elif frames_since_wall < FRAME_COUNTER_MAX:
 		frames_since_wall += 1
 
 func handle_movement(delta: float) -> void:
@@ -181,13 +183,13 @@ func handle_wall_slide(on_floor: bool) -> void:
 		return
 	if signf(move_x) == float(wall_dir):   # empurrando CONTRA a parede (H1.1)
 		is_wall_sliding = true
-		frames_since_floor = 999
+		frames_since_floor = FRAME_COUNTER_MAX
 		velocity.y = minf(velocity.y, WALL_SLIDE_SPEED)
 
 func handle_jump(on_floor: bool) -> void:
 	if Input.is_action_just_pressed("jump"):
 		frames_since_jump_press = 0
-	elif frames_since_jump_press < 999:
+	elif frames_since_jump_press < FRAME_COUNTER_MAX:
 		frames_since_jump_press += 1
 	if frames_since_jump_press <= JUMP_BUFFER_FRAMES:
 		if frames_since_floor <= COYOTE_FRAMES:
@@ -206,8 +208,8 @@ func _do_ground_jump() -> void:
 	load_sfx(sfx_jump)
 	$sfx_player.play()
 	velocity.y = JUMP_VELOCITY
-	frames_since_floor = 999
-	frames_since_jump_press = 999
+	frames_since_floor = FRAME_COUNTER_MAX
+	frames_since_jump_press = FRAME_COUNTER_MAX
 	is_jump_cuttable = true
 	vibrate(400)
 
@@ -219,8 +221,8 @@ func _do_wall_jump() -> void:
 	velocity = Vector2(away, -1.0).normalized() * WALL_JUMP_FORCE
 	is_wall_sliding = false
 	is_jump_cuttable = false
-	frames_since_jump_press = 999
-	frames_since_wall = 999
+	frames_since_jump_press = FRAME_COUNTER_MAX
+	frames_since_wall = FRAME_COUNTER_MAX
 	wall_jump_lock_frames_left = WALL_JUMP_LOCK_FRAMES
 
 
@@ -234,7 +236,7 @@ func update_animations(on_floor: bool) -> void:
 	# Verifica primeiro o wall slide
 	if is_wall_sliding:
 		animated_sprite.play("wall_slide")
-		# Se quiser que o sprite fique "olhando" pra direita quando na parede esquerda, basta ajustar:
+		# vira o sprite pelo lado da parede encostada (wall_dir: -1 esquerda, +1 direita)
 		if wall_dir < 0:
 			animated_sprite.flip_h = true
 		elif wall_dir > 0:
