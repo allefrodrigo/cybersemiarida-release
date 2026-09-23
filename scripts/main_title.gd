@@ -12,6 +12,7 @@ func _on_texture_button_pressed() -> void:
 
 func _on_fade_timer_timeout() -> void:
 	# Pausa a música
+	GameState.reset_run()
 	get_tree().change_scene_to_file("res://levels/release/caf_01.tscn")
 
 func _input(event: InputEvent) -> void:

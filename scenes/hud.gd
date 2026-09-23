@@ -1,4 +1,5 @@
 # res://scripts/HUD.gd
+class_name GameHud
 extends CanvasLayer
 
 @export var icon_pause: Texture
@@ -34,13 +35,17 @@ func _on_pause_button_pressed() -> void:
 	get_tree().paused = will_pause
 	pause_button.texture_normal = icon_play if will_pause else icon_pause
 
+## Desabilita pausa e menu (continuam visíveis) — usado na sequência do elevador (spec 003, H2.4).
+func lock_buttons() -> void:
+	pause_button.disabled = true
+	menu_button.disabled = true
+
 func _on_menu_button_pressed() -> void:
 	print("MenuButton clicado")
 	get_tree().paused = false
 	if MusicPlayer.player.playing:
 		MusicPlayer.player.stop()
-	GameState.death_count  = 0
-	GameState.time_elapsed = 0.0
+	GameState.reset_run()
 	var err = get_tree().change_scene_to_file("res://scenes/main_title.tscn")
 	if err != OK:
 		printerr("Falha ao trocar para Main Title:", err)
