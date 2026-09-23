@@ -2,6 +2,8 @@
 class_name GameHud
 extends CanvasLayer
 
+const PAUSE_ACTION: StringName = &"pause"   # Esc, P, Start (spec 005, H3.4)
+
 @export var icon_pause: Texture
 @export var icon_play:  Texture
 
@@ -34,6 +36,22 @@ func _on_pause_button_pressed() -> void:
 	var will_pause = not get_tree().paused
 	get_tree().paused = will_pause
 	pause_button.texture_normal = icon_play if will_pause else icon_pause
+
+## Pausa por tecla ou botão do controle, com as mesmas regras do botão ⏸ (spec 005, H3.4–H3.6).
+func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action_pressed(PAUSE_ACTION) and _can_toggle_pause():
+		_on_pause_button_pressed()
+		get_viewport().set_input_as_handled()
+
+func _can_toggle_pause() -> bool:
+	if pause_button.disabled:                 # trava do elevador (spec 003, lock_buttons)
+		return false
+	if DialogManager.is_showing_dialog:       # balão/placa aberto: Start e Espaço seguem com o balão
+		return false
+	var pl := get_tree().get_first_node_in_group("player") as Player
+	if pl != null and not pl.input_enabled and not get_tree().paused:
+		return false                          # sino (goal.gd, fade), placa (hit_pop.gd), elevador
+	return true
 
 ## Desabilita pausa e menu (continuam visíveis) — usado na sequência do elevador (spec 003, H2.4).
 func lock_buttons() -> void:
