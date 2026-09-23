@@ -1,13 +1,13 @@
-[gd_scene load_steps=10 format=3 uid="uid://dwwuffuaonhbe"]
+[gd_scene load_steps=9 format=3 uid="uid://dwwuffuaonhbe"]
 
 [ext_resource type="Script" path="res://prefabs/controls.gd" id="1_ctl"]
 [ext_resource type="Script" path="res://prefabs/touch_button.gd" id="2_btn"]
-[ext_resource type="Texture2D" uid="uid://bbisolw6q7hrg" path="res://assets/Buttons_2/tile004.png" id="3_l0"]
-[ext_resource type="Texture2D" uid="uid://b36q7w43p6le4" path="res://assets/Buttons_2/tile005.png" id="4_l1"]
-[ext_resource type="Texture2D" uid="uid://b7roqvwcgkr0y" path="res://assets/Buttons_2/tile002.png" id="5_r0"]
-[ext_resource type="Texture2D" uid="uid://cdecvcnlcn5fn" path="res://assets/Buttons_2/tile003.png" id="6_r1"]
-[ext_resource type="Texture2D" uid="uid://bgkqs0p0sx2ec" path="res://assets/Buttons_2/tile008.png" id="7_j0"]
-[ext_resource type="Texture2D" uid="uid://b3oignk10fi1i" path="res://assets/Buttons_2/tile009.png" id="8_j1"]
+[ext_resource type="Texture2D" path="res://assets/touch/touch_left_rest.png" id="3_l0"]
+[ext_resource type="Texture2D" path="res://assets/touch/touch_left_pressed.png" id="4_l1"]
+[ext_resource type="Texture2D" path="res://assets/touch/touch_right_rest.png" id="5_r0"]
+[ext_resource type="Texture2D" path="res://assets/touch/touch_right_pressed.png" id="6_r1"]
+[ext_resource type="Texture2D" path="res://assets/touch/touch_jump_rest.png" id="7_j0"]
+[ext_resource type="Texture2D" path="res://assets/touch/touch_jump_pressed.png" id="8_j1"]
 
 [node name="controls" type="CanvasLayer"]
 layer = 2
@@ -21,6 +21,7 @@ centered = false
 script = ExtResource("2_btn")
 action = &"ui_left"
 texture_pressed = ExtResource("4_l1")
+pressed_shift = Vector2(0, 0)
 
 [node name="RightButton" type="Sprite2D" parent="."]
 texture_filter = 1
@@ -30,6 +31,7 @@ centered = false
 script = ExtResource("2_btn")
 action = &"ui_right"
 texture_pressed = ExtResource("6_r1")
+pressed_shift = Vector2(0, 0)
 
 [node name="JumpButton" type="Sprite2D" parent="."]
 texture_filter = 1
@@ -39,3 +41,4 @@ centered = false
 script = ExtResource("2_btn")
 action = &"jump"
 texture_pressed = ExtResource("8_j1")
+pressed_shift = Vector2(0, 0)
