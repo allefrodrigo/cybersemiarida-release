@@ -46,14 +46,29 @@ func _close_dialog():
 	queue_free()
 	
 func _unhandled_input(event):
-	if event.is_action_pressed("ui_accept") and not is_typing:
-		if is_typing:
-			text_label.text = texts_to_display[current_index] 
-			is_typing = false
-		else:
-			if current_index + 1 < texts_to_display.size():
-				current_index += 1
-				show_text()
-			else:
-				get_tree().paused = false
-				_close_dialog()
+	if event.is_action_pressed("ui_accept") and can_advance():
+		advance()
+
+## Toque (ou clique do mouse, que vira toque emulado) em qualquer ponto fora do ⏸ e do 🏠 (spec 006, H2.1).
+## Só o começo de um toque conta: dedo que já estava na tela não avança nem ao ser solto.
+func _input(event: InputEvent) -> void:
+	if event is InputEventScreenTouch and event.pressed and can_advance() and not _is_over_hud_button(event.position):
+		advance()
+
+## ▼ visível: a página terminou de ser escrita e o balão não está fechando.
+func can_advance() -> bool:
+	return not is_typing and indicator.visible
+
+func advance() -> void:
+	if current_index + 1 < texts_to_display.size():
+		current_index += 1
+		show_text()          # is_typing = true já aqui: um 2º dedo no mesmo quadro não avança outra página
+	else:
+		get_tree().paused = false
+		_close_dialog()
+
+func _is_over_hud_button(p: Vector2) -> bool:
+	for hud in get_tree().get_nodes_in_group(&"game_hud"):
+		if hud.has_method("is_over_buttons") and hud.is_over_buttons(p):
+			return true
+	return false
