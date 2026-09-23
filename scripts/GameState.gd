@@ -21,7 +21,7 @@ const WEB_TOUCH_QUERY: String = "'ontouchstart' in window"
 
 static func device_reports_touch() -> bool:
 	if OS.has_feature("web"):
-		return JavaScriptBridge.eval(WEB_TOUCH_QUERY, true) == true
+		return bool(JavaScriptBridge.eval(WEB_TOUCH_QUERY, true))   # o navegador devolve 1/0, não bool (T102)
 	return OS.has_feature("mobile")
 
 func _input(event: InputEvent) -> void:
