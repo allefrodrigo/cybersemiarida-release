@@ -32,8 +32,10 @@ func _input(event: InputEvent) -> void:
 		_leave()
 
 func _is_confirm(event: InputEvent) -> bool:
-	if event is InputEventScreenTouch or event is InputEventMouseButton:
+	if event is InputEventScreenTouch:
 		return event.pressed
+	if event is InputEventMouseButton:
+		return event.pressed and event.button_index == MOUSE_BUTTON_LEFT   # roda do mouse não conta
 	if event is InputEventJoypadButton:
 		return event.pressed and event.button_index == JOY_BUTTON_START
 	return event.is_action_pressed("ui_accept")   # Enter, Espaço (Start também está em ui_accept)

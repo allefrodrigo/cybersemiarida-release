@@ -22,6 +22,8 @@ func start_dialog(texts: Array[String], _dialog_position: Vector2) -> void:
 	# instancia e configura a caixa de diálogo
 	dialog_layer = CanvasLayer.new()
 	dialog_layer.layer = DIALOG_LAYER
+	# se a cena trocar com o balão aberto (ex.: botão de menu do HUD), o estado não pode ficar preso (T102)
+	dialog_layer.tree_exited.connect(_on_layer_exited.bind(dialog_layer))
 	get_tree().current_scene.add_child(dialog_layer)
 	dialog_box = dialog_scene.instantiate()
 	dialog_layer.add_child(dialog_box)
@@ -53,3 +55,11 @@ func _on_box_finished() -> void:
 
 	# emite o sinal do manager para quem esteja aguardando
 	emit_signal("dialog_finished")
+
+## A camada saiu da árvore sem o balão fechar (troca de cena): zera o estado, sem emitir dialog_finished.
+func _on_layer_exited(layer: CanvasLayer) -> void:
+	if layer != dialog_layer:
+		return   # fechamento normal: _on_box_finished já zerou o estado
+	is_showing_dialog = false
+	dialog_box = null
+	dialog_layer = null
