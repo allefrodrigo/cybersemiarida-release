@@ -14,6 +14,7 @@ var gravity  = ProjectSettings.get_setting("physics/2d/default_gravity")
 var is_triggered := false
 
 func _ready() -> void:
+	add_to_group(&"falling_platforms")
 	sprite.texture = platform_texture
 	set_physics_process(false)
 
@@ -39,4 +40,15 @@ func _on_respawn_timer_timeout() -> void:
 	if is_triggered:
 		var spawn_tween = create_tween().set_trans(Tween.TRANS_BOUNCE).set_ease(Tween.EASE_IN_OUT)
 		spawn_tween.tween_property(sprite, "scale", Vector2(1,1), 0.2).from(Vector2(0,0))
+	is_triggered = false
+
+## Renascer do Timby (spec 007, H1.5): no lugar e parada, sem a animação de volta.
+func reset_platform() -> void:
+	anim.stop()
+	respawn_timer.stop()
+	set_physics_process(false)
+	velocity = Vector2.ZERO
+	global_position = respawn_position
+	sprite.scale = Vector2.ONE
+	sprite.position = Vector2.ZERO     # o "shake" pode ter parado no meio
 	is_triggered = false
