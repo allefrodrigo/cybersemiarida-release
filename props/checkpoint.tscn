@@ -1,0 +1,46 @@
+[gd_scene load_steps=7 format=3]
+
+[ext_resource type="Script" path="res://scripts/checkpoint.gd" id="1_cp"]
+[ext_resource type="Texture2D" path="res://assets/placeholder/placeholder_checkpoint_inativo.png" id="2_in"]
+[ext_resource type="Texture2D" path="res://assets/placeholder/placeholder_checkpoint_ativo.png" id="3_at"]
+[ext_resource type="AudioStream" path="res://assets/placeholder/placeholder_checkpoint.ogg" id="4_sf"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cp"]
+animations = [{
+"frames": [{"duration": 1.0, "texture": ExtResource("2_in")}],
+"loop": true,
+"name": &"inativo",
+"speed": 5.0
+}, {
+"frames": [{"duration": 1.0, "texture": ExtResource("2_in")}, {"duration": 1.0, "texture": ExtResource("3_at")}, {"duration": 1.0, "texture": ExtResource("2_in")}, {"duration": 1.0, "texture": ExtResource("3_at")}, {"duration": 1.0, "texture": ExtResource("3_at")}, {"duration": 1.0, "texture": ExtResource("3_at")}],
+"loop": false,
+"name": &"ativacao",
+"speed": 12.0
+}, {
+"frames": [{"duration": 1.0, "texture": ExtResource("3_at")}],
+"loop": true,
+"name": &"ativo",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cp"]
+size = Vector2(4, 116)
+
+[node name="Checkpoint" type="Area2D"]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_cp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -58)
+shape = SubResource("RectangleShape2D_cp")
+
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(0, -24)
+sprite_frames = SubResource("SpriteFrames_cp")
+animation = &"inativo"
+
+[node name="Sfx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_sf")
+bus = &"SFX"
