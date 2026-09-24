@@ -7,7 +7,7 @@
 [ext_resource type="AudioStream" uid="uid://cohomxrh847yi" path="res://levels/Step_01.wav" id="3_mqhok"]
 [ext_resource type="AudioStream" uid="uid://c4xr2sis82hqc" path="res://levels/Step_02.wav" id="4_q78kk"]
 [ext_resource type="Texture2D" uid="uid://c0kk15rkf3qlq" path="res://Player/timby_sheet-800pct.png" id="6_aoasm"]
-[ext_resource type="Texture2D" path="res://Player/timby_dizzy.png" id="7_dizzy"]
+[ext_resource type="Texture2D" uid="uid://cv0ym6iquass3" path="res://Player/timby_dizzy.png" id="7_dizzy"]
 [ext_resource type="Shader" uid="uid://7f6ykgarrc5q" path="res://shaders/vignette.gdshader" id="8_0r5ne"]
 [ext_resource type="TileSet" uid="uid://dgp60fa4r1vdi" path="res://scenes/World/world-tileset.tres" id="9_00tjw"]
 
