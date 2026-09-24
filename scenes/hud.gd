@@ -70,8 +70,12 @@ func _can_toggle_pause() -> bool:
 
 ## Desabilita pausa e menu (continuam visíveis) — usado na sequência do elevador (spec 003, H2.4).
 func lock_buttons() -> void:
-	pause_button.disabled = true
-	menu_button.disabled = true
+	set_buttons_locked(true)
+
+## Trava/destrava ⏸ e 🏠 (continuam visíveis). Elevador (003) e sequência de morte (007, H2.5–H2.6).
+func set_buttons_locked(locked: bool) -> void:
+	pause_button.disabled = locked
+	menu_button.disabled = locked
 
 func _on_menu_button_pressed() -> void:
 	print("MenuButton clicado")

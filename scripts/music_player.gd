@@ -33,3 +33,7 @@ func play(group_name: String) -> void:
 	player.stream = stream_resource
 	player.play()
 	current_group = group_name
+
+## Mantém a música tocando com a árvore pausada (sequência de morte, spec 007, D1); a pausa do ⏸ continua pausando.
+func set_play_while_paused(on: bool) -> void:
+	player.process_mode = Node.PROCESS_MODE_ALWAYS if on else Node.PROCESS_MODE_INHERIT

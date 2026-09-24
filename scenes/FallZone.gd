@@ -10,9 +10,14 @@ func _ready() -> void:
 		_auto_size_to_tilemap(tm)
 
 func _on_body_entered(body: Node) -> void:
-	if body.is_in_group("player"):
-		body.respawn_to_initial()
-		FallManager.increment_fall(get_tree().current_scene.name)
+	if not body is Player:
+		return
+	var seq := get_tree().get_first_node_in_group(DeathSequence.GROUP) as DeathSequence
+	if seq == null:
+		body.respawn_to_initial()          # cena sem HUD: como antes
+	elif not seq.start(body as Player):
+		return                             # já morrendo: conta uma vez só (spec 007, H2.4)
+	FallManager.increment_fall(get_tree().current_scene.name)
 
 func _find_tilemap() -> TileMap:
 	var cur = get_parent()

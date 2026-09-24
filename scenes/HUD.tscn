@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://byytbwggf64du"]
+[gd_scene load_steps=10 format=3 uid="uid://byytbwggf64du"]
 
 [ext_resource type="Script" uid="uid://cj5qw86jnwx1t" path="res://scenes/hud.gd" id="1_y5gwh"]
 [ext_resource type="Texture2D" uid="uid://bnofkyygwqkww" path="res://Interface.png" id="2_omjit"]
@@ -7,11 +7,27 @@
 [ext_resource type="Texture2D" uid="uid://tg8urfopyt45" path="res://assets/Buttons_2/tile061.png" id="4_7hsmw"]
 [ext_resource type="Texture2D" uid="uid://csjw6c6cnbgnh" path="res://assets/Buttons_2/tile074.png" id="7_twldb"]
 [ext_resource type="PackedScene" uid="uid://dwwuffuaonhbe" path="res://prefabs/controls.tscn" id="8_ctl"]
+[ext_resource type="Script" path="res://scripts/death_sequence.gd" id="9_dth"]
+[ext_resource type="AudioStream" path="res://assets/placeholder/placeholder_morte.ogg" id="10_dsf"]
 
 [node name="Hud" type="CanvasLayer"]
 script = ExtResource("1_y5gwh")
 icon_pause = ExtResource("4_7hsmw")
 icon_play = ExtResource("3_f6qnu")
+
+[node name="DeathSequence" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0)
+script = ExtResource("9_dth")
+
+[node name="Sfx" type="AudioStreamPlayer" parent="DeathSequence"]
+stream = ExtResource("10_dsf")
+bus = &"SFX"
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 anchors_preset = 5

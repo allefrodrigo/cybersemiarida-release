@@ -25,6 +25,7 @@ const WALL_JUMP_COYOTE_FRAMES: int = 8         # q desde o último quadro encost
 const WALL_JUMP_LOCK_FRAMES: int = 7           # 0,12 s sem efeito da direção depois do wall jump (H1.4)
 
 const FRAME_COUNTER_MAX: int = 999               # teto dos contadores de quadros ("longe demais"; plano 005 §4.4)
+const DEATH_ANIMATION: StringName = &"dizzy"     # tontura na sequência de morte (spec 007, H2.1)
 
 @export var sfx_jump : AudioStream
 @export var sfx_footstep : AudioStream
@@ -291,6 +292,33 @@ func respawn_if_needed() -> void:
 func level_path() -> String:
 	var lvl: Node = owner if owner != null else get_tree().current_scene
 	return lvl.scene_file_path if lvl != null else ""
+
+## Começo da sequência de morte (spec 007, H2.1): a árvore está pausada; só o sprite anima (tontura).
+func enter_death() -> void:
+	velocity = Vector2.ZERO
+	animated_sprite.process_mode = Node.PROCESS_MODE_ALWAYS
+	animated_sprite.play(DEATH_ANIMATION)
+
+func exit_death() -> void:
+	animated_sprite.process_mode = Node.PROCESS_MODE_INHERIT
+
+## Renascer (spec 007, H1.3/H2.2): de pé, parado, olhando no sentido da rota; câmera já no lugar, sem viagem.
+func respawn_at(pos: Vector2, facing_right: bool) -> void:
+	global_position = pos
+	velocity = Vector2.ZERO
+	frames_since_floor = FRAME_COUNTER_MAX
+	frames_since_jump_press = FRAME_COUNTER_MAX
+	frames_since_wall = FRAME_COUNTER_MAX
+	wall_jump_lock_frames_left = 0
+	is_jump_cuttable = false
+	is_wall_sliding = false
+	animated_sprite.flip_h = not facing_right
+	animated_sprite.play("idle")
+	animated_sprite.scale = Vector2.ONE
+	camera.reset_smoothing()
+	camera.force_update_scroll()
+	if key_instance != null and is_instance_valid(key_instance):
+		key_instance.global_position = global_position   # a chave não atravessa o mapa atrás do Timby
 
 func load_sfx(sfx_to_load):
 	if $sfx_player.stream != sfx_to_load:
