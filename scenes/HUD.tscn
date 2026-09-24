@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://csjw6c6cnbgnh" path="res://assets/Buttons_2/tile074.png" id="7_twldb"]
 [ext_resource type="PackedScene" uid="uid://dwwuffuaonhbe" path="res://prefabs/controls.tscn" id="8_ctl"]
 [ext_resource type="Script" path="res://scripts/death_sequence.gd" id="9_dth"]
-[ext_resource type="AudioStream" path="res://assets/placeholder/placeholder_morte.ogg" id="10_dsf"]
+[ext_resource type="AudioStream" path="res://audio/sfx_morte.ogg" id="10_dsf"]
 
 [node name="Hud" type="CanvasLayer"]
 script = ExtResource("1_y5gwh")
