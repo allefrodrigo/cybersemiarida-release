@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://bapvy71043313"]
+[gd_scene load_steps=43 format=3 uid="uid://bapvy71043313"]
 
 [ext_resource type="Script" uid="uid://d63clb8am1nq" path="res://Player/player.gd" id="1_1akqa"]
 [ext_resource type="AudioStream" uid="uid://cxod1j5xq50sq" path="res://levels/Step_03.wav" id="2_01uoc"]
@@ -7,6 +7,7 @@
 [ext_resource type="AudioStream" uid="uid://cohomxrh847yi" path="res://levels/Step_01.wav" id="3_mqhok"]
 [ext_resource type="AudioStream" uid="uid://c4xr2sis82hqc" path="res://levels/Step_02.wav" id="4_q78kk"]
 [ext_resource type="Texture2D" uid="uid://c0kk15rkf3qlq" path="res://Player/timby_sheet-800pct.png" id="6_aoasm"]
+[ext_resource type="Texture2D" path="res://Player/timby_dizzy.png" id="7_dizzy"]
 [ext_resource type="Shader" uid="uid://7f6ykgarrc5q" path="res://shaders/vignette.gdshader" id="8_0r5ne"]
 [ext_resource type="TileSet" uid="uid://dgp60fa4r1vdi" path="res://scenes/World/world-tileset.tres" id="9_00tjw"]
 
@@ -26,28 +27,28 @@ atlas = ExtResource("2_vtor2")
 region = Rect2(66, 96, 33, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pstnt"]
-atlas = ExtResource("6_aoasm")
-region = Rect2(5544, 0, 264, 256)
+atlas = ExtResource("7_dizzy")
+region = Rect2(0, 0, 33, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4sr2n"]
-atlas = ExtResource("6_aoasm")
-region = Rect2(5808, 0, 264, 256)
+atlas = ExtResource("7_dizzy")
+region = Rect2(33, 0, 33, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_iml2i"]
-atlas = ExtResource("6_aoasm")
-region = Rect2(6072, 0, 264, 256)
+atlas = ExtResource("7_dizzy")
+region = Rect2(66, 0, 33, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pvksj"]
-atlas = ExtResource("6_aoasm")
-region = Rect2(6336, 0, 264, 256)
+atlas = ExtResource("7_dizzy")
+region = Rect2(99, 0, 33, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_36qrj"]
-atlas = ExtResource("6_aoasm")
-region = Rect2(6600, 0, 264, 256)
+atlas = ExtResource("7_dizzy")
+region = Rect2(132, 0, 33, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rn2q4"]
-atlas = ExtResource("6_aoasm")
-region = Rect2(6864, 0, 264, 256)
+atlas = ExtResource("7_dizzy")
+region = Rect2(165, 0, 33, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jy8cs"]
 atlas = ExtResource("3_3npf3")
