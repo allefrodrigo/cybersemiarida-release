@@ -49,9 +49,11 @@ func reset_platform() -> void:
 	set_physics_process(false)
 	velocity = Vector2.ZERO
 	# com sync_to_physics, o nó desfaz a mudança e espera o próximo passo da física, que não roda com a árvore
-	# pausada (a morte pausa); sem o sync, o nó e o corpo vão para casa na hora (spec 007, T102)
+	# pausada (a morte pausa). Sem o sync, o nó vai para casa na hora; o corpo no servidor recebe a posição aqui,
+	# porque o aviso de transformação só chegaria depois do sync religado e seria ignorado (spec 007, T102)
 	sync_to_physics = false
 	global_position = respawn_position
+	PhysicsServer2D.body_set_state(get_rid(), PhysicsServer2D.BODY_STATE_TRANSFORM, global_transform)
 	sync_to_physics = true
 	sprite.scale = Vector2.ONE
 	sprite.position = Vector2.ZERO     # o "shake" pode ter parado no meio
