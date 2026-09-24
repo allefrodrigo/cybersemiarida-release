@@ -7,7 +7,9 @@ extends CanvasLayer
 ## (Input.action_release limparia todos os dispositivos).
 const TOUCH_DEVICE_ID: int = -3
 
-var _fingers: Dictionary = {}          # índice do dedo (int) -> TouchButton sob ele, ou null
+## Dedo = (aparelho, índice): o clique do mouse vira toque emulado com índice 0 e não pode ser confundido com o 1º dedo
+## de verdade (notebook/tablet com tela de toque e mouse; QA 006, Q10b).
+var _fingers: Dictionary = {}          # Vector2i(device, index) -> TouchButton sob ele, ou null
 var _buttons: Array[TouchButton] = []
 var _player: Player = null
 
@@ -17,6 +19,15 @@ func _ready() -> void:
 			_buttons.append(c as TouchButton)
 	visible = false
 	_update_visibility()
+
+## Janela ou app perde o foco (troca de app no celular): nenhum botão fica apertado (QA 006).
+func _notification(what: int) -> void:
+	if what == NOTIFICATION_APPLICATION_FOCUS_OUT:
+		release_all()
+
+func _finger_key(event: InputEvent) -> Vector2i:
+	var index: int = event.index if (event is InputEventScreenTouch or event is InputEventScreenDrag) else 0
+	return Vector2i(event.device, index)
 
 ## Troca de cena com um dedo num botão (🏠, sino, elevador): a ação não pode ficar presa na cena seguinte.
 func _exit_tree() -> void:
@@ -50,14 +61,15 @@ func _input(event: InputEvent) -> void:
 	if event is InputEventScreenTouch:
 		var st := event as InputEventScreenTouch
 		if st.pressed and not st.canceled:
-			_fingers[st.index] = _button_at(st.position)
+			_fingers[_finger_key(st)] = _button_at(st.position)
 		else:
-			_fingers.erase(st.index)
+			_fingers.erase(_finger_key(st))
 		_sync()
 	elif event is InputEventScreenDrag:
 		var sd := event as InputEventScreenDrag
-		if _fingers.has(sd.index):   # só dedos que começaram com os controles visíveis
-			_fingers[sd.index] = _button_at(sd.position)
+		var key: Vector2i = _finger_key(sd)
+		if _fingers.has(key):   # só dedos que começaram com os controles visíveis
+			_fingers[key] = _button_at(sd.position)
 			_sync()
 
 func _button_at(p: Vector2) -> TouchButton:
