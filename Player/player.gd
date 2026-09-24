@@ -296,6 +296,7 @@ func level_path() -> String:
 ## Começo da sequência de morte (spec 007, H2.1): a árvore está pausada; só o sprite anima (tontura).
 func enter_death() -> void:
 	velocity = Vector2.ZERO
+	animated_sprite.scale = Vector2.ONE   # a deformação da queda não passa para a tontura (T011, spec 007)
 	animated_sprite.process_mode = Node.PROCESS_MODE_ALWAYS
 	animated_sprite.play(DEATH_ANIMATION)
 
