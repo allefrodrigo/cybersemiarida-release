@@ -49,6 +49,9 @@ func reset_platform() -> void:
 	set_physics_process(false)
 	velocity = Vector2.ZERO
 	global_position = respawn_position
+	# AnimatableBody2D com sync_to_physics: com a árvore pausada, o nó voltaria à posição guardada no servidor de
+	# física; grava a posição lá também (spec 007, T101)
+	PhysicsServer2D.body_set_state(get_rid(), PhysicsServer2D.BODY_STATE_TRANSFORM, global_transform)
 	sprite.scale = Vector2.ONE
 	sprite.position = Vector2.ZERO     # o "shake" pode ter parado no meio
 	is_triggered = false
