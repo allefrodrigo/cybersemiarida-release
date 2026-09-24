@@ -40,3 +40,4 @@ func reset_run() -> void:
 	death_count = 0
 	time_elapsed = 0.0
 	has_key = false
+	CheckpointManager.reset()   # jogo novo: nenhum checkpoint ativo (spec 007, H1.8)

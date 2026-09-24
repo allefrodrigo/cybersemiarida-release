@@ -74,6 +74,7 @@ func _ready() -> void:
 	add_to_group("player")
 	print("Grupos do jogador:", get_groups())
 	initial_position = global_position
+	CheckpointManager.enter_level(level_path())   # outra fase: zera o checkpoint (spec 007, H1.7)
 	respawn_if_needed()
 	shader_mat           = vignette_rect.material as ShaderMaterial
 	vignette_layer.visible = false
@@ -282,11 +283,14 @@ func update_stretch_and_squash(delta: float, on_floor: bool) -> void:
 # ------------------------------------------------------
 
 func respawn_if_needed() -> void:
-	var checkpoint_data = CheckpointManager.get_checkpoint()
-	if checkpoint_data.has("position") and checkpoint_data["position"]:
-		global_position = checkpoint_data["position"]
-		health = CheckpointManager.player_data["health"]
-		print("Respawned at:", checkpoint_data["position"])
+	# só vale para a mesma fase recarregada (mundos legados); nas fases da rota a morte não recarrega a cena
+	if CheckpointManager.has_respawn(level_path()):
+		global_position = CheckpointManager.get_respawn_position()
+
+## Caminho da fase dona deste Timby (raiz da cena da fase; nos testes a fase pode não ser a current_scene).
+func level_path() -> String:
+	var lvl: Node = owner if owner != null else get_tree().current_scene
+	return lvl.scene_file_path if lvl != null else ""
 
 func load_sfx(sfx_to_load):
 	if $sfx_player.stream != sfx_to_load:
