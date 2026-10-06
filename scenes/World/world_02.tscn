@@ -15,7 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://c40q6xu4cdxgl" path="res://assets/Casas Sertão/casa_sertao_4.png" id="11_xba12"]
 [ext_resource type="Texture2D" uid="uid://cbd4flb86ktus" path="res://assets/Casas Sertão/casa_sertao_3.png" id="12_jlldw"]
 [ext_resource type="AudioStream" uid="uid://dtu6edecpycrc" path="res://assets/Music/bg_mundo1.wav" id="12_qf3w4"]
-[ext_resource type="PackedScene" uid="uid://daolyiryu2ium" path="res://scenes/World/fade.tscn" id="13_skx3w"]
+[ext_resource type="PackedScene" path="res://scenes/World/fade.tscn" id="13_skx3w"]
 [ext_resource type="Script" uid="uid://c1111crs4tv4d" path="res://scripts/MusicManager.gd" id="16_2jhri"]
 [ext_resource type="PackedScene" uid="uid://dwwuffuaonhbe" path="res://prefabs/controls.tscn" id="18_bnqc3"]
 [ext_resource type="PackedScene" uid="uid://bpv0a8wadbvx6" path="res://prefabs/fallzone.tscn" id="24_vswpy"]

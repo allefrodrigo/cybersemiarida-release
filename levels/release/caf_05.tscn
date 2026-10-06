@@ -1,9 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://cbpf0daqn1g33"]
+[gd_scene load_steps=8 format=3 uid="uid://cbpf0daqn1g33"]
 
 [ext_resource type="PackedScene" uid="uid://bapvy71043313" path="res://Player/player.tscn" id="1_player"]
 [ext_resource type="PackedScene" uid="uid://b4od7gebexprg" path="res://scenes/parallax_bg_desert.tscn" id="2_ofoyb"]
 [ext_resource type="PackedScene" uid="uid://byytbwggf64du" path="res://scenes/HUD.tscn" id="3_hud"]
-[ext_resource type="PackedScene" uid="uid://diirx2efdrc4l" path="res://colorblind_shaderscreen.tscn" id="4_colorblind"]
 [ext_resource type="Script" uid="uid://b2q26cfdjx40s" path="res://scripts/circle_spawner.gd" id="5_spawner"]
 [ext_resource type="TileSet" uid="uid://dgp60fa4r1vdi" path="res://scenes/World/world-tileset.tres" id="6_ofoyb"]
 
@@ -71,8 +70,6 @@ script = ExtResource("5_spawner")
 
 [node name="HUD" parent="CanvasLayer" instance=ExtResource("3_hud")]
 visible = false
-
-[node name="ColorblindShaderScreen" parent="CanvasLayer" instance=ExtResource("4_colorblind")]
 
 [node name="CircleResetArea" type="Area2D" parent="." groups=["circle_reset"]]
 position = Vector2(136, 170)
