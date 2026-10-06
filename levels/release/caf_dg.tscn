@@ -877,7 +877,7 @@ tile_set = SubResource("TileSet_0")
 use_kinematic_bodies = true
 
 [node name="Goal" parent="." instance=ExtResource("5_i3ydc")]
-position = Vector2(2777, 2488)
+position = Vector2(2777, 2497)
 collision_mask = 2
 next_scene_path = "res://scenes/main_title.tscn"
 

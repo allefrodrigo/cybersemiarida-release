@@ -37,7 +37,9 @@ Located in project.godot autoload section:
 - Key collection mechanics
 
 **Level Structure**:
-- Playable route (set/2026): `scenes/main_title.tscn` → `levels/release/caf_01` → `caf_02` → `caf_03` → fall cutscene `scenes/caf_fall_dg.tscn` → `caf_03_dg` (key + door; `scenes/DoorUnlock.tscn` points to `caf_04` via uid) → `caf_04` (ruins; spawn at the start door; bell) → `des_01` → `scenes/elevator.tscn` (end of the desert) → `scenes/demo_end_card.tscn` ("Fim da demo") → menu
+- Playable route (set/2026): `scenes/main_title.tscn` → `levels/release/caf_01` → `caf_02` → `caf_03` → fall cutscene `scenes/caf_fall_dg.tscn` → `caf_03_dg` (key + door; `scenes/DoorUnlock.tscn` points to `caf_04` via uid) → `caf_04` (ruins; spawn at the start door; gate) → `des_01` → `scenes/elevator.tscn` (end of the desert) → `scenes/demo_end_card.tscn` ("Fim da demo") → menu
+- Level end in `caf_01`, `caf_02`, `caf_04`: `scenes/goal.tscn` + `scripts/goal.gd`, a scrap-metal gate (porteira) that opens and Timby walks through. Origin = ground. Two sprites: `Fundo` (lamp post + gate leaf, drawn behind Timby) and `Frente` (latch post, `z_index` 1). Everything else is z 0, so the Goal node must come BEFORE the player node in the level scene (goal.gd warns otherwise). Checkpoints are the bell posts (`props/checkpoint.tscn`); keep the two objects visually distinct
+- The gate's art (`assets/goal/goal_porteira.png`) and SFX (`audio/sfx_porteira.ogg`) come from Python scripts in `art/_gerado/goal_porteira/` and `audio/_gerado/sfx_porteira/` (folders have `.gdignore`); edit the script and rerun it instead of editing the PNG/OGG by hand
 - Also in `levels/release/` but off the route (nothing leads to them): `caf_05`, `caf_dg`; credits `scenes/CreditsScreen.tscn` is unreachable too
 - Some release levels still use scripts stored in `levels/Level_design/TILED/CSA/Mapa/`
 - Level design files in `levels/Level_design/TILED/` (uses Tiled map editor)

@@ -792,6 +792,11 @@ texture_filter = 1
 position = Vector2(529, 915)
 texture = ExtResource("20_57fg6")
 
+[node name="Goal" parent="." instance=ExtResource("7_s5nev")]
+position = Vector2(4523, 944)
+collision_mask = 2
+next_scene_path = "res://levels/release/des_01.tscn"
+
 [node name="player" parent="." instance=ExtResource("6_kiwin")]
 position = Vector2(529, 915)
 
@@ -804,11 +809,6 @@ texture = ExtResource("11_cgud4")
 texture_filter = 1
 position = Vector2(2867, 892)
 texture = ExtResource("15_n264o")
-
-[node name="Goal" parent="." instance=ExtResource("7_s5nev")]
-position = Vector2(4523, 935)
-collision_mask = 2
-next_scene_path = "res://levels/release/des_01.tscn"
 
 [node name="parede_invisivel" parent="." instance=ExtResource("9_kj0p3")]
 position = Vector2(44, 967)

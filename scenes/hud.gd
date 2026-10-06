@@ -65,7 +65,7 @@ func _can_toggle_pause() -> bool:
 		return false
 	var pl := get_tree().get_first_node_in_group("player") as Player
 	if pl != null and not pl.input_enabled and not get_tree().paused:
-		return false                          # sino (goal.gd, fade), placa (hit_pop.gd), elevador
+		return false                          # porteira (goal.gd, fade), placa (hit_pop.gd), elevador
 	return true
 
 ## Desabilita pausa e menu (continuam visíveis) — usado na sequência do elevador (spec 003, H2.4).

@@ -441,13 +441,13 @@ order = 1
 position = Vector2(4740, 320)
 order = 2
 
-[node name="Player" parent="." instance=ExtResource("4_ue3r0")]
-position = Vector2(681, 934)
-
 [node name="Goal" parent="." instance=ExtResource("5_y8xtw")]
-position = Vector2(7655, 934)
+position = Vector2(7655, 944)
 collision_mask = 2
 next_scene_path = "res://levels/release/caf_03.tscn"
+
+[node name="Player" parent="." instance=ExtResource("4_ue3r0")]
+position = Vector2(681, 934)
 
 [node name="parede_invisivel" parent="." instance=ExtResource("10_1dm8y")]
 position = Vector2(7, 980)

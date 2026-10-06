@@ -29,7 +29,7 @@ func _finger_key(event: InputEvent) -> Vector2i:
 	var index: int = event.index if (event is InputEventScreenTouch or event is InputEventScreenDrag) else 0
 	return Vector2i(event.device, index)
 
-## Troca de cena com um dedo num botão (🏠, sino, elevador): a ação não pode ficar presa na cena seguinte.
+## Troca de cena com um dedo num botão (🏠, porteira, elevador): a ação não pode ficar presa na cena seguinte.
 func _exit_tree() -> void:
 	release_all()
 
